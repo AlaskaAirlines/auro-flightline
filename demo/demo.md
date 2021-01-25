@@ -19,17 +19,122 @@ The `auro-flightline` element should be used in situations where users may:
 |√|√|||
 |||√|√|
 
-<div class="exampleWrapper">
-  <auro-flightline cssClass="testClass">Hello World!</auro-flightline>
+
+<h2>Nonstop</h2>
+<div class="exampleWrapper">    
+  <auro-flightline>
+  </auro-flightline>
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
   ```html
-  <auro-flightline cssClass="testClass">Hello World!</auro-flightline>
+  <auro-flightline>
+  </auro-flightline>
   ```
+</auro-accordion>
 
+<h2>1 Connection</h2>
+
+<div class="exampleWrapper">    
+  <auro-flightline>
+    <auro-flight-segment layover iata="SEA" duration="0h 40m"/>
+  </auro-flightline>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-flightline>
+    <auro-flight-segment layover iata="SEA" duration="0h 40m"/>
+  </auro-flightline>
+  ```
+</auro-accordion>
+
+<h2>1 Stopover</h2>
+
+<div class="exampleWrapper">    
+  <auro-flightline>
+    <auro-flight-segment stopover iata="YAK"/>
+  </auro-flightline>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-flightline>
+    <auro-flight-segment stopover iata="YAK"/>
+  </auro-flightline>
+  ```
+</auro-accordion>
+
+<h2>2 Stopovers</h2>
+
+<div class="exampleWrapper">    
+  <auro-flightline>
+    <auro-flight-segment stopover iata="YAK"/>
+    <auro-flight-segment stopover iata="WRG"/>
+  </auro-flightline>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-flightline>
+    <auro-flight-segment stopover iata="YAK"/>
+    <auro-flight-segment stopover iata="WRG"/>
+  </auro-flightline>
+  ```
+</auro-accordion>
+
+<h2>Stopover + Layover</h2>
+
+<div class="exampleWrapper">    
+  <auro-flightline>
+    <auro-flight-segment stopover iata="YAK"/>
+    <auro-flight-segment layover iata="SEA" duration="0h 40m"/>
+  </auro-flightline>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-flightline>
+    <auro-flight-segment stopover iata="YAK"/>
+    <auro-flight-segment layover iata="SEA" duration="0h 40m"/>
+  </auro-flightline>
+  ```
+</auro-accordion>
+
+<h2>Stopover Layover International Flight</h2>
+
+<div class="exampleWrapper">    
+  <auro-flightline>
+    <auro-flight-segment stopover iata="YAK"/>
+    <auro-flight-segment stopover iata="WRG"/>
+    <auro-flight-segment layover iata="SEA" duration="0h 40m"/>
+    <auro-flight-segment layover iata="BOS" duration="1h 40m"/>
+    <auro-flight-segment layover iata="DUB" duration="13h 40m"/>
+  </auro-flightline>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-flightline>
+    <auro-flight-segment stopover iata="YAK"/>
+    <auro-flight-segment stopover iata="WRG"/>
+    <auro-flight-segment layover iata="SEA" duration="0h 40m"/>
+    <auro-flight-segment layover iata="BOS" duration="1h 40m"/>
+    <auro-flight-segment layover iata="DUB" duration="13h 40m"/>
+  </auro-flightline>
+  ```
 </auro-accordion>
 
 ## Then there is more
