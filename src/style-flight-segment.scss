@@ -1,12 +1,14 @@
 div {
-
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    flex-direction: column;    
-
-
-
+    flex-direction: column; 
+    z-index: 2;
+    width: 100%;  
+    
+    &.stopover-container {
+        padding-bottom: 22px;
+    }
 }
 
 .circle {

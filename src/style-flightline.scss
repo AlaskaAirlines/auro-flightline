@@ -27,13 +27,28 @@
 //   ...
 // }
 
+::slotted(*) {
+    flex-grow: 1;
+    flex-basis: 0;
+}
+
+[stub]::slotted(*) {
+    display:none;
+}
+
 ::slotted(*)::before {
-    content: '';
-    position: absolute;
-    top: .9em;
-    left: -4em;
-    width: 4em;
-    height: .2em;
-    background: black;
-    z-index: -1;
+    content: "";
+    display: block;
+    background-color: #054687;
+    height: 2px;
+    width: 100%;
+    position: relative;
+    top:10px;
+    z-index: 1;
+}
+
+
+.slot-container {
+    display:flex;
+    justify-content:space-around;
 }
