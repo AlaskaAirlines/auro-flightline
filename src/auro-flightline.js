@@ -24,6 +24,7 @@ import styleCss from "./style-flightline-css.js";
 
 // build the component class
 class AuroFlightline extends LitElement {
+
   // constructor() {
   //   super();
   // }
@@ -37,10 +38,13 @@ class AuroFlightline extends LitElement {
   }
 
   firstUpdated() {
-    const children = this.shadowRoot.querySelector('slot').assignedNodes().filter(node => node.nodeName === 'AURO-FLIGHT-SEGMENT');
+    const ZERO = 0,
+     children = this.shadowRoot.querySelector('slot').assignedNodes().
+filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
 
-    if(children.length === 0) {
+    if (children.length === ZERO) {
       const el = document.createElement('span');
+
       el.style = 'color: transparent;';
       el.innerHTML = 'nonstop';
       this.appendChild(el);
@@ -58,12 +62,15 @@ class AuroFlightline extends LitElement {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    return html`
+    const ONE = 1;
+
+
+return html`
       <div class="flightline-container">
         <span class="slot-container">
           <slot>
-            <auro-flight-segment stub iata="${this.children.length} stop${this.children.length > 1 ? 's' : ''}"></auro-flight-segment>
           </slot>
+          <auro-flight-segment stub iata="${this.children.length} stop${this.children.length > ONE ? 's' : ''}"></auro-flight-segment>
         </span>
       </div>
     `;
