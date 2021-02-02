@@ -8,7 +8,6 @@ describe('auro-flightline', () => {
   it('auro-flightline is accessible', async () => {
     const el = await fixture(html`
       <auro-flightline>
-        <auro-flight-segment iata="SEA"></auro-flight-segment>
       </auro-flightline>
     `);
 

@@ -25,18 +25,6 @@ import styleCss from "./style-flightline-css.js";
 // build the component class
 class AuroFlightline extends LitElement {
 
-  // constructor() {
-  //   super();
-  // }
-
-  // function to define props used within the scope of this component
-  static get properties() {
-    return {
-      // ...super.properties,
-      cssClass:   { type: String }
-    };
-  }
-
   firstUpdated() {
     const ZERO = 0,
      children = this.shadowRoot.querySelector('slot').assignedNodes().
