@@ -1,0 +1,27 @@
+div {
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;    
+
+
+
+}
+
+.circle {
+    background-color: #054687;
+    border: 1px solid #054687;
+    border-radius: 16px;
+    width: 16px;
+    height: 16px;
+    &.stopover {
+        background-color:#fff;
+    }
+}
+
+span {
+    margin-top:14px;
+    color: var(--auro-color-text-secondary-on-light);
+    padding-bottom: 6px;
+}
