@@ -50,7 +50,7 @@ class AuroFlightSegment extends LitElement {
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     return html`
-      <div>
+      <div class="${this.stopover ? 'stopover-container':''}">
         <slot></slot>
         <div class="circle ${this.stopover ? 'stopover':''}"></div>
         <span>${this.iata}</span>
