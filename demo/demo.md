@@ -39,7 +39,7 @@ The `auro-flightline` element should be used in situations where users may:
 
 <div class="exampleWrapper">    
   <auro-flightline>
-    <auro-flight-segment layover iata="SEA" duration="0h 40m"/>
+    <auro-flight-segment layover iata="SEA" duration="0h 40m"></auro-flight-segment>
   </auro-flightline>
 </div>
 
@@ -48,7 +48,7 @@ The `auro-flightline` element should be used in situations where users may:
 
   ```html
   <auro-flightline>
-    <auro-flight-segment layover iata="SEA" duration="0h 40m"/>
+    <auro-flight-segment layover iata="SEA" duration="0h 40m"></auro-flight-segment>
   </auro-flightline>
   ```
 </auro-accordion>
@@ -57,7 +57,7 @@ The `auro-flightline` element should be used in situations where users may:
 
 <div class="exampleWrapper">    
   <auro-flightline>
-    <auro-flight-segment stopover iata="YAK"/>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
   </auro-flightline>
 </div>
 
@@ -66,7 +66,7 @@ The `auro-flightline` element should be used in situations where users may:
 
   ```html
   <auro-flightline>
-    <auro-flight-segment stopover iata="YAK"/>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
   </auro-flightline>
   ```
 </auro-accordion>
@@ -75,8 +75,8 @@ The `auro-flightline` element should be used in situations where users may:
 
 <div class="exampleWrapper">    
   <auro-flightline>
-    <auro-flight-segment stopover iata="YAK"/>
-    <auro-flight-segment stopover iata="WRG"/>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
   </auro-flightline>
 </div>
 
@@ -85,8 +85,8 @@ The `auro-flightline` element should be used in situations where users may:
 
   ```html
   <auro-flightline>
-    <auro-flight-segment stopover iata="YAK"/>
-    <auro-flight-segment stopover iata="WRG"/>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
   </auro-flightline>
   ```
 </auro-accordion>
@@ -95,8 +95,8 @@ The `auro-flightline` element should be used in situations where users may:
 
 <div class="exampleWrapper">    
   <auro-flightline>
-    <auro-flight-segment stopover iata="YAK"/>
-    <auro-flight-segment layover iata="SEA" duration="0h 40m"/>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment layover iata="SEA" duration="0h 40m"></auro-flight-segment>
   </auro-flightline>
 </div>
 
@@ -105,8 +105,8 @@ The `auro-flightline` element should be used in situations where users may:
 
   ```html
   <auro-flightline>
-    <auro-flight-segment stopover iata="YAK"/>
-    <auro-flight-segment layover iata="SEA" duration="0h 40m"/>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment layover iata="SEA" duration="0h 40m"></auro-flight-segment>
   </auro-flightline>
   ```
 </auro-accordion>
@@ -115,11 +115,11 @@ The `auro-flightline` element should be used in situations where users may:
 
 <div class="exampleWrapper">    
   <auro-flightline>
-    <auro-flight-segment stopover iata="YAK"/>
-    <auro-flight-segment stopover iata="WRG"/>
-    <auro-flight-segment layover iata="SEA" duration="0h 40m"/>
-    <auro-flight-segment layover iata="BOS" duration="1h 40m"/>
-    <auro-flight-segment layover iata="DUB" duration="13h 40m"/>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
+    <auro-flight-segment layover iata="SEA" duration="0h 40m"></auro-flight-segment>
+    <auro-flight-segment layover iata="BOS" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment layover iata="DUB" duration="13h 40m"></auro-flight-segment>
   </auro-flightline>
 </div>
 
@@ -128,11 +128,11 @@ The `auro-flightline` element should be used in situations where users may:
 
   ```html
   <auro-flightline>
-    <auro-flight-segment stopover iata="YAK"/>
-    <auro-flight-segment stopover iata="WRG"/>
-    <auro-flight-segment layover iata="SEA" duration="0h 40m"/>
-    <auro-flight-segment layover iata="BOS" duration="1h 40m"/>
-    <auro-flight-segment layover iata="DUB" duration="13h 40m"/>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
+    <auro-flight-segment layover iata="SEA" duration="0h 40m"></auro-flight-segment>
+    <auro-flight-segment layover iata="BOS" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment layover iata="DUB" duration="13h 40m"></auro-flight-segment>
   </auro-flightline>
   ```
 </auro-accordion>
