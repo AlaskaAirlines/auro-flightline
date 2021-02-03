@@ -7,36 +7,35 @@
 import { LitElement, html, css } from "lit-element";
 import { classMap } from "lit-html/directives/class-map";
 
-// If using auroElement base class
-// See instructions for importing auroElement base class https://git.io/JULq4
-// import { html, css } from "lit-element";
-// import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
-
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-flightline-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-flightline provides users a way to ...
+ * auro-flightline provides a responsive flight timeline experience by placing
+ * dots indicating stopovers and layovers on a timeline.
  *
- * @attr {String} cssClass - Applies designated CSS class to DOM element.
+ * @slot default - fill in with <auro-flight-segment>s of a given leg.
  */
 
 // build the component class
 class AuroFlightline extends LitElement {
 
   firstUpdated() {
-    const ZERO = 0,
-     children = this.shadowRoot.querySelector('slot').assignedNodes().
+    // children is an array of auro-flight-segments from within your <slot> below.
+    const children = this.shadowRoot.querySelector('slot').assignedNodes().
 filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
 
-    if (children.length === ZERO) {
+    // if we have a nonstop flight, we need to force _something_ into the dom
+    // since we are using pseudoclasses to draw the connector line.
+    if (!children.length) {
       const el = document.createElement('span');
+      // hack to get something substantial into the DOM to spawn the ::before
 
       el.style = 'color: transparent;font-size:0px;';
       el.innerHTML = '.';
-      this.shadowRoot.querySelector('span').appendChild(el);
+      this.shadowRoot.querySelector('div').appendChild(el);
     }
   }
 
@@ -46,16 +45,12 @@ filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
     `;
   }
 
-  // When using auroElement, use the following attribute and function when hiding content from screen readers.
-  // aria-hidden="${this.hideAudible(this.hiddenAudible)}"
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const ONE = 1,
-     ZERO = 0,
-
      classes = {
-      'nonstop': this.children.length === ZERO,
+      'nonstop': !this.children.length,
       'single': this.children.length === ONE,
       'multiple': this.children.length > ONE,
       'slot-container': true,
@@ -63,14 +58,11 @@ filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
 
 
 return html`
-      <div class="flightline-container">
-        <span class="${classMap(classes)}">
-          <slot>
-          </slot>
-          ${this.children.length > ONE ? html`
-            <auro-flight-segment iata="${this.children.length} stop${this.children.length > ONE ? 's' : ''}"></auro-flight-segment>
-          ` : html``}
-        </span>
+      <div class="${classMap(classes)}">
+        <slot></slot>
+        ${this.children.length > ONE ? html`
+          <auro-flight-segment iata="${this.children.length} stop${this.children.length > ONE ? 's' : ''}"></auro-flight-segment>
+        ` : html``}
       </div>
     `;
   }

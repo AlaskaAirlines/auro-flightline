@@ -1,9 +1,10 @@
 # auro-flightline
 
-auro-flightline provides users a way to ...
+auro-flightline provides a responsive flight timeline experience by placing 
+dots indicating stopovers and layovers on a timeline.
 
-## Properties
+## Slots
 
-| Property   | Attribute  | Type     | Description                                  |
-|------------|------------|----------|----------------------------------------------|
-| `cssClass` | `cssClass` | `String` | Applies designated CSS class to DOM element. |
+| Name      | Description                                      |
+|-----------|--------------------------------------------------|
+| `default` | fill in with <auro-flight-segment>s of a given leg. |
