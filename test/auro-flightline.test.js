@@ -1,5 +1,4 @@
 import { fixture, html, expect } from '@open-wc/testing';
-import sinon from 'sinon';
 import '../src/auro-flightline.js';
 import '../src/auro-flight-segment.js';
 
@@ -26,7 +25,6 @@ describe('auro-flightline', () => {
   });
 
   it('auro-flight-segment with a layover', async () => {
-    debugger;
     const el = await fixture(html`
       <auro-flight-segment iata="SEA" duration="1h 2m"></auro-flight-segment>
     `);
@@ -36,7 +34,6 @@ describe('auro-flightline', () => {
   });
 
   it('auro-flight-segment with a layover no duration', async () => {
-    debugger;
     const el = await fixture(html`
       <auro-flight-segment iata="2 Stops"></auro-flight-segment>
     `);
@@ -54,7 +51,7 @@ describe('auro-flightline', () => {
   });
 
   it('auro-flightline custom element is defined', async () => {
-    const el = await !!customElements.get("auro-flightline");
+    const el = await Boolean(customElements.get("auro-flightline"));
 
     await expect(el).to.be.true;
   });
