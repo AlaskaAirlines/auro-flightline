@@ -6,10 +6,6 @@
 // If use litElement base class
 import { LitElement, html, css } from "lit-element";
 import "@alaskaairux/auro-badge";
-// If using auroElement base class
-// See instructions for importing auroElement base class https://git.io/JULq4
-// import { html, css } from "lit-element";
-// import AuroElement from '@alaskaairux/webcorestylesheets/dist/auroElement/auroElement';
 
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
@@ -17,17 +13,18 @@ import styleCss from "./style-flight-segment-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-flight-segment provides users a way to ...
+ * auro-flight-segment is a standard for indicating stopovers and layovers.
+ * Stopovers do not have duration information and are indicated white.
+ * Layovers contain duration information and are indicated blue.
+ * https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/
  *
- * @attr {String} cssClass - Applies designated CSS class to DOM element.
+ * @attr {Boolean} stopover - Indicates a stopover. Do not provide duration.
+ * @attr {String} iata - text to display, typically a station code (SEA, PVD, AVP)
+ * @attr {String} duraton - displayed in the badge, typically duration (1h 53m)
  */
 
 // build the component class
 class AuroFlightSegment extends LitElement {
-  // constructor() {
-  //   super();
-  // }
-
   // function to define props used within the scope of this component
   static get properties() {
     return {
@@ -43,9 +40,6 @@ class AuroFlightSegment extends LitElement {
       ${styleCss}
     `;
   }
-
-  // When using auroElement, use the following attribute and function when hiding content from screen readers.
-  // aria-hidden="${this.hideAudible(this.hiddenAudible)}"
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
