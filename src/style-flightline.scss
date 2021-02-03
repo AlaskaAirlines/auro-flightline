@@ -27,15 +27,14 @@
 //   ...
 // }
 
+auro-flight-segment,
 ::slotted(*) {
     flex-grow: 1;
     flex-basis: 0;
 }
 
-[stub]::slotted(*) {
-    display:none;
-}
-
+.nonstop::before,
+auro-flight-segment::before,
 ::slotted(*)::before {
     content: "";
     display: block;
@@ -47,8 +46,25 @@
     z-index: 1;
 }
 
+// when there's only one connection
+.multiple ::slotted(*) {
+    display: none;
+    @include auro_breakpoint--sm {
+        display:block;
+    }
+}
+
+auro-flight-segment {
+    @include auro_breakpoint--sm {
+        display:none;
+    }
+}
 
 .slot-container {
     display:flex;
     justify-content:space-around;
+
+    &.multiple::slotted(*) {
+            display: none;
+    }
 }
