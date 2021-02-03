@@ -39,7 +39,7 @@ auro-flight-segment::before,
     content: "";
     display: block;
     background-color: #054687;
-    height: 2px;
+    height: var(--auro-size-xxxs);
     width: 100%;
     position: relative;
     top:10px;
