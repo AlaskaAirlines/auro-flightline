@@ -5,6 +5,7 @@
 
 // If use litElement base class
 import { LitElement, html, css } from "lit-element";
+import { classMap } from "lit-html/directives/class-map";
 
 // If using auroElement base class
 // See instructions for importing auroElement base class https://git.io/JULq4
@@ -33,9 +34,9 @@ filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
     if (children.length === ZERO) {
       const el = document.createElement('span');
 
-      el.style = 'color: transparent;';
-      el.innerHTML = 'nonstop';
-      this.appendChild(el);
+      el.style = 'color: transparent;font-size:0px;';
+      el.innerHTML = '.';
+      this.shadowRoot.querySelector('span').appendChild(el);
     }
   }
 
@@ -50,15 +51,25 @@ filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    const ONE = 1;
+    const ONE = 1,
+     ZERO = 0,
+
+     classes = {
+      'nonstop': this.children.length === ZERO,
+      'single': this.children.length === ONE,
+      'multiple': this.children.length > ONE,
+      'slot-container': true,
+    }
 
 
 return html`
       <div class="flightline-container">
-        <span class="slot-container">
+        <span class="${classMap(classes)}">
           <slot>
           </slot>
-          <auro-flight-segment stub iata="${this.children.length} stop${this.children.length > ONE ? 's' : ''}"></auro-flight-segment>
+          ${this.children.length > ONE ? html`
+            <auro-flight-segment iata="${this.children.length} stop${this.children.length > ONE ? 's' : ''}"></auro-flight-segment>
+          ` : html``}
         </span>
       </div>
     `;
