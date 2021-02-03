@@ -12,13 +12,13 @@ div {
 }
 
 .circle {
-    background-color: #054687;
-    border: 1px solid #054687;
-    border-radius: 16px;
-    width: 16px;
-    height: 16px;
+    background-color: var(--auro-color-ui-active-on-light);
+    border: 1px solid var(--auro-color-ui-active-on-light);
+    border-radius: var(--auro-size-md);
+    width: var(--auro-size-md);
+    height: var(--auro-size-md);
     &.stopover {
-        background-color:#fff;
+        background-color: var(--auro-color-background-lightest);
     }
 }
 
