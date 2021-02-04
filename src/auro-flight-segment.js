@@ -21,7 +21,7 @@ import styleCss from "./style-flight-segment-css.js";
  *
  * @attr {Boolean} stopover - Indicates a stopover. Do not provide duration.
  * @attr {String} iata - Text to display, typically a station code (SEA, PVD, AVP)
- * @attr {String} duraton - Displayed in the auro-badge, typically duration (1h 53m)
+ * @attr {String} duration - Displayed in the auro-badge, typically duration (1h 53m)
  */
 
 // build the component class
