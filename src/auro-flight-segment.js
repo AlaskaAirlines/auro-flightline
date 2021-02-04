@@ -5,6 +5,7 @@
 
 // If use litElement base class
 import { LitElement, html, css } from "lit-element";
+import { classMap } from "lit-html/directives/class-map";
 import "@alaskaairux/auro-badge";
 
 // Import touch detection lib
@@ -31,8 +32,8 @@ class AuroFlightSegment extends LitElement {
     return {
       // ...super.properties,
       stopover:   { type: Boolean },
-      iata: {type: String},
-      duration: {type: String},
+      iata:       { type: String },
+      duration:   { type: String },
     };
   }
 
@@ -44,10 +45,18 @@ class AuroFlightSegment extends LitElement {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
+    const circleClasses = {
+      'stopover': this.stopover,
+      'circle': true,
+    },
+    parentClasses = {
+      'stopover-container': this.stopover,
+    };
+
     return html`
-      <div class="${this.stopover ? 'stopover-container' : ''}">
+      <div class="${classMap(parentClasses)}">
         <slot></slot>
-        <div class="circle ${this.stopover ? 'stopover' : ''}"></div>
+        <div class="${classMap(circleClasses)}"></div>
         <span>${this.iata}</span>
         ${this.duration ? html`
             <auro-badge label>${this.duration}</auro-badge>
