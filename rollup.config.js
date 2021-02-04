@@ -26,10 +26,13 @@ const getSharedPlugins = (isLegacy) => [
 ];
 
 const modernConfig = {
-  input: 'src/auro-flightline.js',
+  input: {
+    ['auro-flightline__bundled']: 'src/auro-flightline.js',
+    ['auro-flight-segment__bundled']: 'src/auro-flight-segment.js'
+  },
   output: {
     format: 'esm',
-    file: 'dist/auro-flightline__bundled.js'
+    file: 'dist/'
   },
   plugins: [
     // remove shady DOM polyfill for modern browsers
@@ -60,4 +63,13 @@ const legacyConfig = {
   plugins: getSharedPlugins(true)
 };
 
-export default [modernConfig, legacyConfig];
+const legacyConfigSegment = {
+  input: 'src/es5.js',
+  output: {
+    format: 'iife',
+    file: 'dist/auro-flight-segment__bundled.es5.js'
+  },
+  plugins: getSharedPlugins(true)
+};
+
+export default [modernConfig, legacyConfig, legacyConfigSegment];
