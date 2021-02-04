@@ -104,7 +104,7 @@ OPERATED BY /ENVOY AIR AS AMERICAN EAGLE
   ```
 </auro-accordion>
 
-<h2>Stopover + Layover</h2>
+<h2>Stopover + Layover (ADKSEA)</h2>
 
 <div class="exampleWrapper">    
   <auro-flightline>
@@ -131,7 +131,7 @@ OPERATED BY /ENVOY AIR AS AMERICAN EAGLE
   ```
 </auro-accordion>
 
-<h2>Stopover Layover International Flight</h2>
+<h2>Stopover Layover International Flight (ADKBCN)</h2>
 
 <div class="exampleWrapper">    
   <auro-flightline>
