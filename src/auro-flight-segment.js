@@ -14,13 +14,14 @@ import styleCss from "./style-flight-segment-css.js";
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * auro-flight-segment is a standard for indicating stopovers and layovers.
- * Stopovers do not have duration information and are indicated white.
- * Layovers contain duration information and are indicated blue.
- * https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/
+ * Stopovers do not have duration information and are indicated differently.
+ * Layovers contain duration information and are indicated with a solid fill.
+ * For more information about the difference between a layover and a stopover,
+ * [please see this article.](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/)
  *
  * @attr {Boolean} stopover - Indicates a stopover. Do not provide duration.
- * @attr {String} iata - text to display, typically a station code (SEA, PVD, AVP)
- * @attr {String} duraton - displayed in the badge, typically duration (1h 53m)
+ * @attr {String} iata - Text to display, typically a station code (SEA, PVD, AVP)
+ * @attr {String} duraton - Displayed in the auro-badge, typically duration (1h 53m)
  */
 
 // build the component class

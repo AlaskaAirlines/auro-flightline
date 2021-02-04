@@ -7,7 +7,7 @@ div {
   width: 100%;  
     
   &.stopover-container {
-    padding-bottom: 22px;
+    padding-bottom: var(--auro-size-lg);
   }
 }
 
@@ -23,7 +23,7 @@ div {
 }
 
 span {
-  margin-top: 14px;
+  margin-top: var(--auro-size-sm);
   color: var(--auro-color-text-secondary-on-light);
-  padding-bottom: 6px;
+  padding-bottom: var(--auro-size-xs);
 }
