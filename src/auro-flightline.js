@@ -13,8 +13,7 @@ import styleCss from "./style-flightline-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-flightline provides a responsive flight timeline experience by placing
- * dots indicating stopovers and layovers on a timeline.
+ * auro-flightline provides a responsive flight timeline experience by placing dots indicating stopovers and layovers on a timeline.
  *
  * @slot default - fill in with <auro-flight-segment>s of a given leg.
  */
@@ -25,7 +24,7 @@ class AuroFlightline extends LitElement {
   firstUpdated() {
     // children is an array of auro-flight-segments from within your <slot> below.
     const children = this.shadowRoot.querySelector('slot').assignedNodes().
-filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
+      filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
 
     // if we have a nonstop flight, we need to force _something_ into the dom
     // since we are using pseudoclasses to draw the connector line.
@@ -33,7 +32,7 @@ filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
       const el = document.createElement('span');
       // hack to get something substantial into the DOM to spawn the ::before
 
-      el.style = 'color: transparent;font-size:0px;';
+      el.style = 'color: transparent; font-size: 0px;';
       el.innerHTML = '.';
       this.shadowRoot.querySelector('div').appendChild(el);
     }
@@ -56,15 +55,13 @@ filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
       'slot-container': true,
     }
 
-
-return html`
+    return html`
       <div class="${classMap(classes)}">
         <slot></slot>
         ${this.children.length > ONE ? html`
           <auro-flight-segment iata="${this.children.length} stop${this.children.length > ONE ? 's' : ''}"></auro-flight-segment>
         ` : html``}
-      </div>
-    `;
+      </div>`;
   }
 }
 
