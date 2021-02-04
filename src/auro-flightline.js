@@ -32,7 +32,7 @@ class AuroFlightline extends LitElement {
       const el = document.createElement('span');
       // hack to get something substantial into the DOM to spawn the ::before
 
-      el.style = 'color: transparent; font-size: 0px;';
+      el.style = 'color: transparent; font-size: 0;';
       el.innerHTML = '.';
       this.shadowRoot.querySelector('div').appendChild(el);
     }
