@@ -32,7 +32,7 @@ const modernConfig = {
   },
   output: {
     format: 'esm',
-    file: 'dist/'
+    dir: 'dist/'
   },
   plugins: [
     // remove shady DOM polyfill for modern browsers
