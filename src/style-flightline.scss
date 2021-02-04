@@ -30,45 +30,45 @@
 // forces each segment to take up as much space in its row to extend the ::before
 auro-flight-segment,
 ::slotted(*) {
-    flex-grow: 1;
-    flex-basis: 0;
+  flex-grow: 1;
+  flex-basis: 0;
 }
 
 // places the connecting line with a pseudoclass
 .nonstop::before,
 auro-flight-segment::before,
 ::slotted(*)::before {
-    content: "";
-    display: block;
-    background-color: #054687;
-    height: var(--auro-size-xxxs);
-    width: 100%;
-    position: relative;
-    top:10px;
-    z-index: 1;
+  content: "";
+  display: block;
+  background-color: #054687;
+  height: var(--auro-size-xxxs);
+  width: 100%;
+  position: relative;
+  top: 10px;
+  z-index: 1;
 }
 
 // when there's only one connection, we want to show the actual dot but
 // for multiple we want to just show N stops in a layover dot.
 .multiple ::slotted(*) {
-    display: none;
-    @include auro_breakpoint--sm {
-        display:block;
-    }
+  display: none;
+  @include auro_breakpoint--sm {
+    display: block;
+  }
 }
 
 auro-flight-segment {
-    @include auro_breakpoint--sm {
-        display:none;
-    }
+  @include auro_breakpoint--sm {
+    display: none;
+  }
 }
 
 // flex container for the slot
 .slot-container {
-    display:flex;
-    justify-content:space-around;
+  display: flex;
+  justify-content: space-around;
 
-    &.multiple::slotted(*) {
-            display: none;
-    }
+  &.multiple::slotted(*) {
+    display: none;
+  }
 }
