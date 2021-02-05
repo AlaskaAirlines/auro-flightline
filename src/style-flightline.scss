@@ -40,7 +40,7 @@ auro-flight-segment::before,
 ::slotted(*)::before {
   content: "";
   display: block;
-  background-color: #054687;
+  background-color: var(--auro-color-brand-atlas-500);
   height: var(--auro-size-xxxs);
   width: 100%;
   position: relative;

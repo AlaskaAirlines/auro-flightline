@@ -1,23 +1,25 @@
-# auro-flightline
+# auro-Flightline
 
-Auro-Flightline represents a passenger's intermediate journey between a departure station and an arrival station.
+auro-flightline represents any layovers and/or stopovers a guest may encounter throughout their journey. 
 
-The flightline represents the layovers and stopovers the guest will take throughout their journey. For instance, flying from SEA (Seattle, WA) to AVP (Scranton, PA) will take a *layover* in ORD (Chicago, IL), while a guest flying from [ANC (Anchorage, AK) to ADK (Adak Island, AK) will have a *stopover* in CDB (Cold Bay, AK)](https://onemileatatime.com/alaska-airlines-adak-cold-bay/). They won't get off the aircraft in Cold Bay, kind of like a bus. We cannot predict stopover duration due to variants in passenger and cargo loads.
+For mobile, the number of stops is automatically calculated by the number of layovers and/or stopovers added in the DOM via the `auro-flight-segment` element. 
 
-Guests with physical disabilities appreciate indication of whether a flight will require them to deplane, and typically optimize for the most direct route. For this reason, [Change of Gauge flights](https://www.travelweekly.com/Mark-Pestronk/Agents-must-identify-change-of-gauge-services), or COG for short, require a *layover* indication even if they are filed as a direct flight. Please contact gus@alaskaair.com for clarification on this. 
+## Component use cases
+Use the auro-flightline element to:
+* Flying from SEA (Seattle, WA) to AVP (Scranton, PA) will require a *layover* in ORD (Chicago, IL)
+* Flying from [ANC (Anchorage, AK) to ADK (Adak Island, AK) will have a *stopover* in CDB (Cold Bay, AK)](https://onemileatatime.com/alaska-airlines-adak-cold-bay/). These passengers will not deplane in Cold Bay.
+Stopover duration cannot be predicted due to variants in passenger and cargo loads.
 
-<h2>Nonstop (SEAEWR)</h2>
+## Nonstop (SEAEWR)
 <div class="exampleWrapper">    
-  <auro-flightline>
-  </auro-flightline>
+  <auro-flightline></auro-flightline>
 </div>
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
 
   ```html
-  <auro-flightline>
-  </auro-flightline>
+  <auro-flightline></auro-flightline>
   ```
   ```
    10FEB  WED   SEA/PST     EWR/EST¥3
@@ -26,7 +28,7 @@ Guests with physical disabilities appreciate indication of whether a flight will
   ```
 </auro-accordion>
 
-<h2>1 Connection (SEAAVP)</h2>
+## Flight with a single layover (SEAAVP)
 
 <div class="exampleWrapper">    
   <auro-flightline>
@@ -52,7 +54,7 @@ OPERATED BY /ENVOY AIR AS AMERICAN EAGLE
   ```
 </auro-accordion>
 
-<h2>1 Stopover (ANCADK)</h2>
+## Flight with a single stopover (ANCADK)
 
 <div class="exampleWrapper">    
   <auro-flightline>
@@ -77,34 +79,7 @@ OPERATED BY /ENVOY AIR AS AMERICAN EAGLE
   ```
 </auro-accordion>
 
-<h2>2 Stopovers (JNUANC)</h2>
-
-<div class="exampleWrapper">    
-  <auro-flightline>
-    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
-    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
-  </auro-flightline>
-</div>
-
-<auro-accordion lowProfile justifyRight>
-  <span slot="trigger">See code</span>
-
-  ```html
-  <auro-flightline>
-    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
-    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
-  </auro-flightline>
-  ```
-  ```
- 10FEB  WED   ANC/Z-9     PSG/¥0
-2   114 F1 D1 P0 I0 U0 A0 Y4*ANCSEA 100  145A  610A 73J 0 /E
-        Z4 S3 B3 M2 H2 Q2 L1 V0
-3    65 F7 D7 P7 I7 U4 A3 Y7*   PSG 033  705A 1051A 73G S 2 /E
-        Z7 S7 B7 M7 H7 Q7 L7 V7
-  ```
-</auro-accordion>
-
-<h2>Stopover + Layover (ADKSEA)</h2>
+## Flight with a stopover and a layover (ADKSEA)
 
 <div class="exampleWrapper">    
   <auro-flightline>
@@ -131,7 +106,7 @@ OPERATED BY /ENVOY AIR AS AMERICAN EAGLE
   ```
 </auro-accordion>
 
-<h2>Stopover Layover International Flight (ADKBCN)</h2>
+## Flight with layovers and stopovers (ADKBCN)
 
 <div class="exampleWrapper">    
   <auro-flightline>
