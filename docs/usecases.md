@@ -1,12 +1,11 @@
-# Business Cases
+# Airline information, DoT compliance
 Below are example markets searchable in ITA and Sabre for availability.
 
-For more information about the difference between a layover and a stopover,
-[please see this article.](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/)
-
+For more information, [please see this article](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/) about the differences between a layover and a stopover.
 [Change of Gauge flights](https://www.travelweekly.com/Mark-Pestronk/Agents-must-identify-change-of-gauge-services)  are flights with the same flight number, but with an equipment swap at a intermediate stop. This is a pain point for guests with physical disabilities whom may not expect to need to depart the aircraft. Even with the physical change of planes, these flights are still considered Direct. Qantas runs a COG JFK-SYD.
 
 ## Nonstop (SEAEWR)
+
 <div class="exampleWrapper">    
   <auro-flightline></auro-flightline>
 </div>
@@ -17,6 +16,7 @@ For more information about the difference between a layover and a stopover,
   ```html
   <auro-flightline></auro-flightline>
   ```
+    <!-- Sabre Output -->
   ```
    10FEB  WED   SEA/PST     EWR/EST¥3
 1      8 F7 D7 P7 I7 U5*SEAEWR 066  730A  355P 73J S 0 /E
@@ -34,14 +34,17 @@ For more information about the difference between a layover and a stopover,
 
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
-
   ```html
   <auro-flightline>
     <auro-flight-segment iata="LAX"></auro-flight-segment>
   </auro-flightline>
-  ```dion>
+  ```
+<auro-accordion>
 
 ## Flight with a single layover (SEAAVP)
+
+The following illustrates flight with one layover, for example, SEA to AVP.
+
 
 <div class="exampleWrapper">    
   <auro-flightline>
@@ -57,6 +60,7 @@ For more information about the difference between a layover and a stopover,
     <auro-flight-segment iata="ORD" duration="3h 40m"></auro-flight-segment>
   </auro-flightline>
   ```
+    <!-- Sabre Output -->
   ```
  10FEB  WED   SEA/PST     AVP/EST¥3
 1     34 F7 D7 P7 A0 Y7 Z7*SEAORD 080  810A  208P 73J S 0 /E
@@ -69,6 +73,9 @@ OPERATED BY /ENVOY AIR AS AMERICAN EAGLE
 
 ## Flight with a single stopover (ANCADK)
 
+The following illustrates a flight with one stopover, for example, ANC to ADK.
+
+
 <div class="exampleWrapper">    
   <auro-flightline>
     <auro-flight-segment stopover iata="CDB"></auro-flight-segment>
@@ -83,6 +90,7 @@ OPERATED BY /ENVOY AIR AS AMERICAN EAGLE
     <auro-flight-segment stopover iata="CDB"></auro-flight-segment>
   </auro-flightline>
   ```
+    <!-- Sabre Output -->
   ```
  14FEB  SUN   ANC/Z-9     ADK/HST-1
 1   184 F7 D7 P7 I7 U4 A2*ANCADK 000 -1 1000A 1255P 73G 1 WJ /E
@@ -94,6 +102,9 @@ OPERATED BY /ENVOY AIR AS AMERICAN EAGLE
 
 ## Flight with a stopover and a layover (ADKSEA)
 
+The following illustrates flight with a stopover and a layover, for example, ADK to SEA.
+
+
 <div class="exampleWrapper">    
   <auro-flightline>
     <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
@@ -110,6 +121,7 @@ OPERATED BY /ENVOY AIR AS AMERICAN EAGLE
     <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
   </auro-flightline>
   ```
+    <!-- Sabre Output -->
   ```
    10FEB  WED   ADK/HST     SEA/PST¥2
 1   187 F7 D7 P7 I7 U4 A3*ADKANC 016    205P  725P 73H 1 WJ /E
@@ -120,6 +132,8 @@ OPERATED BY /ENVOY AIR AS AMERICAN EAGLE
 </auro-accordion>
 
 ## Flight with layovers and stopovers (ADKBCN)
+
+The following illustrates an international flight with stopovers and layovers, for example, ADK to BCN.
 
 <div class="exampleWrapper">    
   <auro-flightline>
@@ -142,6 +156,7 @@ OPERATED BY /ENVOY AIR AS AMERICAN EAGLE
     <auro-flight-segment iata="SFO" duration="1h 40m"></auro-flight-segment>
   </auro-flightline>
   ```
+    <!-- Sabre Output -->
   ```
    14FEB  SUN   ADK/HST     BCN/¥11
 1    187 F6 D6 P6 I6*ADKANC 016  - 155P  715P   73G 1 WJ /E
