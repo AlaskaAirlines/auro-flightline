@@ -21,6 +21,6 @@ auro-flightline provides a responsive flight timeline experience by placing dots
 
 ## Slots
 
-| Name      | Description                                      |
-|-----------|--------------------------------------------------|
-| `default` | fill in with <auro-flight-segment>s of a given leg. |
+| Name | Description                                      |
+|------|--------------------------------------------------|
+|      | fill in with `<auro-flight-segment>` components of a given leg. |

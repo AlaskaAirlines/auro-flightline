@@ -15,7 +15,7 @@ import styleCss from "./style-flightline-css.js";
 /**
  * auro-flightline provides a responsive flight timeline experience by placing dots indicating stopovers and layovers on a timeline.
  *
- * @slot default - fill in with <auro-flight-segment>s of a given leg.
+ * @slot - fill in with `<auro-flight-segment>` components of a given leg.
  */
 
 // build the component class
@@ -27,7 +27,7 @@ class AuroFlightline extends LitElement {
       filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
 
     // if we have a nonstop flight, we need to force _something_ into the dom
-    // since we are using pseudoclasses to draw the connector line.
+    // since we are using pseudo classes to draw the connector line.
     if (!children.length) {
       const el = document.createElement('span');
       // hack to get something substantial into the DOM to spawn the ::before

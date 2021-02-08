@@ -30,7 +30,7 @@ Any update to the Auro Design Tokens will be immediately reflected with browsers
 
 ### Define dependency in project component
 
-Defining the component dependency within each component that is using the `<auro-flightline>` component.
+Defining the component dependency within each component that is using the `<auro-flightline>` and `<auro-flight-segment>` components.
 
 ```javascript
 import "@alaskaairux/auro-flightline";
