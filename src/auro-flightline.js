@@ -53,7 +53,7 @@ class AuroFlightline extends LitElement {
       'single': this.children.length === ONE,
       'multiple': this.children.length > ONE,
       'slot-container': true,
-    }
+    };
 
     return html`
       <div class="${classMap(classes)}">

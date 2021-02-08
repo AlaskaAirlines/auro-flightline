@@ -45,19 +45,18 @@ class AuroFlightSegment extends LitElement {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    const circleClasses = {
-      'stopover': this.stopover,
-      'circle': true,
-    },
-    parentClasses = {
-      'stopover-container': this.stopover,
+    const legClasses = {
+      'leg': true,
+      'layout': true,
+      'leg--stopover': this.stopover,
+      'leg--layover': !this.stopover,
     };
 
     return html`
-      <div class="${classMap(parentClasses)}">
+      <div class="layout">
         <slot></slot>
-        <div class="${classMap(circleClasses)}"></div>
-        <span>${this.iata}</span>
+        <div class="${classMap(legClasses)}"></div>
+        <span class="iata">${this.iata}</span>
         ${this.duration ? html`
             <auro-badge label>${this.duration}</auro-badge>
         ` : html``}

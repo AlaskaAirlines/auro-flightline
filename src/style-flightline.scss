@@ -27,17 +27,8 @@
 //   ...
 // }
 
-// forces each segment to take up as much space in its row to extend the ::before
-auro-flight-segment,
-::slotted(*) {
-  flex-grow: 1;
-  flex-basis: 0;
-}
-
-// places the connecting line with a pseudoclass
-.nonstop::before,
-auro-flight-segment::before,
-::slotted(*)::before {
+// places the connecting line with a pseudo class
+.nonstop::before {
   content: "";
   display: block;
   background-color: var(--auro-color-brand-atlas-500);
@@ -52,6 +43,7 @@ auro-flight-segment::before,
 // for multiple we want to just show N stops in a layover dot.
 .multiple ::slotted(*) {
   display: none;
+
   @include auro_breakpoint--sm {
     display: block;
   }

@@ -1,28 +1,51 @@
-div {
+// Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+// forces each segment to take up as much space in its row to extend the ::before
+:host {
+  flex-grow: 1;
+  flex-basis: 0;
+}
+
+// places the connecting line with a pseudo class
+:host::before {
+  content: "";
+  display: block;
+  background-color: var(--auro-color-brand-atlas-500);
+  height: var(--auro-size-xxxs);
+  width: 100%;
+  position: relative;
+  top: 10px;
+  z-index: 1;
+}
+
+.layout {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column; 
+  flex-direction: column;
   z-index: 2;
-  width: 100%;  
-    
-  &.stopover-container {
-    padding-bottom: var(--auro-size-lg);
-  }
+  width: 100%;
 }
 
-.circle {
-  background-color: var(--auro-color-ui-active-on-light);
+.leg {
   border: 1px solid var(--auro-color-ui-active-on-light);
   border-radius: var(--auro-size-md);
   width: var(--auro-size-md);
   height: var(--auro-size-md);
-  &.stopover {
+
+  &--stopover {
     background-color: var(--auro-color-background-lightest);
+  }
+
+  &--layover {
+    background-color: var(--auro-color-ui-active-on-light);
   }
 }
 
-span {
+.iata {
   margin-top: var(--auro-size-sm);
   color: var(--auro-color-text-secondary-on-light);
   padding-bottom: var(--auro-size-xs);
