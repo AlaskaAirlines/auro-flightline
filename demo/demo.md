@@ -13,6 +13,8 @@ Stopover duration cannot be predicted due to variants in passenger and cargo loa
 
 ## Nonstop
 
+The following illustrates a flight with no layovers or stopovers, for example, SEA to EWR.
+
 <div class="exampleWrapper">    
   <auro-flightline></auro-flightline>
 </div>
