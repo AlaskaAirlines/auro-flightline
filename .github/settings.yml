@@ -3,7 +3,7 @@ repository:
   # See https://github.com/apps/settings for app settings
 
   # A short description of the repository that will show up on GitHub
-  description: TBD ...
+  description: A custom element that represents the intermediate details between a departure and arrival station on a flight.
 
   # A URL with more information about the repository
   homepage: https://auro.alaskaair.com/components/auro/flightline
