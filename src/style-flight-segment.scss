@@ -48,5 +48,9 @@
 .iata {
   margin-top: var(--auro-size-sm);
   color: var(--auro-color-text-secondary-on-light);
-  padding-bottom: var(--auro-size-xs);
+  padding-bottom: var(--auro-size-xxs);
+}
+
+auro-badge {
+  min-width: 72px;
 }
