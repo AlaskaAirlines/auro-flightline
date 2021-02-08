@@ -34,6 +34,7 @@ Defining the component dependency within each component that is using the `<auro
 
 ```javascript
 import "@alaskaairux/auro-flightline";
+import "@alaskaairux/auro-flightline/dist/auro-flight-segment";
 ```
 
 **Reference component in HTML**
