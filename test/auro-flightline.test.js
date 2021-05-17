@@ -13,6 +13,36 @@ describe('auro-flightline', () => {
     await expect(el).to.be.accessible();
   });
 
+  it('auro-flightline with canceled status', async () => {
+    const el = await fixture(html`
+      <auro-flightline canceled>
+      </auro-flightline>
+    `);
+
+    await expect(el.classList.contains("canceled"));
+  });
+
+  it('auro-flightline with canceled status do not display a layover', async () => {
+    const el = await fixture(html`
+      <auro-flightline canceled>
+        <auro-flight-segment iata="SEA"></auro-flight-segment>
+        <auro-flight-segment iata="LAX"></auro-flight-segment>
+      </auro-flightline>
+    `);
+
+    await expect(el.shadowRoot.querySelectorAll('auro-flight-segment').length).to.equal(0);
+  });
+
+  it('auro-flightline with canceled status do not display a stopover', async () => {
+    const el = await fixture(html`
+      <auro-flightline canceled>
+        <auro-flight-segment iata="SEA" stopover></auro-flight-segment>
+      </auro-flightline>
+    `);
+
+    await expect(el.shadowRoot.querySelectorAll('auro-flight-segment').length).to.equal(0);
+  });
+
   it('auro-flightline with a layover', async () => {
     const el = await fixture(html`
       <auro-flightline>
