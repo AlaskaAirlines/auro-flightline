@@ -21,14 +21,24 @@ import styleCss from "./style-flightline-css.js";
 // build the component class
 class AuroFlightline extends LitElement {
 
+    // function to define props used within the scope of this component
+    static get properties() {
+      return {
+        // ...super.properties,
+        canceled:   { type: Boolean }
+      };
+    }
+
   firstUpdated() {
     // children is an array of auro-flight-segments from within your <slot> below.
-    const children = this.shadowRoot.querySelector('slot').assignedNodes().
+    const slot = this.shadowRoot.querySelector('slot');
+    
+    const children = slot && slot.assignedNodes().
       filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
 
     // if we have a nonstop flight, we need to force _something_ into the dom
     // since we are using pseudo classes to draw the connector line.
-    if (!children.length) {
+    if (!children || !children.length) {
       const el = document.createElement('span');
       // hack to get something substantial into the DOM to spawn the ::before
 
@@ -49,17 +59,18 @@ class AuroFlightline extends LitElement {
   render() {
     const ONE = 1,
      classes = {
-      'nonstop': !this.children.length,
+      'nonstop': !this.children.length && !this.canceled,
       'single': this.children.length === ONE,
       'multiple': this.children.length > ONE,
+      'canceled': this.canceled,
       'slot-container': true,
     };
 
     return html`
       <div class="${classMap(classes)}">
-        <slot></slot>
-        ${this.children.length > ONE ? html`
-          <auro-flight-segment iata="${this.children.length} stop${this.children.length > ONE ? 's' : ''}"></auro-flight-segment>
+        ${!this.canceled ? html` <slot></slot>`: html``}
+        ${(this.children.length > ONE && !this.canceled) ? html`
+          <auro-flight-segment iata="${this.children.length} stop${this.children.length > ONE  ? 's' : ''}"></auro-flight-segment>
         ` : html``}
       </div>`;
   }
