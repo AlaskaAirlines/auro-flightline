@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.1.0](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.0.1...v1.1.0) (2021-06-15)
+
+
+### Features
+
+* add a new canceled status ([c6dd5e7](https://github.com/AlaskaAirlines/auro-flightline/commit/c6dd5e7094cf26325f1ad936bba741eb1c10ac67))
+
 ## [1.0.1](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.0.0...v1.0.1) (2021-02-09)
 
 
