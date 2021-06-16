@@ -7,6 +7,8 @@
 :host {
   flex-grow: 1;
   flex-basis: 0;
+  // prevent z-index declarations from affecting anything outside the component
+  isolation: isolate;
 }
 
 // places the connecting line with a pseudo class
