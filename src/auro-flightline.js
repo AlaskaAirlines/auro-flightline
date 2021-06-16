@@ -31,9 +31,10 @@ class AuroFlightline extends LitElement {
 
   firstUpdated() {
     // children is an array of auro-flight-segments from within your <slot> below.
-    const slot = this.shadowRoot.querySelector('slot');
-    
-    const children = slot && slot.assignedNodes().
+    /* eslint-disable sort-vars */
+    const slot = this.shadowRoot.querySelector('slot'),
+
+     children = slot && slot.assignedNodes().
       filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
 
     // if we have a nonstop flight, we need to force _something_ into the dom
@@ -68,9 +69,9 @@ class AuroFlightline extends LitElement {
 
     return html`
       <div class="${classMap(classes)}">
-        ${!this.canceled ? html` <slot></slot>`: html``}
-        ${(this.children.length > ONE && !this.canceled) ? html`
-          <auro-flight-segment iata="${this.children.length} stop${this.children.length > ONE  ? 's' : ''}"></auro-flight-segment>
+        ${this.canceled ? html`` : html` <slot></slot>`}
+        ${this.children.length > ONE && !this.canceled ? html`
+          <auro-flight-segment iata="${this.children.length} stop${this.children.length > ONE ? 's' : ''}"></auro-flight-segment>
         ` : html``}
       </div>`;
   }
