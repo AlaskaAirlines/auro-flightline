@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.1.1](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.1.0...v1.1.1) (2021-06-18)
+
+
+### Bug Fixes
+
+* prevent z-index from overlapping header [#7](https://github.com/AlaskaAirlines/auro-flightline/issues/7) ([4e7d755](https://github.com/AlaskaAirlines/auro-flightline/commit/4e7d755759a36b5b8c72babb2e1f7e73cb1b991b))
+
 # [1.1.0](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.0.1...v1.1.0) (2021-06-15)
 
 
