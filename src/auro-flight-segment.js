@@ -58,7 +58,10 @@ class AuroFlightSegment extends LitElement {
         <div class="${classMap(legClasses)}"></div>
         <span class="iata">${this.iata}</span>
         ${this.duration ? html`
-            <auro-badge label>${this.duration}</auro-badge>
+            <auro-badge label>
+              ${this.duration} 
+              <span class="util_displayHiddenVisually"> layover</span>
+            </auro-badge>
         ` : html``}
       </div>
     `;
