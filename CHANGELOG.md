@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.1.2](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.1.1...v1.1.2) (2021-06-21)
+
+
+### Bug Fixes
+
+* **a11y:** adds layover readout for screenreaders [#13](https://github.com/AlaskaAirlines/auro-flightline/issues/13) ([2721739](https://github.com/AlaskaAirlines/auro-flightline/commit/2721739cd3e6dd3d993624cc9d0050c181d1d7b3))
+
 ## [1.1.1](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.1.0...v1.1.1) (2021-06-18)
 
 
