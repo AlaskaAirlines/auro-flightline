@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.1.3](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.1.2...v1.1.3) (2021-06-24)
+
+
+### Bug Fixes
+
+* **stop:** mobile stop size decreased ([2fcf0d2](https://github.com/AlaskaAirlines/auro-flightline/commit/2fcf0d2b761175035513151181b8596228b80d14))
+
 ## [1.1.2](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.1.1...v1.1.2) (2021-06-21)
 
 
