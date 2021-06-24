@@ -3,6 +3,8 @@
 
 // ---------------------------------------------------------------------
 @import "./node_modules/@alaskaairux/webcorestylesheets/dist/utilityClasses/displayProperties";
+@import "./node_modules/@alaskaairux/webcorestylesheets/dist/_breakpoints";
+@import "./node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
 
 // forces each segment to take up as much space in its row to extend the ::before
 :host {
@@ -36,8 +38,8 @@
 .leg {
   border: 1px solid var(--auro-color-ui-active-on-light);
   border-radius: var(--auro-size-md);
-  width: var(--auro-size-md);
-  height: var(--auro-size-md);
+  width: var(--auro-size-sm);
+  height: var(--auro-size-sm);
 
   &--stopover {
     background-color: var(--auro-color-background-lightest);
@@ -45,6 +47,11 @@
 
   &--layover {
     background-color: var(--auro-color-ui-active-on-light);
+  }
+
+  @include auro_breakpoint--sm {
+    width: var(--auro-size-md);
+    height: var(--auro-size-md);
   }
 }
 

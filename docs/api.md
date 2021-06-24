@@ -19,6 +19,12 @@ For more information about the difference between a layover and a stopover,
 
 auro-flightline provides a responsive flight timeline experience by placing dots indicating stopovers and layovers on a timeline.
 
+## Properties
+
+| Property   | Attribute  | Type      |
+|------------|------------|-----------|
+| `canceled` | `canceled` | `boolean` |
+
 ## Slots
 
 | Name | Description                                      |
