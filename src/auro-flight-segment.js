@@ -25,12 +25,15 @@ import styleCss from "./style-flight-segment-css.js";
  * @attr {String} duration - Displayed in the auro-badge, typically duration (1h 53m)
  */
 
-// build the component class
 class AuroFlightSegment extends LitElement {
+  constructor() {
+    super();
+    this.stopover = false;
+  }
+
   // function to define props used within the scope of this component
   static get properties() {
     return {
-      // ...super.properties,
       stopover:   { type: Boolean },
       iata:       { type: String },
       duration:   { type: String },
