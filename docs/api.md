@@ -8,11 +8,11 @@ For more information about the difference between a layover and a stopover,
 
 ## Properties
 
-| Property   | Attribute  | Type      | Description                                      |
-|------------|------------|-----------|--------------------------------------------------|
-| `duration` | `duration` | `String`  | Displayed in the auro-badge, typically duration (1h 53m) |
-| `iata`     | `iata`     | `String`  | Text to display, typically a station code (SEA, PVD, AVP) |
-| `stopover` | `stopover` | `Boolean` | Indicates a stopover. Do not provide duration.   |
+| Property   | Attribute  | Type      | Default | Description                                      |
+|------------|------------|-----------|---------|--------------------------------------------------|
+| `duration` | `duration` | `String`  |         | Displayed in the auro-badge, typically duration (1h 53m) |
+| `iata`     | `iata`     | `String`  |         | Text to display, typically a station code (SEA, PVD, AVP) |
+| `stopover` | `stopover` | `Boolean` | false   | Indicates a stopover. Do not provide duration.   |
 
 
 # auro-flightline
@@ -21,9 +21,9 @@ auro-flightline provides a responsive flight timeline experience by placing dots
 
 ## Properties
 
-| Property   | Attribute  | Type      |
-|------------|------------|-----------|
-| `canceled` | `canceled` | `boolean` |
+| Property   | Attribute  | Type      | Default |
+|------------|------------|-----------|---------|
+| `canceled` | `canceled` | `boolean` | false   |
 
 ## Slots
 

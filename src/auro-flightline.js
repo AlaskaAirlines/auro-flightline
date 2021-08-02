@@ -18,16 +18,18 @@ import styleCss from "./style-flightline-css.js";
  * @slot - fill in with `<auro-flight-segment>` components of a given leg.
  */
 
-// build the component class
 class AuroFlightline extends LitElement {
+  constructor() {
+    super();
+    this.canceled = false;
+  }
 
-    // function to define props used within the scope of this component
-    static get properties() {
-      return {
-        // ...super.properties,
-        canceled:   { type: Boolean }
-      };
-    }
+  // function to define props used within the scope of this component
+  static get properties() {
+    return {
+      canceled:   { type: Boolean }
+    };
+  }
 
   firstUpdated() {
     // children is an array of auro-flight-segments from within your <slot> below.
