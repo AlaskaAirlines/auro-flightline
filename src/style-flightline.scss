@@ -9,6 +9,10 @@
 @import "./node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
 
+.slot-container {
+  min-height: var(--auro-size-lg);
+}
+
 // places the connecting line with a pseudo class
 .canceled,
 .nonstop {
@@ -20,7 +24,6 @@
     top: 10px;
   }
 }
-
 
 .nonstop::before {
   display: block;

@@ -24,31 +24,10 @@ class AuroFlightline extends LitElement {
     this.canceled = false;
   }
 
-  // function to define props used within the scope of this component
   static get properties() {
     return {
       canceled:   { type: Boolean }
     };
-  }
-
-  firstUpdated() {
-    // children is an array of auro-flight-segments from within your <slot> below.
-    /* eslint-disable sort-vars */
-    const slot = this.shadowRoot.querySelector('slot'),
-
-     children = slot && slot.assignedNodes().
-      filter((node) => node.nodeName === 'AURO-FLIGHT-SEGMENT');
-
-    // if we have a nonstop flight, we need to force _something_ into the dom
-    // since we are using pseudo classes to draw the connector line.
-    if (!children || !children.length) {
-      const el = document.createElement('span');
-      // hack to get something substantial into the DOM to spawn the ::before
-
-      el.style = 'color: transparent; font-size: 0;';
-      el.innerHTML = '.';
-      this.shadowRoot.querySelector('div').appendChild(el);
-    }
   }
 
   static get styles() {
@@ -60,20 +39,19 @@ class AuroFlightline extends LitElement {
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
-    const ONE = 1,
-     classes = {
+    const isMultiple = this.children.length > 1;
+    const classes = {
       'nonstop': !this.children.length && !this.canceled,
-      'single': this.children.length === ONE,
-      'multiple': this.children.length > ONE,
+      'multiple': isMultiple,
       'canceled': this.canceled,
-      'slot-container': true,
+      'slot-container': true
     };
 
     return html`
       <div class="${classMap(classes)}">
         ${this.canceled ? html`` : html` <slot></slot>`}
-        ${this.children.length > ONE && !this.canceled ? html`
-          <auro-flight-segment iata="${this.children.length} stop${this.children.length > ONE ? 's' : ''}"></auro-flight-segment>
+        ${isMultiple && !this.canceled ? html`
+          <auro-flight-segment iata="${this.children.length} stops"></auro-flight-segment>
         ` : html``}
       </div>`;
   }
