@@ -30,9 +30,10 @@
     "focus-visible": "^5.2.0"
   },
   "devDependencies": {
-    "@alaskaairux/icons": "^4.2.2",
     "@alaskaairux/design-tokens": "^3.0.0",
+    "@alaskaairux/icons": "^4.2.2",
     "@alaskaairux/webcorestylesheets": "^3.0.0",
+    "@aurodesignsystem/eslint-config": "^1.2.0",
     "@babel/core": "^7.12.10",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@babel/plugin-transform-runtime": "^7.12.10",
