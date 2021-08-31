@@ -4,7 +4,7 @@ import '../src/auro-flight-segment.js';
 
 describe('auro-flightline', () => {
 
-  it('auro-flightline is accessible', async () => {
+  it('is accessible', async () => {
     const el = await fixture(html`
       <auro-flightline>
       </auro-flightline>
@@ -13,7 +13,7 @@ describe('auro-flightline', () => {
     await expect(el).to.be.accessible();
   });
 
-  it('auro-flightline with canceled status', async () => {
+  it('with canceled status', async () => {
     const el = await fixture(html`
       <auro-flightline canceled>
       </auro-flightline>
@@ -22,7 +22,7 @@ describe('auro-flightline', () => {
     await expect(el.classList.contains("canceled"));
   });
 
-  it('auro-flightline with canceled status do not display a layover', async () => {
+  it('with canceled status do not display a layover', async () => {
     const el = await fixture(html`
       <auro-flightline canceled>
         <auro-flight-segment iata="SEA"></auro-flight-segment>
@@ -33,7 +33,7 @@ describe('auro-flightline', () => {
     await expect(el.shadowRoot.querySelectorAll('auro-flight-segment').length).to.equal(0);
   });
 
-  it('auro-flightline with canceled status do not display a stopover', async () => {
+  it('with canceled status do not display a stopover', async () => {
     const el = await fixture(html`
       <auro-flightline canceled>
         <auro-flight-segment iata="SEA" stopover></auro-flight-segment>
@@ -43,7 +43,7 @@ describe('auro-flightline', () => {
     await expect(el.shadowRoot.querySelectorAll('auro-flight-segment').length).to.equal(0);
   });
 
-  it('auro-flightline with a layover', async () => {
+  it('with a layover', async () => {
     const el = await fixture(html`
       <auro-flightline>
         <auro-flight-segment iata="SEA"></auro-flight-segment>
@@ -54,7 +54,15 @@ describe('auro-flightline', () => {
     await expect(el).to.be.accessible();
   });
 
-  it('auro-flight-segment with a layover', async () => {
+  it('custom element is defined', async () => {
+    const el = await Boolean(customElements.get("auro-flightline"));
+
+    await expect(el).to.be.true;
+  });
+});
+
+describe('auro-flight-segment', () => {  
+  it('with a layover', async () => {
     const el = await fixture(html`
       <auro-flight-segment iata="SEA" duration="1h 2m"></auro-flight-segment>
     `);
@@ -63,7 +71,7 @@ describe('auro-flightline', () => {
     await expect(el.shadowRoot.querySelectorAll('auro-badge').length).to.equal(1);
   });
 
-  it('auro-flight-segment with a layover no duration', async () => {
+  it('with a layover no duration', async () => {
     const el = await fixture(html`
       <auro-flight-segment iata="2 Stops"></auro-flight-segment>
     `);
@@ -72,17 +80,11 @@ describe('auro-flightline', () => {
     await expect(el.shadowRoot.querySelectorAll('auro-badge').length).to.equal(0);
   });
 
-  it('auro-flight-segment with a stopover', async () => {
+  it('with a stopover', async () => {
     const el = await fixture(html`
       <auro-flight-segment iata="SEA" stopover></auro-flight-segment>
     `);
 
     await expect(el.shadowRoot.querySelector('span').innerHTML).to.equal('<!---->SEA<!---->');
   });
-
-  it('auro-flightline custom element is defined', async () => {
-    const el = await Boolean(customElements.get("auro-flightline"));
-
-    await expect(el).to.be.true;
-  });
-});
+})
