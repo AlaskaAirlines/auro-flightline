@@ -10,6 +10,9 @@ import { classMap } from "lit-html/directives/class-map";
 // Import touch detection lib
 import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-flightline-css.js";
+import { observeResize, unobserve } from './observer';
+
+const SMALL_BREAKPOINT = 660;
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -22,11 +25,15 @@ class AuroFlightline extends LitElement {
   constructor() {
     super();
     this.canceled = false;
+
+    /** @private */
+    this.condensed = false;
   }
 
   static get properties() {
     return {
-      canceled:   { type: Boolean }
+      canceled:    { type: Boolean },
+      condensed:   { type: Boolean }
     };
   }
 
@@ -36,6 +43,19 @@ class AuroFlightline extends LitElement {
     `;
   }
 
+  firstUpdated() {
+    // if the container's width drops below the small breakpoint, force the condensed view
+    const setCondensed = (val) => {
+      this.condensed = val < SMALL_BREAKPOINT;
+    };
+
+    this.observedNode = this;
+    observeResize(this.observedNode, setCondensed);
+  }
+
+  disconnectedCallback() {
+    unobserve(this.observedNode);
+  }
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
@@ -44,11 +64,11 @@ class AuroFlightline extends LitElement {
       'nonstop': !this.children.length && !this.canceled,
       'multiple': isMultiple,
       'canceled': this.canceled,
-      'slot-container': true
+      'condensed': this.condensed
     };
 
     return html`
-      <div class="${classMap(classes)}">
+      <div class="slot-container ${classMap(classes)}">
         ${this.canceled ? html`` : html` <slot></slot>`}
         ${isMultiple && !this.canceled ? html`
           <auro-flight-segment iata="${this.children.length} stops"></auro-flight-segment>
