@@ -1,4 +1,4 @@
-import { fixture, html, expect } from '@open-wc/testing';
+import { fixture, html, expect, waitUntil } from '@open-wc/testing';
 import '../src/auro-flightline.js';
 import '../src/auro-flight-segment.js';
 
@@ -58,6 +58,31 @@ describe('auro-flightline', () => {
     const el = await Boolean(customElements.get("auro-flightline"));
 
     await expect(el).to.be.true;
+  });
+
+  it('shows condensed view when not enough room', async () => {
+    const el = await fixture(html`
+      <auro-flightline id="condensed">
+        <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
+        <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+        <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
+      </auro-flightline>
+    `);
+
+    const slottedSegment = el.querySelector('auro-flight-segment');
+    const condensedSegment = el.shadowRoot.querySelector('auro-flight-segment');
+
+    // when too narrow to show all segments, the condensed segment is shwon
+    el.style.width = "100px";
+    await waitUntil(() => el.condensed);
+    expect(window.getComputedStyle(slottedSegment).display).to.eql('none');
+    expect(window.getComputedStyle(condensedSegment).display).to.eql('block');
+
+    // when the element is resized, the expanded view is shown
+    el.style.width = "700px";
+    await waitUntil(() => !el.condensed);
+    expect(window.getComputedStyle(slottedSegment).display).to.eql('block');
+    expect(window.getComputedStyle(condensedSegment).display).to.eql('none');
   });
 });
 

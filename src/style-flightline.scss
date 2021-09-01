@@ -33,6 +33,7 @@
 .canceled::before{
   border-top: var(--auro-size-xxxs) dashed var(--auro-color-alert-error-on-light);
 }
+
 // when there's only one connection, we want to show the actual dot but
 // for multiple we want to just show N stops in a layover dot.
 .multiple ::slotted(*) {
@@ -41,6 +42,14 @@
   @include auro_breakpoint--sm {
     display: block;
   }
+}
+
+// when the container becomes too small, show the summary segment, not all the segments 
+.condensed.multiple ::slotted(*) {
+  display: none;
+}
+.condensed.multiple auro-flight-segment {
+  display: block;
 }
 
 auro-flight-segment {
@@ -53,8 +62,4 @@ auro-flight-segment {
 .slot-container {
   display: flex;
   justify-content: space-around;
-
-  &.multiple::slotted(*) {
-    display: none;
-  }
 }
