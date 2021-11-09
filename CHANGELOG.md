@@ -1,5 +1,14 @@
 # Semantic Release Automated Changelog
 
+## [1.1.4](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.1.3...v1.1.4) (2021-11-09)
+
+
+### Bug Fixes
+
+* **css:** remove tokens from generated CSS file [#17](https://github.com/AlaskaAirlines/auro-flightline/issues/17) ([161439e](https://github.com/AlaskaAirlines/auro-flightline/commit/161439e6333dcb35d195f28fa4e8770ef45f5c6d))
+* default booleans to false ([a49add6](https://github.com/AlaskaAirlines/auro-flightline/commit/a49add6f285c6d315b9540f3805874ed68407ba7))
+* stop reading out '.' to screen readers [#21](https://github.com/AlaskaAirlines/auro-flightline/issues/21) ([9b2f723](https://github.com/AlaskaAirlines/auro-flightline/commit/9b2f723ef62aea668157fb9b0eaf8150d4bea779))
+
 ## [1.1.3](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.1.2...v1.1.3) (2021-06-24)
 
 
