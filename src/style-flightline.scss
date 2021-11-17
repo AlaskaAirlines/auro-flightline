@@ -9,6 +9,10 @@
 @import "./node_modules/@alaskaairux/webcorestylesheets/dist/breakpoints";
 @import "./node_modules/@alaskaairux/webcorestylesheets/dist/core";
 
+:host {
+  display: block;
+}
+
 .slot-container {
   min-height: var(--auro-size-lg);
 }
@@ -38,24 +42,14 @@
 // for multiple we want to just show N stops in a layover dot.
 .multiple ::slotted(*) {
   display: none;
-
-  @include auro_breakpoint--sm {
-    display: block;
-  }
 }
 
-// when the container becomes too small, show the summary segment, not all the segments 
-.condensed.multiple ::slotted(*) {
-  display: none;
-}
-.condensed.multiple auro-flight-segment {
+.multiple.expanded ::slotted(*) {
   display: block;
 }
 
-auro-flight-segment {
-  @include auro_breakpoint--sm {
-    display: none;
-  }
+.expanded auro-flight-segment {
+  display: none;
 }
 
 // flex container for the slot
