@@ -63,6 +63,7 @@ class AuroFlightline extends LitElement {
   render() {
     const isMultiple = this.children.length > 1;
     const classes = {
+      'slot-container': true,
       'nonstop': !this.children.length && !this.canceled,
       'multiple': isMultiple,
       'canceled': this.canceled,
@@ -70,7 +71,7 @@ class AuroFlightline extends LitElement {
     };
 
     return html`
-      <div class="slot-container ${classMap(classes)}">
+      <div class="${classMap(classes)}">
         ${this.canceled ? html`` : html` <slot></slot>`}
         ${isMultiple && !this.canceled ? html`
           <auro-flight-segment iata="${this.children.length} stops"></auro-flight-segment>
