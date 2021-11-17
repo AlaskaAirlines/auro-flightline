@@ -12,12 +12,13 @@ import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-flightline-css.js";
 import { observeResize, unobserve } from './observer';
 
-const SMALL_BREAKPOINT = 660;
+const defaultBreakpoint = 414;
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * auro-flightline provides a responsive flight timeline experience by placing dots indicating stopovers and layovers on a timeline.
- *
+ * @attr {Boolean} canceled - Whether the flightline is canceled.
+ * @attr {Number} breakpoint - The number of pixels where the component should switch to an expanded view.
  * @slot - fill in with `<auro-flight-segment>` components of a given leg.
  */
 
@@ -25,15 +26,17 @@ class AuroFlightline extends LitElement {
   constructor() {
     super();
     this.canceled = false;
+    this.breakpoint = defaultBreakpoint;
 
     /** @private */
-    this.condensed = false;
+    this.expanded = false;
   }
 
   static get properties() {
     return {
       canceled:    { type: Boolean },
-      condensed:   { type: Boolean }
+      expanded:    { type: Boolean },
+      breakpoint:  { type: Number }
     };
   }
 
@@ -44,13 +47,12 @@ class AuroFlightline extends LitElement {
   }
 
   firstUpdated() {
-    // if the container's width drops below the small breakpoint, force the condensed view
-    const setCondensed = (val) => {
-      this.condensed = val < SMALL_BREAKPOINT;
+    const setExpanded = (val) => {
+      this.expanded = val > this.breakpoint;
     };
 
     this.observedNode = this;
-    observeResize(this.observedNode, setCondensed);
+    observeResize(this.observedNode, setExpanded);
   }
 
   disconnectedCallback() {
@@ -64,7 +66,7 @@ class AuroFlightline extends LitElement {
       'nonstop': !this.children.length && !this.canceled,
       'multiple': isMultiple,
       'canceled': this.canceled,
-      'condensed': this.condensed
+      'expanded': this.expanded
     };
 
     return html`
