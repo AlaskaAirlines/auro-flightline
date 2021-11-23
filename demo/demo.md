@@ -26,7 +26,7 @@ The following illustrates a flight with no layovers or stopovers, for example, S
   <auro-flightline></auro-flightline>
   ```
 </auro-accordion>
- 
+
 ## Canceled
 
 The following illustrates a canceled flight with no layovers or stopovers, for example, SEA to EWR is canceled.
@@ -218,6 +218,74 @@ The following illustrates an cancellation of international flight with stopovers
     <auro-flight-segment iata="ANC" duration="1h 30m"></auro-flight-segment>
     <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
     <auro-flight-segment iata="SFO" duration="1h 40m"></auro-flight-segment>
+  </auro-flightline>
+  ```
+</auro-accordion>
+
+## Container query
+
+The `auro-flightline` element is reactive to its parent container's `width` value versus a `@media` query based on the device `width`. This allows for greater control over the shape of the element when in constrained spaces.
+
+The default container query is a min-width of `414px`. This value can be edited using the `cq` attribute.
+
+The first example illustrates a `auro-flightline` element with a container width of `400px`. The next `auro-flightline` element is within a container set at `100%` for context. Notice when the 100% container reaches a width of < `414px`, the container query switches the UI. The last example illustrates a `auro-flightline` element with a redefined `cq` value of `500px` and a container width of `75%`.
+
+<div class="exampleWrapper">
+  <auro-flightline style="width: 400px">
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
+    <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
+  </auro-flightline>
+</div>
+
+<div class="exampleWrapper">
+  <auro-flightline>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
+    <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
+  </auro-flightline>
+</div>
+
+<div class="exampleWrapper">
+  <auro-flightline cq="500" style="width: 50%">
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
+    <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
+  </auro-flightline>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-flightline style="width: 400px">
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
+    <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
+  </auro-flightline>
+
+  <auro-flightline>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
+    <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
+  </auro-flightline>
+
+  <auro-flightline cq="500" style="width: 50%">
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
+    <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
   </auro-flightline>
   ```
 </auro-accordion>
