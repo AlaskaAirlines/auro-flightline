@@ -8,10 +8,7 @@ const callbacks = new Map();
 function resizeCallback(target) {
   const { width } = target.getBoundingClientRect();
 
-  // requestAnimationFrame prevents a "ResizeObserver loop limit exceeded" error in the tests
-  window.requestAnimationFrame(() => {
-    callbacks.get(target)(width);
-  });
+  callbacks.get(target)(width);
 }
 
 /**
