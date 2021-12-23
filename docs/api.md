@@ -21,10 +21,10 @@ auro-flightline provides a responsive flight timeline experience by placing dots
 
 ## Properties
 
-| Property     | Attribute    | Type      | Default | Description                                      |
-|--------------|--------------|-----------|---------|--------------------------------------------------|
-| `breakpoint` | `breakpoint` | `Number`  | 414     | The number of pixels where the component should switch to an expanded view. |
-| `canceled`   | `canceled`   | `Boolean` | false   | Whether the flightline is canceled.              |
+| Property   | Attribute  | Type      | Default | Description                                      |
+|------------|------------|-----------|---------|--------------------------------------------------|
+| `canceled` | `canceled` | `Boolean` | false   | Whether the flightline is canceled.              |
+| `cq`       | `cq`       | `Number`  | 414     | The number of pixels where the component should switch to an expanded view. |
 
 ## Slots
 
