@@ -2,6 +2,21 @@ import { fixture, html, expect, waitUntil } from '@open-wc/testing';
 import '../src/auro-flightline.js';
 import '../src/auro-flight-segment.js';
 
+// This suppresses ResizeObserver errors that only show up in the tests
+// Ref: https://stackoverflow.com/a/64197640/14808988
+before(() => {
+  // called before any tests are run
+  const e = window.onerror;
+  window.onerror = function(err) {
+    if(err === 'ResizeObserver loop limit exceeded') {
+      console.warn('Ignored: ResizeObserver loop limit exceeded');
+      return false;
+    } else {
+      return e(...arguments);
+    }
+  }
+});
+
 describe('auro-flightline', () => {
 
   it('is accessible', async () => {
