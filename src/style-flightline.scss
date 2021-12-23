@@ -34,7 +34,7 @@
   background-color: var(--auro-color-brand-atlas-500);
 }
 
-.canceled::before{
+.canceled::before {
   border-top: var(--auro-size-xxxs) dashed var(--auro-color-alert-error-on-light);
 }
 
@@ -44,11 +44,11 @@
   display: none;
 }
 
-.multiple.expanded ::slotted(*) {
+.multiple.show-all-stops ::slotted(*) {
   display: block;
 }
 
-.expanded auro-flight-segment {
+.show-all-stops auro-flight-segment {
   display: none;
 }
 

@@ -228,7 +228,7 @@ The `auro-flightline` element is reactive to its parent container's `width` valu
 
 The default container query is a min-width of `414px`. This value can be edited using the `cq` attribute.
 
-The first example illustrates a `auro-flightline` element with a container width of `400px`. The next `auro-flightline` element is within a container set at `100%` for context. Notice when the 100% container reaches a width of < `414px`, the container query switches the UI. The last example illustrates a `auro-flightline` element with a redefined `cq` value of `500px` and a container width of `75%`.
+The first example illustrates a `auro-flightline` element with a container width of `400px`. The next `auro-flightline` element is within a container set at `100%` for context. Notice when the 100% container reaches a width of < `414px`, the container query switches the UI. The last example illustrates a `auro-flightline` element with a redefined `cq` value of `500px` and a container width of `75%`. Resize the screen to see it switch between a summarized and expanded view when its width reaches `500px`.
 
 <div class="exampleWrapper">
   <auro-flightline style="width: 400px">
@@ -251,7 +251,7 @@ The first example illustrates a `auro-flightline` element with a container width
 </div>
 
 <div class="exampleWrapper">
-  <auro-flightline cq="500" style="width: 50%">
+  <auro-flightline cq="500" style="width: 75%">
     <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
     <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
     <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
@@ -280,7 +280,7 @@ The first example illustrates a `auro-flightline` element with a container width
     <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
   </auro-flightline>
 
-  <auro-flightline cq="500" style="width: 50%">
+  <auro-flightline cq="500" style="width: 75%">
     <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
     <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
     <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
