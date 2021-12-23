@@ -12,13 +12,13 @@ import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-flightline-css.js";
 import { observeResize, unobserve } from './observer';
 
-const defaultBreakpoint = 414;
+const defaultContainerWidth = 414;
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * auro-flightline provides a responsive flight timeline experience by placing dots indicating stopovers and layovers on a timeline.
  * @attr {Boolean} canceled - Whether the flightline is canceled.
- * @attr {Number} breakpoint - The number of pixels where the component should switch to an expanded view.
+ * @attr {Number} cq - The number of pixels where the component should switch to an expanded view.
  * @slot - fill in with `<auro-flight-segment>` components of a given leg.
  */
 
@@ -26,17 +26,17 @@ class AuroFlightline extends LitElement {
   constructor() {
     super();
     this.canceled = false;
-    this.breakpoint = defaultBreakpoint;
+    this.cq = defaultContainerWidth;
 
     /** @private */
-    this.expanded = false;
+    this.showAllStops = false;
   }
 
   static get properties() {
     return {
       canceled:    { type: Boolean },
-      expanded:    { type: Boolean },
-      breakpoint:  { type: Number }
+      showAllStops:    { type: Boolean },
+      cq:  { type: Number }
     };
   }
 
@@ -47,12 +47,12 @@ class AuroFlightline extends LitElement {
   }
 
   firstUpdated() {
-    const setExpanded = (val) => {
-      this.expanded = val > this.breakpoint;
+    const setShowAllStops = (val) => {
+      this.showAllStops = val > this.cq;
     };
 
     this.observedNode = this;
-    observeResize(this.observedNode, setExpanded);
+    observeResize(this.observedNode, setShowAllStops);
   }
 
   disconnectedCallback() {
@@ -67,7 +67,7 @@ class AuroFlightline extends LitElement {
       'nonstop': !this.children.length && !this.canceled,
       'multiple': isMultiple,
       'canceled': this.canceled,
-      'expanded': this.expanded
+      'show-all-stops': this.showAllStops
     };
 
     return html`
