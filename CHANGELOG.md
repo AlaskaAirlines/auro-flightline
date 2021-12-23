@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+# [1.2.0](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.1.4...v1.2.0) (2021-12-23)
+
+
+### Features
+
+* add breakpoint prop ([16b22a4](https://github.com/AlaskaAirlines/auro-flightline/commit/16b22a4c7a95ca30a4182d24faeae487acf6cfe3))
+* switch to condensed view based on container width ([916b7cc](https://github.com/AlaskaAirlines/auro-flightline/commit/916b7cc30b845047824d957e5f1d99b7c4c33f2f))
+
 ## [1.1.4](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.1.3...v1.1.4) (2021-11-09)
 
 
