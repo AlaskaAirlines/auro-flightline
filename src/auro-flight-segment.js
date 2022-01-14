@@ -29,6 +29,9 @@ class AuroFlightSegment extends LitElement {
   constructor() {
     super();
     this.stopover = false;
+
+    /** @private */
+    this.partialCancel = false;
   }
 
   // function to define props used within the scope of this component
@@ -37,6 +40,9 @@ class AuroFlightSegment extends LitElement {
       stopover:   { type: Boolean },
       iata:       { type: String },
       duration:   { type: String },
+      canceled:   { type: Boolean,
+        reflect: true },
+      partialCancel: { type: Boolean }
     };
   }
 
@@ -51,20 +57,23 @@ class AuroFlightSegment extends LitElement {
     const legClasses = {
       'leg': true,
       'layout': true,
-      'leg--stopover': this.stopover
+      'leg--stopover': this.stopover,
+      'leg--canceled': this.canceled || this.partialCancel
     };
 
     return html`
-      <div class="layout">
-        <slot></slot>
-        <div class="${classMap(legClasses)}"></div>
-        <span class="iata">${this.iata}</span>
-        ${this.duration ? html`
-            <auro-badge label>
-              ${this.duration} 
-              <span class="util_displayHiddenVisually"> layover</span>
-            </auro-badge>
-        ` : html``}
+      <div class="wrapper">
+        <div class="layout">
+          <slot></slot>
+          <div class="${classMap(legClasses)}"></div>
+          <span class="iata">${this.iata}</span>
+          ${this.duration ? html`
+              <auro-badge label>
+                ${this.duration} 
+                <span class="util_displayHiddenVisually"> layover</span>
+              </auro-badge>
+          ` : html``}
+        </div>
       </div>
     `;
   }

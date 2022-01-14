@@ -10,20 +10,46 @@
 :host {
   flex-grow: 1;
   flex-basis: 0;
-  // prevent z-index declarations from affecting anything outside the component
-  isolation: isolate;
+}
+
+.wrapper {
+  position: relative;
 }
 
 // places the connecting line with a pseudo class
-:host::before {
-  content: "";
-  display: block;
-  background-color: var(--auro-color-brand-atlas-500);
-  height: var(--auro-size-xxxs);
-  width: 100%;
-  position: relative;
-  top: 0.625rem;
+.wrapper::before,
+.wrapper::after {
+  border-top: var(--auro-size-xxxs) solid var(--auro-color-brand-atlas-500);
+  position: absolute;
+  top: 0.5rem;
   z-index: 1;
+}
+
+.wrapper::before {
+  content: "";
+  right: 50%;
+  width: 100%;
+}
+
+.wrapper::after {
+  left: 50%;
+  width: 50%;
+}
+
+// the first line is only half as long
+:host(:first-child) .wrapper::before {
+  width: 50%;
+}
+
+// the last segment and summary segment need a line after
+:host(:last-child) .wrapper::after, 
+:host(:only-of-type) .wrapper::after {
+  content: "";
+}
+
+:host([canceled]) .wrapper::before,
+:host([destinationCanceled]) .wrapper::after {
+  border-top: var(--auro-size-xxxs) dashed var(--auro-color-alert-error-on-light);
 }
 
 .layout {
@@ -44,6 +70,11 @@
 
   &--stopover {
     background-color: var(--auro-color-background-lightest);
+  }
+
+  &--canceled {
+    border-color: var(--auro-color-alert-error-on-light);
+    background-color: var(--auro-color-alert-error-on-light);
   }
 
   @include auro_breakpoint--sm {
