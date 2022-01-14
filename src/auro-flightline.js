@@ -30,13 +30,25 @@ class AuroFlightline extends LitElement {
 
     /** @private */
     this.showAllStops = false;
+
+    /** @private */
+    this.hasCanceledSegment = false;
+
+    /** @private */
+    this.firstSegmentCanceled = false;
+
+    /** @private */
+    this.lastSegmentCanceled = false;
   }
 
   static get properties() {
     return {
       canceled:    { type: Boolean },
       showAllStops:    { type: Boolean },
-      cq:  { type: Number }
+      cq:  { type: Number },
+      hasCanceledSegment: { type: Boolean },
+      firstSegmentCanceled: { type: Boolean },
+      lastSegmentCanceled: { type: Boolean }
     };
   }
 
@@ -50,13 +62,30 @@ class AuroFlightline extends LitElement {
     const setShowAllStops = (val) => {
       this.showAllStops = val > this.cq;
     };
-
     this.observedNode = this;
     observeResize(this.observedNode, setShowAllStops);
   }
 
   disconnectedCallback() {
     unobserve(this.observedNode);
+  }
+
+  containsCanceledSegment() {
+    // this needs to be reactive somehow - MutationObserver?
+    const segments = this.querySelectorAll('auro-flight-segment');
+    /* eslint-disable id-length, no-plusplus */
+    for (let i = 0; i < segments.length; i++) {
+      const segment = segments[i];
+      if (segment.canceled || segment.hasAttribute('canceled')) {
+        this.hasCanceledSegment = true;
+        if (i === 0) {
+          this.firstSegmentCanceled = true;
+        }
+      }
+      if (segment.hasAttribute('destinationCanceled') && i === segments.length - 1) {
+        this.lastSegmentCanceled = true;
+      }
+    }
   }
 
   // function that renders the HTML and CSS into  the scope of the component
@@ -72,9 +101,9 @@ class AuroFlightline extends LitElement {
 
     return html`
       <div class="${classMap(classes)}">
-        ${this.canceled ? html`` : html` <slot></slot>`}
+        ${this.canceled ? html`` : html` <slot @slotchange=${this.containsCanceledSegment}></slot>`}
         ${isMultiple && !this.canceled ? html`
-          <auro-flight-segment iata="${this.children.length} stops"></auro-flight-segment>
+          <auro-flight-segment ?canceled=${this.firstSegmentCanceled} ?partialCancel=${this.hasCanceledSegment} ?destinationCanceled=${this.lastSegmentCanceled} iata="${this.children.length} stops"></auro-flight-segment>
         ` : html``}
       </div>`;
   }

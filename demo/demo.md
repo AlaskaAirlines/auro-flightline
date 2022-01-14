@@ -69,8 +69,8 @@ The following illustrates flight with one layover, for example, SEA to AVP.
 The following illustrates a canceled flight with layovers, for example, SEA to EWR is canceled.
 
 <div class="exampleWrapper">
-  <auro-flightline canceled>
-     <auro-flight-segment iata="ORD" duration="3h 40m"></auro-flight-segment>
+  <auro-flightline>
+     <auro-flight-segment canceled iata="EWR" duration="3h 40m"></auro-flight-segment>
   </auro-flightline>
 </div>
 
@@ -78,7 +78,9 @@ The following illustrates a canceled flight with layovers, for example, SEA to E
   <span slot="trigger">See code</span>
 
   ```html
-  <auro-flightline canceled></auro-flightline>
+  <auro-flightline>
+     <auro-flight-segment canceled iata="EWR" duration="3h 40m"></auro-flight-segment>
+  </auro-flightline>
   ```
 </auro-accordion>
 
@@ -90,27 +92,6 @@ The following illustrates a flight with one stopover, for example, ANC to ADK.
 <div class="exampleWrapper">
   <auro-flightline>
     <auro-flight-segment stopover iata="CDB"></auro-flight-segment>
-  </auro-flightline>
-</div>
-
-<auro-accordion lowProfile justifyRight>
-  <span slot="trigger">See code</span>
-
-  ```html
-  <auro-flightline>
-    <auro-flight-segment stopover iata="CDB"></auro-flight-segment>
-  </auro-flightline>
-  ```
-</auro-accordion>
-
-## Canceled with a single stopover
-
-The following illustrates a canceled flight with one stopover, for example, ANC to ADK.
-
-
-<div class="exampleWrapper">
-  <auro-flightline canceled>
-     <auro-flight-segment stopover iata="ORD"></auro-flight-segment>
   </auro-flightline>
 </div>
 
@@ -140,28 +121,6 @@ The following illustrates flight with a stopover and a layover, for example, ADK
 
   ```html
   <auro-flightline>
-    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
-    <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
-  </auro-flightline>
-  ```
-</auro-accordion>
-
-## Canceled with a stopover and a layover
-
-The following illustrates canceled flight with a stopover and a layover, for example, ADK to SEA.
-
-<div class="exampleWrapper">
-  <auro-flightline canceled>
-    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
-    <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
-  </auro-flightline>
-</div>
-
-<auro-accordion lowProfile justifyRight>
-  <span slot="trigger">See code</span>
-
-  ```html
-  <auro-flightline canceled>
     <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
     <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
   </auro-flightline>
@@ -200,10 +159,10 @@ The following illustrates an international flight with stopovers and layovers, f
 The following illustrates an cancellation of international flight with stopovers and layovers, for example, ADK to BCN.
 
 <div class="exampleWrapper">
-  <auro-flightline canceled>
-    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+  <auro-flightline>
+    <auro-flight-segment canceled stopover iata="YAK"></auro-flight-segment>
     <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
-    <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
+    <auro-flight-segment canceled iata="SEA" duration="0h 40m"></auro-flight-segment>
     <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
     <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
   </auro-flightline>
@@ -213,11 +172,12 @@ The following illustrates an cancellation of international flight with stopovers
   <span slot="trigger">See code</span>
 
   ```html
-  <auro-flightline canceled>
-    <auro-flight-segment stopover iata="CDB"></auro-flight-segment>
-    <auro-flight-segment iata="ANC" duration="1h 30m"></auro-flight-segment>
-    <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
-    <auro-flight-segment iata="SFO" duration="1h 40m"></auro-flight-segment>
+  <auro-flightline>
+    <auro-flight-segment canceled stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
+    <auro-flight-segment canceled iata="SEA" duration="0h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
   </auro-flightline>
   ```
 </auro-accordion>

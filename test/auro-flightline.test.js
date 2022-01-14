@@ -99,6 +99,18 @@ describe('auro-flightline', () => {
     expect(window.getComputedStyle(slottedSegment).display).to.eql('block');
     expect(window.getComputedStyle(summarySegment).display).to.eql('none');
   });
+
+  it('shows canceled summary when contains canceled segment', async () => {
+    const el = await fixture(html`
+      <auro-flightline id="condensed">
+        <auro-flight-segment canceled iata="SEA" duration="0h 40m"></auro-flight-segment>
+        <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+      </auro-flightline>
+    `);
+
+    const summarySegment = el.shadowRoot.querySelector('auro-flight-segment');
+    expect(summarySegment.hasAttribute('canceled'), "Canceled attribute not set").to.be.true;
+  })
 });
 
 describe('auro-flight-segment', () => {  
