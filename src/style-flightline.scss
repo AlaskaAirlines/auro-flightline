@@ -20,7 +20,6 @@
 }
 
 // places the connecting line with a pseudo class
-.canceled,
 .nonstop {
   &::before {
     content: "";
@@ -36,7 +35,7 @@
 }
 
 
-.canceled::before {
+.nonstop.canceled::before {
   border-top: var(--auro-size-xxxs) dashed var(--auro-color-alert-error-on-light);
 }
 

@@ -29,6 +29,8 @@ class AuroFlightSegment extends LitElement {
   constructor() {
     super();
     this.stopover = false;
+    this.canceled = false;
+    this.destinationCanceled = false;
 
     /** @private */
     this.partialCancel = false;
@@ -41,6 +43,8 @@ class AuroFlightSegment extends LitElement {
       iata:       { type: String },
       duration:   { type: String },
       canceled:   { type: Boolean,
+        reflect: true },
+      destinationCanceled: { type: Boolean,
         reflect: true },
       partialCancel: { type: Boolean }
     };
