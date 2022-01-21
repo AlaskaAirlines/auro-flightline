@@ -23,6 +23,8 @@ import styleCss from "./style-flight-segment-css.js";
  * @attr {Boolean} stopover - Indicates a stopover. Do not provide duration.
  * @attr {String} iata - Text to display, typically a station code (SEA, PVD, AVP)
  * @attr {String} duration - Displayed in the auro-badge, typically duration (1h 53m)
+ * @attr {Boolean} canceled - Whether the segment is canceled. The line leading to the segment will be red.
+ * @attr {Boolean} destinationCanceled - Whether the following segment is canceled, will only affect the last segment in a flightline. The line after the segment will be red.
  */
 
 class AuroFlightSegment extends LitElement {
