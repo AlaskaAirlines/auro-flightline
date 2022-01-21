@@ -90,6 +90,66 @@ describe('auro-flightline', () => {
     const summarySegment = el.shadowRoot.querySelector('auro-flight-segment');
     expect(summarySegment.hasAttribute('canceled'), "Canceled attribute not set").to.be.true;
   })
+
+  it('when flightline is canceled, all segments are canceled', async () => {
+    const el = await fixture(html`
+      <auro-flightline canceled>
+        <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
+        <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+      </auro-flightline>
+    `);
+
+    const segments = el.querySelectorAll('auro-flight-segment');
+
+    expect(segments[0].hasAttribute('canceled'), "Canceled attribute not set").to.be.true;
+    expect(segments[0].hasAttribute('destinationCanceled'), "destinationCanceled attribute not set").to.be.true;
+    expect(segments[1].hasAttribute('canceled'), "Canceled attribute not set").to.be.true;
+    expect(segments[1].hasAttribute('destinationCanceled'), "destinationCanceled attribute not set").to.be.true;
+  })
+
+  it('when all segments are canceled, summary segment is fully canceled', async () => {
+    const el = await fixture(html`
+      <auro-flightline>
+        <auro-flight-segment canceled iata="SEA" duration="0h 40m"></auro-flight-segment>
+        <auro-flight-segment canceled destinationCanceled iata="BOS" duration="1h 40m"></auro-flight-segment>
+      </auro-flightline>
+    `);
+
+    const summarySegment = el.shadowRoot.querySelector('auro-flight-segment');
+    expect(summarySegment.hasAttribute('canceled'), "Canceled attribute not set").to.be.true;
+    expect(summarySegment.hasAttribute('partialCancel'), "partialCancel attribute not set").to.be.true;
+    expect(summarySegment.hasAttribute('destinationCanceled'), "destinationCanceled attribute not set").to.be.true;
+  })
+
+  it('when only a middle segment is canceled, summary segment is partially canceled', async () => {
+    const el = await fixture(html`
+      <auro-flightline>
+        <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
+        <auro-flight-segment canceled iata="BOS" duration="1h 40m"></auro-flight-segment>
+        <auro-flight-segment iata="ORD" duration="1h 40m"></auro-flight-segment>
+      </auro-flightline>
+    `);
+
+    const summarySegment = el.shadowRoot.querySelector('auro-flight-segment');
+    expect(summarySegment.hasAttribute('canceled'), "Canceled attribute is set").to.be.false;
+    expect(summarySegment.hasAttribute('partialCancel'), "partialCancel attribute not set").to.be.true;
+    expect(summarySegment.hasAttribute('destinationCanceled'), "destinationCanceled attribute is set").to.be.false;
+  })
+
+  it('when the last segment is canceled, summary segment shows destination canceled', async () => {
+    const el = await fixture(html`
+      <auro-flightline>
+        <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
+        <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+        <auro-flight-segment canceled destinationCanceled iata="ORD" duration="1h 40m"></auro-flight-segment>
+      </auro-flightline>
+    `);
+
+    const summarySegment = el.shadowRoot.querySelector('auro-flight-segment');
+    expect(summarySegment.hasAttribute('canceled'), "Canceled attribute is set").to.be.false;
+    expect(summarySegment.hasAttribute('partialCancel'), "partialCancel attribute not set").to.be.true;
+    expect(summarySegment.hasAttribute('destinationCanceled'), "destinationCanceled attribute not set").to.be.true;
+  })
 });
 
 describe('auro-flight-segment', () => {  
