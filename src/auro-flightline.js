@@ -70,6 +70,7 @@ class AuroFlightline extends LitElement {
     unobserve(this.observedNode);
   }
 
+  /** @private */
   containsCanceledSegment() {
     const segments = this.querySelectorAll('auro-flight-segment');
     for (let idx = 0; idx < segments.length; idx += 1) {
