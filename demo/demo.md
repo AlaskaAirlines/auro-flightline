@@ -191,11 +191,11 @@ The following illustrates a cancellation of international flight with stopovers 
 
   ```html
   <auro-flightline>
-    <auro-flight-segment canceled stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
     <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
     <auro-flight-segment canceled iata="SEA" duration="0h 40m"></auro-flight-segment>
     <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
-    <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
+    <auro-flight-segment canceled destinationCanceled iata="DUB" duration="13h 40m"></auro-flight-segment>
   </auro-flightline>
   ```
 </auro-accordion>
