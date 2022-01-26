@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+# [1.3.0](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.2.0...v1.3.0) (2022-01-26)
+
+
+### Features
+
+* add canceled segment ([3146c6c](https://github.com/AlaskaAirlines/auro-flightline/commit/3146c6c411214963ca9c4b8696baf79aebd03ad7))
+* mark all segments canceled when flightline canceled ([9ceb4e8](https://github.com/AlaskaAirlines/auro-flightline/commit/9ceb4e85adb5777833e2b0606f9b3c320278e64f))
+
 # [1.2.0](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.1.4...v1.2.0) (2021-12-23)
 
 
