@@ -37,7 +37,8 @@
 }
 
 // the first line is only half as long
-:host(:first-child) .wrapper::before {
+:host(:first-child) .wrapper::before,
+:host(:only-of-type) .wrapper::before {
   width: 50%;
 }
 
