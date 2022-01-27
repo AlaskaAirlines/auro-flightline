@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [1.3.1](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.3.0...v1.3.1) (2022-01-27)
+
+
+### Bug Fixes
+
+* prevent summary segment overflow ([f3fe328](https://github.com/AlaskaAirlines/auro-flightline/commit/f3fe328b17d13e9a3362c34a55649f26569ad00f))
+
 # [1.3.0](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.2.0...v1.3.0) (2022-01-26)
 
 
