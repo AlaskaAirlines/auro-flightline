@@ -14,13 +14,14 @@ import styleCss from "./style-flight-segment-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-flight-segment is a standard for indicating stopovers and layovers.
+ * The auro-flight-segment component is a standard for indicating stopovers and layovers.
  * Stopovers do not have duration information and are indicated differently.
  * Layovers contain duration information and are indicated with a solid fill.
  * For more information about the difference between a layover and a stopover,
- * [please see this article.](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/)
+ * [please see this article.](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/).
  *
  * @attr {Boolean} stopover - Indicates a stopover. Do not provide duration.
+ * @attr {Boolean} nextDay - Indicates time is on the following calendar day.
  * @attr {String} iata - Text to display, typically a station code (SEA, PVD, AVP)
  * @attr {String} duration - Displayed in the auro-badge, typically duration (1h 53m)
  * @attr {Boolean} canceled - Whether the segment is canceled. The line leading to the segment will be red.
@@ -42,6 +43,10 @@ class AuroFlightSegment extends LitElement {
   static get properties() {
     return {
       stopover:   { type: Boolean },
+      nextDay: {
+        type: Boolean,
+        reflect: true
+      },
       iata:       { type: String },
       duration:   { type: String },
       canceled:   { type: Boolean,
@@ -75,7 +80,7 @@ class AuroFlightSegment extends LitElement {
           <span class="iata">${this.iata}</span>
           ${this.duration ? html`
               <auro-badge label>
-                ${this.duration} 
+                ${this.duration}
                 <span class="util_displayHiddenVisually"> layover</span>
               </auro-badge>
           ` : html``}

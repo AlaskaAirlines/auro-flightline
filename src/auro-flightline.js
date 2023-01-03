@@ -16,7 +16,7 @@ const defaultContainerWidth = 414;
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * auro-flightline provides a responsive flight timeline experience by placing dots indicating stopovers and layovers on a timeline.
+ * The auro-flightline component provides a responsive flight timeline experience by placing dots indicating stopovers and layovers on a timeline.
  * @attr {Boolean} canceled - Whether the flightline is canceled.
  * @attr {Number} cq - The number of pixels where the component should switch to an expanded view.
  * @slot - fill in with `<auro-flight-segment>` components of a given leg.
@@ -108,10 +108,10 @@ class AuroFlightline extends LitElement {
       <div class="${classMap(classes)}">
         <slot @slotchange=${this.containsCanceledSegment}></slot>
         ${isMultiple ? html`
-          <auro-flight-segment 
-            ?canceled=${this.firstSegmentCanceled} 
-            ?partialCancel=${this.hasCanceledSegment} 
-            ?destinationCanceled=${this.lastSegmentCanceled} 
+          <auro-flight-segment
+            ?canceled=${this.firstSegmentCanceled}
+            ?partialCancel=${this.hasCanceledSegment}
+            ?destinationCanceled=${this.lastSegmentCanceled}
             iata="${this.children.length} stops"
           ></auro-flight-segment>
         ` : html``}
