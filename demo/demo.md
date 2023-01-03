@@ -65,7 +65,6 @@ If the canceled flightline has segments, they will all be shown as canceled. To 
 
 The following illustrates flight with one layover, for example, SEA to AVP.
 
-
 <div class="exampleWrapper">
   <auro-flightline>
     <auro-flight-segment iata="ORD" duration="3h 40m"></auro-flight-segment>
@@ -78,6 +77,24 @@ The following illustrates flight with one layover, for example, SEA to AVP.
   ```html
   <auro-flightline>
     <auro-flight-segment iata="ORD" duration="3h 40m"></auro-flight-segment>
+  </auro-flightline>
+  ```
+</auro-accordion>
+
+The following illustrates flight with one layover, that occurs on the following calendar day.
+
+<div class="exampleWrapper">
+  <auro-flightline>
+    <auro-flight-segment nextDay iata="ORD" duration="3h 40m"></auro-flight-segment>
+  </auro-flightline>
+</div>
+
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+
+  ```html
+  <auro-flightline>
+    <auro-flight-segment nextDay iata="ORD" duration="3h 40m"></auro-flight-segment>
   </auro-flightline>
   ```
 </auro-accordion>
