@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [1.4.0](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.3.1...v1.4.0) (2023-01-04)
+
+
+### Features
+
+* **nextday:** add new nextDay attribute [#42](https://github.com/AlaskaAirlines/auro-flightline/issues/42) ([ca40ccf](https://github.com/AlaskaAirlines/auro-flightline/commit/ca40ccf674e2a48868bef7946043a146b92f245a))
+
 ## [1.3.1](https://github.com/AlaskaAirlines/auro-flightline/compare/v1.3.0...v1.3.1) (2022-01-27)
 
 
