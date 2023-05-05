@@ -68,7 +68,6 @@
     "postcss": "^8.4.20",
     "postcss-custom-properties": "^12.1.11",
     "postcss-discard-comments": "^5.1.2",
-    "postcss-remove-rules": "^1.0.0",
     "postcss-selector-replace": "^1.0.2",
     "prismjs": "^1.29.0",
     "rollup": "^2.59.0",
