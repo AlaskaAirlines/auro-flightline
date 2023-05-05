@@ -284,3 +284,40 @@ The first example illustrates a `auro-flightline` element with a container width
   </auro-flightline>
   ```
 </auro-accordion>
+
+## Recommended Use and Version Control
+
+There are two important parts of every Auro component. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom clement. The class is exported and then used as part of defining the Web Component. When importing this component as described in the <a href="#install">install</a> section, the class is imported and the `auro-flightline` custom element is defined automatically.
+
+To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `registerComponent(name)` method and pass in a unique name.
+
+```js
+import './node_modules/@aurodesignsystem/auro-flightline.js';
+import './node_modules/@aurodesignsystem/auro-flightline-segment';
+registerComponent('custom-flightline');
+```
+
+This will create a new custom element that you can use in your HTML that will function identically to the `auro-flightline` element.
+
+<div class="exampleWrapper">
+  <custom-flightline>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
+    <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
+  </custom-flightline>
+</div>
+<auro-accordion lowProfile justifyRight>
+  <span slot="trigger">See code</span>
+  ```html
+  <custom-flightline>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
+    <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
+  </custom-flightline>
+  ```
+
+</auro-accordion>
