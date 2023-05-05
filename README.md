@@ -8,9 +8,9 @@ For the most up to date information on [UI development browser support](https://
 
 ## Install
 
-[![Build Status](https://img.shields.io/github/workflow/status/AlaskaAirlines/auro-flightline/Test%20and%20publish?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/auro-flightline/actions?query=workflow%3A%22test+and+publish%22)
-[![See it on NPM!](https://img.shields.io/npm/v/@alaskaairux/auro-flightline?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@alaskaairux/auro-flightline)
-[![License](https://img.shields.io/npm/l/@alaskaairux/auro-flightline?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+[![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-flightline/testPublish.yml?branch=master&style=for-the-badge)](https://github.com/AlaskaAirlines/auro-flightline/actions/workflows/testPublish.yml)
+[![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-flightline?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-flightline)
+[![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-flightline?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
 $ npm i @alaskaairux/auro-flightline
@@ -46,25 +46,31 @@ import "@alaskaairux/auro-flightline/dist/auro-flight-segment";
 </auro-flightline>
 ```
 
-## Install bundled assets from CDN
+## CDN Use
 
-In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Two bundles are available -- `auro-flightline__bundled.js` for modern browsers and `auro-flightline__bundled.es5.js` for legacy browsers (including IE11). For the segment, use `auro-flight-segment__bundled.js` and `auro-flight-segment__bundled.es5.js`.
+In cases where the project is not able to process JS assets, there are pre-processed assets available for use.
 
-Since the legacy bundle includes many polyfills that are not needed by modern browsers, we recommend you load these bundles using [differential serving](https://philipwalton.com/articles/deploying-es2015-code-in-production-today/) so that the browser only loads the bundle it needs. To accomplish this, the script tag for the modern bundle should have `type="module"` and the script tag for the legacy bundle should have the `nomodule` attribute. See the example below.
+### Install
 
-**NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
+Include the following example HTML code in the `<head>` element of your page.
 
 ```html
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
-<link rel="stylesheet" href="https://unpkg.com/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
-<script src="https://unpkg.com/@alaskaairux/auro-flightline@latest/dist/auro-flightline__bundled.js" type="module"></script>
-<script src="https://unpkg.com/@alaskaairux/auro-flightline@latest/dist/auro-flightline__bundled.es5.js" nomodule></script>
+<script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-flightline@latest/dist/auro-flightline__bundled.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-flightline@latest/dist/auro-flightline__bundled.es5.js" nomodule></script>
 
 <!-- for just the segment -->
 <script src="https://unpkg.com/@alaskaairux/auro-flightline@latest/dist/auro-flight-segment__bundled.js" type="module"></script>
 <script src="https://unpkg.com/@alaskaairux/auro-flightline@latest/dist/auro-flight-segment__bundled.es5.js" nomodule></script>
 ```
+
+**NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
+
+### polyfills.js
+
+The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project.
 
 ## auro-flightline use cases
 
