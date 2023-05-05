@@ -308,8 +308,10 @@ This will create a new custom element that you can use in your HTML that will fu
     <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
   </custom-flightline>
 </div>
+
 <auro-accordion lowProfile justifyRight>
   <span slot="trigger">See code</span>
+
   ```html
   <custom-flightline>
     <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
@@ -319,5 +321,4 @@ This will create a new custom element that you can use in your HTML that will fu
     <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
   </custom-flightline>
   ```
-
 </auro-accordion>
