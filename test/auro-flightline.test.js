@@ -158,7 +158,7 @@ describe('auro-flight-segment', () => {
       <auro-flight-segment iata="SEA" duration="1h 2m"></auro-flight-segment>
     `);
 
-    await expect(el.shadowRoot.querySelector('span').innerHTML).to.equal('<!---->SEA<!---->');
+    await expect(el.shadowRoot.querySelector('span').innerText).to.equal('SEA');
     await expect(el.shadowRoot.querySelectorAll('auro-badge').length).to.equal(1);
   });
 
@@ -167,7 +167,7 @@ describe('auro-flight-segment', () => {
       <auro-flight-segment iata="2 Stops"></auro-flight-segment>
     `);
 
-    await expect(el.shadowRoot.querySelector('span').innerHTML).to.equal('<!---->2 Stops<!---->');
+    await expect(el.shadowRoot.querySelector('span').innerText).to.equal('2 Stops');
     await expect(el.shadowRoot.querySelectorAll('auro-badge').length).to.equal(0);
   });
 
@@ -176,6 +176,6 @@ describe('auro-flight-segment', () => {
       <auro-flight-segment iata="SEA" stopover></auro-flight-segment>
     `);
 
-    await expect(el.shadowRoot.querySelector('span').innerHTML).to.equal('<!---->SEA<!---->');
+    await expect(el.shadowRoot.querySelector('span').innerText).to.equal('SEA');
   });
 })
