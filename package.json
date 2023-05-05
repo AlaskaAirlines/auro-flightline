@@ -78,6 +78,7 @@
     "sinon": "^15.0.1",
     "stylelint": "^14.16.1",
     "stylelint-config-standard": "^29.0.0",
+    "typescript": "^5.0.4",
     "wc-sass-render": "^1.4.0",
     "web-component-analyzer": "^1.1.6",
     "webpack-merge": "^5.8.0",
@@ -116,7 +117,8 @@
     "sassBuild:watch": "nodemon -e scss --watch src --exec npm run sassBuild:dev",
     "postCss:component": "node ./scripts/postCss.js",
     "serve": "web-dev-server --open demo/ --node-resolve --watch",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "types": "tsc"
   },
   "release": {
     "branches": [
