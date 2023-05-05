@@ -4,8 +4,8 @@
 // ---------------------------------------------------------------------
 
 // If use litElement base class
-import { LitElement, html, css } from "lit-element";
-import { classMap } from "lit-html/directives/class-map";
+import { LitElement, html, css } from "lit";
+import { classMap } from "lit/directives/class-map.js";
 import "@alaskaairux/auro-badge";
 
 // Import touch detection lib
