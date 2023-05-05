@@ -5,7 +5,7 @@ const production = !process.env.ROLLUP_WATCH;
 
 const modernConfig = {
   input: {
-    ['auro-flightline__bundled']: 'src/auro-flightline.js',
+    ['auro-flightline__bundled']: 'index.js',
     ['auro-flight-segment__bundled']: 'src/auro-flight-segment.js'
   },
   output: {

@@ -22,7 +22,7 @@ const defaultContainerWidth = 414;
  * @slot - fill in with `<auro-flight-segment>` components of a given leg.
  */
 
-class AuroFlightline extends LitElement {
+export class AuroFlightline extends LitElement {
   constructor() {
     super();
     this.canceled = false;
