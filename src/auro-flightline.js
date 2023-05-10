@@ -7,8 +7,6 @@
 import { LitElement, html, css } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 
-// Import touch detection lib
-import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-flightline-css.js";
 import { observeResize, unobserve } from './observer';
 
