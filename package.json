@@ -97,6 +97,11 @@
     "last 2 Edge versions",
     "last 2 Safari major versions"
   ],
+  "overrides": {
+    "wc-sass-render": {
+      "sass": "$sass"
+    }
+  },
   "scripts": {
     "build": "npm-run-all build:sass sass:render dist:js build:api test bundler postinstall types",
     "build:api": "wca analyze 'src/auro-*.js' --outFiles docs/api.md",
