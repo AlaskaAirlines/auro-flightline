@@ -6,10 +6,8 @@
 // If use litElement base class
 import { LitElement, html, css } from "lit";
 import { classMap } from "lit/directives/class-map.js";
-import "@alaskaairux/auro-badge";
+import "@aurodesignsystem/auro-badge";
 
-// Import touch detection lib
-import "focus-visible/dist/focus-visible.min.js";
 import styleCss from "./style-flight-segment-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
