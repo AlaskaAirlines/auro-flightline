@@ -1,4 +1,4 @@
-# auro-flightline
+`# auro-flightline
 
 `<auro-flightline>` is a [HTML custom element](https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_custom_elements) that represents the intermediate details between a departure and arrival station on a flight.
 
@@ -13,7 +13,7 @@ For the most up to date information on [UI development browser support](https://
 [![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-flightline?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 
 ```shell
-$ npm i @alaskaairux/auro-flightline
+$ npm i @aurodesignsystem/auro-flightline
 ```
 
 Installing as a direct, dev or peer dependency is up to the user installing the package. If you are unsure as to what type of dependency you should use, consider reading this [stack overflow](https://stackoverflow.com/questions/18875674/whats-the-difference-between-dependencies-devdependencies-and-peerdependencies) answer.
@@ -33,8 +33,8 @@ Any update to the Auro Design Tokens will be immediately reflected with browsers
 Defining the component dependency within each component that is using the `<auro-flightline>` and `<auro-flight-segment>` components.
 
 ```javascript
-import "@alaskaairux/auro-flightline";
-import "@alaskaairux/auro-flightline/dist/auro-flight-segment";
+import "@aurodesignsystem/auro-flightline";
+import "@aurodesignsystem/auro-flightline/dist/auro-flight-segment";
 ```
 
 **Reference component in HTML**
@@ -55,15 +55,15 @@ In cases where the project is not able to process JS assets, there are pre-proce
 Include the following example HTML code in the `<head>` element of your page.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/webcorestylesheets@latest/dist/bundled/essentials.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
-<script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-flightline@latest/dist/auro-flightline__bundled.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@alaskaairux/auro-flightline@latest/dist/auro-flightline__bundled.es5.js" nomodule></script>
+<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-flightline@latest/dist/auro-flightline__bundled.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-flightline@latest/dist/auro-flightline__bundled.es5.js" nomodule></script>
 
 <!-- for just the segment -->
-<script src="https://unpkg.com/@alaskaairux/auro-flightline@latest/dist/auro-flight-segment__bundled.js" type="module"></script>
-<script src="https://unpkg.com/@alaskaairux/auro-flightline@latest/dist/auro-flight-segment__bundled.es5.js" nomodule></script>
+<script src="https://unpkg.com/@aurodesignsystem/auro-flightline@latest/dist/auro-flight-segment__bundled.js" type="module"></script>
+<script src="https://unpkg.com/@aurodesignsystem/auro-flightline@latest/dist/auro-flight-segment__bundled.es5.js" nomodule></script>
 ```
 
 **NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
