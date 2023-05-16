@@ -46,6 +46,7 @@
     "autoprefixer": "^10.4.14",
     "compression": "^1.7.4",
     "concat": "^1.0.3",
+    "concurrently": "^8.0.1",
     "copyfiles": "^2.4.1",
     "core-js": "^3.30.2",
     "eslint": "^8.40.0",
@@ -85,6 +86,12 @@
       "sass": "$sass"
     }
   },
+  "nodemonConfig": {
+    "ignore": [
+      "*-css.js",
+      "*.css"
+    ]
+  },
   "scripts": {
     "build": "npm-run-all build:sass sass:render dist:js build:api test bundler postinstall types",
     "build:api": "wca analyze 'src/auro-*.js' --outFiles docs/api.md",
@@ -92,7 +99,7 @@
     "bundle:test": "rollup -c -w",
     "postinstall": "node packageScripts/postinstall.mjs",
     "cssLint": "stylelint \"./src/*.css\"",
-    "dev": "npm run build:sass:watch",
+    "dev": "concurrently --kill-others 'npm run build:watch' 'npm run serve'",
     "dist:js": "copyfiles -u 1 -V './src/**/*.js' ./dist",
     "sass:render": "sass-render src/*.css -t ./scripts/staticStyles-template.js",
     "sweep": "rm -rf ./temp ./dist ./src/tokens | rm ./src/*.css ./src/*-css.js",
