@@ -114,6 +114,7 @@
     "build:sass:dev": "npm-run-all build:sass:component postCss:component sass:render",
     "build:sass:component": "sass --no-source-map src:src",
     "build:sass:watch": "nodemon -e scss --watch src --exec npm run build:sass:dev",
+    "build:watch": "nodemon -e scss,js,html --watch src --watch apiExamples/**/* --exec npm run build:dev:assets",
     "postCss:component": "node ./scripts/postCss.js",
     "serve": "web-dev-server --open demo/ --node-resolve --watch",
     "prepare": "husky install",
