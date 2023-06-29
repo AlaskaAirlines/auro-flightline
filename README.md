@@ -46,7 +46,7 @@ import "@aurodesignsystem/auro-flightline/dist/auro-flight-segment";
 </auro-flightline>
 ```
 
-## CDN Use
+## CDN use
 
 In cases where the project is not able to process JS assets, there are pre-processed assets available for use.
 
@@ -55,31 +55,20 @@ In cases where the project is not able to process JS assets, there are pre-proce
 Include the following example HTML code in the `<head>` element of your page.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
 <script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-flightline@latest/dist/auro-flightline__bundled.js" type="module"></script>
-<script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-flightline@latest/dist/auro-flightline__bundled.es5.js" nomodule></script>
 
 <!-- for just the segment -->
 <script src="https://unpkg.com/@aurodesignsystem/auro-flightline@latest/dist/auro-flight-segment__bundled.js" type="module"></script>
-<script src="https://unpkg.com/@aurodesignsystem/auro-flightline@latest/dist/auro-flight-segment__bundled.es5.js" nomodule></script>
 ```
 
 **NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
 
-### polyfills.js
+### CDN options
 
-The `polyfills.js` is packaged with this component, but **IT IS NOT NEEDED** to load a polyfill per component. The `polyfills.js` will work for all additional components added to the project.
-
-## auro-flightline use cases
-
-The `<auro-flightline>` element should be used in situations where users may:
-
-* Indicate a nonstop flight
-* Indicate a flight with a stopover
-* Indicate a flight with a layover
-* Indicate any combination of the above
+Both [Unpkg](https://www.unpkg.com/) and [JSDelivr](https://www.jsdelivr.com/) are free open source options that you can use. These are 3rd party resources and Auro is not responsible for their uptime. **Use at your own risk.** These bundle resources are included with the npm package, you are free to use any CDN resource that fits your needs.
 
 ## API Code Examples
 
