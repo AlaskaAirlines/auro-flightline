@@ -11,50 +11,54 @@
 
 :host {
   display: block;
+
   // prevent z-index declarations from affecting anything outside the component
   isolation: isolate;
 }
 
-.slot-container {
-  min-height: var(--auro-size-lg);
-}
-
 // places the connecting line with a pseudo class
 .nonstop {
-  &::before {
+  &:before {
     content: "";
     height: var(--auro-size-xxxs);
     width: 100%;
     position: relative;
     top: 10px;
+    border-top: var(--auro-size-xxxs) solid var(--auro-color-brand-atlas-500);
   }
 }
 
-.nonstop::before {
-  border-top: var(--auro-size-xxxs) solid var(--auro-color-brand-atlas-500);
-}
-
-
-.nonstop.canceled::before {
-  border-top: var(--auro-size-xxxs) dashed var(--auro-color-alert-error-on-light);
+.canceled {
+  &:before {
+    border-top: var(--auro-size-xxxs) dashed var(--auro-color-alert-error-on-light);
+  }
 }
 
 // when there's only one connection, we want to show the actual dot but
 // for multiple we want to just show N stops in a layover dot.
-.multiple ::slotted(*) {
-  display: none;
+
+/* stylelint-disable selector-max-class */
+.multiple {
+  ::slotted(*) {
+    display: none;
+  }
+
+  &.showAllStops {
+    ::slotted(*) {
+      display: block;
+    }
+  }
 }
 
-.multiple.show-all-stops ::slotted(*) {
-  display: block;
-}
-
-.show-all-stops auro-flight-segment {
-  display: none;
+.showAllStops {
+  auro-flight-segment {
+    display: none;
+  }
 }
 
 // flex container for the slot
-.slot-container {
+.slotContainer {
   display: flex;
   justify-content: space-around;
+  min-height: var(--auro-size-lg);
 }

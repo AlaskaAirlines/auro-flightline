@@ -95,11 +95,11 @@ export class AuroFlightline extends LitElement {
   render() {
     const isMultiple = this.children.length > 1;
     const classes = {
-      'slot-container': true,
+      'slotContainer': true,
       'nonstop': !this.children.length,
       'multiple': isMultiple,
       'canceled': this.canceled,
-      'show-all-stops': this.showAllStops
+      'showAllStops': this.showAllStops
     };
 
     return html`
