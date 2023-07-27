@@ -3,7 +3,7 @@
 
 // ---------------------------------------------------------------------
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties";
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/_breakpoints";
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
 @import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
 
 // forces each segment to take up as much space in its row to extend the ::before
@@ -12,45 +12,68 @@
   flex-basis: 0;
 }
 
+// places the connecting line with a pseudo class
 .wrapper {
   position: relative;
-}
 
-// places the connecting line with a pseudo class
-.wrapper::before,
-.wrapper::after {
-  border-top: var(--auro-size-xxxs) solid var(--auro-color-brand-atlas-500);
-  position: absolute;
-  top: 0.5rem;
-  z-index: 1;
-}
+  &:before,
+  &:after {
+    border-top: var(--auro-size-xxxs) solid var(--auro-color-brand-atlas-500);
+    position: absolute;
+    top: 0.5rem;
+    z-index: 1;
+  }
 
-.wrapper::before {
-  content: "";
-  right: 50%;
-  width: 100%;
-}
+  &:before {
+    content: "";
+    right: 50%;
+    width: 100%;
+  }
 
-.wrapper::after {
-  left: 50%;
-  width: 50%;
+  &:after {
+    left: 50%;
+    width: 50%;
+  }
 }
 
 // the first line is only half as long
-:host(:first-child) .wrapper::before,
-:host(:only-of-type) .wrapper::before {
-  width: 50%;
+:host(:first-child),
+:host(:only-of-type) {
+  .wrapper {
+    &:before {
+      width: 50%;
+    }
+  }
 }
 
 // the last segment and summary segment need a line after
-:host(:last-child) .wrapper::after,
-:host(:only-of-type) .wrapper::after {
-  content: "";
+:host(:last-child),
+:host(:only-of-type) {
+  .wrapper {
+    &:after {
+      content: "";
+    }
+  }
 }
 
-:host([canceled]) .wrapper::before,
-:host([destinationCanceled]) .wrapper::after {
-  border-top: var(--auro-size-xxxs) dashed var(--auro-color-alert-error-on-light);
+:host([canceled]) {
+  .wrapper {
+    &:before {
+      border-top: var(--auro-size-xxxs) dashed var(--auro-color-alert-error-on-light);
+    }
+  }
+}
+
+:host([destinationCanceled]) {
+  .wrapper {
+    &:after {
+      border-top: var(--auro-size-xxxs) dashed var(--auro-color-alert-error-on-light);
+    }
+  }
+}
+
+auro-badge {
+  min-width: var(--auro-size-xxxl);
 }
 
 :host([nextday]) {
@@ -94,8 +117,4 @@
   margin-top: var(--auro-size-sm);
   color: var(--auro-color-text-secondary-on-light);
   padding-bottom: var(--auro-size-xxs);
-}
-
-auro-badge {
-  min-width: var(--auro-size-xxxl);
 }
