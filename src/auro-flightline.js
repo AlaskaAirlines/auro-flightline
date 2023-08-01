@@ -4,19 +4,15 @@
 // ---------------------------------------------------------------------
 
 // If use litElement base class
-import { LitElement, html, css } from "lit";
+import { LitElement, html } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 
 import styleCss from "./style-flightline-css.js";
-import { observeResize, unobserve } from './observer';
-
-const defaultContainerWidth = 414;
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * The auro-flightline component provides a responsive flight timeline experience by placing dots indicating stopovers and layovers on a timeline.
  * @attr {Boolean} canceled - Whether the flightline is canceled.
- * @attr {Number} cq - The number of pixels where the component should switch to an expanded view.
  * @slot - fill in with `<auro-flight-segment>` components of a given leg.
  */
 
@@ -24,10 +20,6 @@ export class AuroFlightline extends LitElement {
   constructor() {
     super();
     this.canceled = false;
-    this.cq = defaultContainerWidth;
-
-    /** @private */
-    this.showAllStops = false;
 
     /** @private */
     this.hasCanceledSegment = false;
@@ -42,8 +34,6 @@ export class AuroFlightline extends LitElement {
   static get properties() {
     return {
       canceled:    { type: Boolean },
-      showAllStops:    { type: Boolean },
-      cq:  { type: Number },
       hasCanceledSegment: { type: Boolean },
       firstSegmentCanceled: { type: Boolean },
       lastSegmentCanceled: { type: Boolean }
@@ -51,21 +41,7 @@ export class AuroFlightline extends LitElement {
   }
 
   static get styles() {
-    return css`
-      ${styleCss}
-    `;
-  }
-
-  firstUpdated() {
-    const setShowAllStops = (val) => {
-      this.showAllStops = val > this.cq;
-    };
-    this.observedNode = this;
-    observeResize(this.observedNode, setShowAllStops);
-  }
-
-  disconnectedCallback() {
-    unobserve(this.observedNode);
+    return [styleCss];
   }
 
   /** @private */
@@ -98,8 +74,7 @@ export class AuroFlightline extends LitElement {
       'slotContainer': true,
       'nonstop': !this.children.length,
       'multiple': isMultiple,
-      'canceled': this.canceled,
-      'showAllStops': this.showAllStops
+      'canceled': this.canceled
     };
 
     return html`
@@ -107,6 +82,7 @@ export class AuroFlightline extends LitElement {
         <slot @slotchange=${this.containsCanceledSegment}></slot>
         ${isMultiple ? html`
           <auro-flight-segment
+            class="showNoStops"
             ?canceled=${this.firstSegmentCanceled}
             ?partialCancel=${this.hasCanceledSegment}
             ?destinationCanceled=${this.lastSegmentCanceled}

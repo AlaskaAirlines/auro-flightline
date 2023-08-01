@@ -24,10 +24,9 @@ The auro-flightline component provides a responsive flight timeline experience b
 
 ## Properties
 
-| Property   | Attribute  | Type      | Default | Description                                      |
-|------------|------------|-----------|---------|--------------------------------------------------|
-| `canceled` | `canceled` | `Boolean` | false   | Whether the flightline is canceled.              |
-| `cq`       | `cq`       | `Number`  | 414     | The number of pixels where the component should switch to an expanded view. |
+| Property   | Attribute  | Type      | Default | Description                         |
+|------------|------------|-----------|---------|-------------------------------------|
+| `canceled` | `canceled` | `Boolean` | false   | Whether the flightline is canceled. |
 
 ## Slots
 

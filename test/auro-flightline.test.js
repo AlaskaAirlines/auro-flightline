@@ -54,31 +54,6 @@ describe('auro-flightline', () => {
     await expect(el).to.be.true;
   });
 
-  it('shows all stops depending on width', async () => {
-    const el = await fixture(html`
-      <auro-flightline id="condensed">
-        <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
-        <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
-        <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
-      </auro-flightline>
-    `);
-
-    const slottedSegment = el.querySelector('auro-flight-segment');
-    const summarySegment = el.shadowRoot.querySelector('auro-flight-segment');
-
-    // when too narrow to show all segments, the condensed segment is shwon
-    el.style.width = "100px";
-    await waitUntil(() => !el.showAllStops);
-    expect(window.getComputedStyle(slottedSegment).display).to.eql('none');
-    expect(window.getComputedStyle(summarySegment).display).to.eql('block');
-
-    // when the element is resized, the expanded view is shown
-    el.style.width = "700px";
-    await waitUntil(() => el.showAllStops);
-    expect(window.getComputedStyle(slottedSegment).display).to.eql('block');
-    expect(window.getComputedStyle(summarySegment).display).to.eql('none');
-  });
-
   it('shows canceled summary when contains canceled segment', async () => {
     const el = await fixture(html`
       <auro-flightline id="condensed">
@@ -152,7 +127,7 @@ describe('auro-flightline', () => {
   })
 });
 
-describe('auro-flight-segment', () => {  
+describe('auro-flight-segment', () => {
   it('with a layover', async () => {
     const el = await fixture(html`
       <auro-flight-segment iata="SEA" duration="1h 2m"></auro-flight-segment>

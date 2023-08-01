@@ -4,7 +4,6 @@
 // ---------------------------------------------------------------------
 
 @import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
-@import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SassCustomProperties";
 
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/core";
@@ -37,23 +36,30 @@
 // when there's only one connection, we want to show the actual dot but
 // for multiple we want to just show N stops in a layover dot.
 
-/* stylelint-disable selector-max-class */
+/* stylelint-disable selector-max-class, scss/at-mixin-pattern */
+
+@mixin auro_cq-xs {
+  @container (max-width: #{$auro-grid-breakpoint-xs}) {
+    @content;
+  }
+}
+
 .multiple {
   ::slotted(*) {
-    display: none;
-  }
+    display: block;
 
-  &.showAllStops {
-    ::slotted(*) {
-      display: block;
+    @include auro_cq-xs {
+      display: none;
     }
   }
 }
 
-.showAllStops {
-  auro-flight-segment {
-    display: none;
-  }
+.showNoStops {
+  display: none;
+
+    @include auro_cq-xs {
+      display: block;
+    }
 }
 
 // flex container for the slot
@@ -61,4 +67,5 @@
   display: flex;
   justify-content: space-around;
   min-height: var(--auro-size-lg);
+  container-type: inline-size;
 }
