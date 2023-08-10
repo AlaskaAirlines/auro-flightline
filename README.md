@@ -81,6 +81,18 @@ Default auro-flightline
 </auro-flightline>
 ```
 
+### React install support
+
+React uses a virtual DOM and a process called reconciliation to efficiently update the actual DOM based on changes in your component's state and props. When you reorder elements, React might not always recreate the entire shadow DOM from scratch, which could potentially lead to styles not updating as expected.
+
+To ensure a full recreation of the shadow DOM, consider the following example to use a key for the elements you're reordering, which can help React understand that the elements have changed and need to be re-rendered.
+
+```html
+<auro-flightline
+  key={segments.map(segment => segment.destination).join("")}
+>
+```
+
 ## Development
 
 In order to develop against this project, if you are not part of the core team, you will be required to fork the project prior to submitting a pull request.
