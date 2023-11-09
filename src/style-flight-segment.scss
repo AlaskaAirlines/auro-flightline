@@ -2,9 +2,12 @@
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/utilityClasses/displayProperties";
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/dist/breakpoints";
-@import "./../node_modules/@alaskaairux/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/utilityClasses/displayProperties";
+@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+
+// Support for fallback values
+@import './../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables.scss';
 
 // forces each segment to take up as much space in its row to extend the ::before
 :host {
@@ -18,7 +21,7 @@
 
   &:before,
   &:after {
-    border-top: var(--auro-size-xxxs) solid var(--auro-color-brand-atlas-500);
+    border-top: var(--ds-size-25, $ds-size-25) solid var(--ds-color-brand-atlas-500, $ds-color-brand-atlas-500);
     position: absolute;
     top: 0.5rem;
     z-index: 1;
@@ -59,7 +62,7 @@
 :host([canceled]) {
   .wrapper {
     &:before {
-      border-top: var(--auro-size-xxxs) dashed var(--auro-color-alert-error-on-light);
+      border-top: var(--ds-size-25, $ds-size-25) dashed var(--ds-color-alert-error-default, $ds-color-alert-error-default);
     }
   }
 }
@@ -67,18 +70,18 @@
 :host([destinationCanceled]) {
   .wrapper {
     &:after {
-      border-top: var(--auro-size-xxxs) dashed var(--auro-color-alert-error-on-light);
+      border-top: var(--ds-size-25, $ds-size-25) dashed var(--ds-color-alert-error-default, $ds-color-alert-error-default);
     }
   }
 }
 
 auro-badge {
-  min-width: var(--auro-size-xxxl);
+  min-width: var(--ds-size-800, $ds-size-800);
 }
 
 :host([nextday]) {
   auro-badge {
-    color: var(--auro-color-alert-error-on-light);
+    color: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
   }
 }
 
@@ -92,29 +95,29 @@ auro-badge {
 }
 
 .leg {
-  border: 1px solid var(--auro-color-ui-active-on-light);
-  border-radius: var(--auro-size-md);
-  width: var(--auro-size-sm);
-  height: var(--auro-size-sm);
-  background-color: var(--auro-color-ui-active-on-light);
+  border: 1px solid var(--ds-color-ui-active-default, $ds-color-ui-active-default);
+  border-radius: var(--ds-size-200, $ds-size-200);
+  width: var(--ds-size-150, $ds-size-150);
+  height: var(--ds-size-150, $ds-size-150);
+  background-color: var(--ds-color-ui-active-default, $ds-color-ui-active-default);
 
   &--stopover {
-    background-color: var(--auro-color-background-lightest);
+    background-color: var(--ds-color-background-lightest, $ds-color-background-lightest);
   }
 
   &--canceled {
-    border-color: var(--auro-color-alert-error-on-light);
-    background-color: var(--auro-color-alert-error-on-light);
+    border-color: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
+    background-color: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
   }
 
   @include auro_breakpoint--sm {
-    width: var(--auro-size-md);
-    height: var(--auro-size-md);
+    width: var(--ds-size-200, $ds-size-200);
+    height: var(--ds-size-200, $ds-size-200);
   }
 }
 
 .iata {
-  margin-top: var(--auro-size-sm);
-  color: var(--auro-color-text-secondary-on-light);
-  padding-bottom: var(--auro-size-xxs);
+  margin-top: var(--ds-size-150, $ds-size-150);
+  color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
+  padding-bottom: var(--ds-size-50, $ds-size-50);
 }

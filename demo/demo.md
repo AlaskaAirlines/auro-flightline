@@ -221,7 +221,7 @@ The following illustrates a cancellation of international flight with stopovers 
 
 The `auro-flightline` element is reactive to its parent container's `width` value versus a `@media` query based on the device `width`. This allows for greater control over the shape of the element when in constrained spaces.
 
-The default container query is a min-width of `320px`, or `var(--auro-grid-breakpoint-xs)`.
+The default container query is a min-width of `320px`, or `var(--ds-grid-breakpoint-xs)`.
 
 The first example illustrates a `auro-flightline` element with a container width of `300px`. The next `auro-flightline` element is within a container set at `100%` for context. Notice when the container reaches a width of < `320px`, the container query switches the UI.
 
