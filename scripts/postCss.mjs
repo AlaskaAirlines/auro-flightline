@@ -1,8 +1,8 @@
-const autoprefixer = require('autoprefixer')
-const postcss = require('postcss')
-const postcssCustomProperties = require('postcss-custom-properties')
-const comments = require('postcss-discard-comments')
-const fs = require('fs')
+import autoprefixer from 'autoprefixer';
+import postcss from 'postcss';
+import postcssCustomProperties from 'postcss-custom-properties';
+import comments from 'postcss-discard-comments';
+import fs from 'fs';
 
 const cssFiles = ['style-flight-segment', 'style-flightline']
 
