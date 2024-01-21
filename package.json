@@ -15,6 +15,7 @@
     "type": "git",
     "url": "https://github.com/AlaskaAirlines/auro-flightline"
   },
+  "type": "module",
   "main": "index.js",
   "license": "Apache-2.0",
   "engines": {
