@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+# [2.1.0](https://github.com/AlaskaAirlines/auro-flightline/compare/v2.0.2...v2.1.0) (2024-01-22)
+
+
+### Bug Fixes
+
+* **ssr:** add missing type module to package.json ([d1b14fa](https://github.com/AlaskaAirlines/auro-flightline/commit/d1b14fa2aa76df8806254173dfbc320f47ae31cd))
+* **ssr:** rename eslintrc file ([e6c0418](https://github.com/AlaskaAirlines/auro-flightline/commit/e6c0418489648d74030de487a4fc5292bcf937d9))
+
+
+### Features
+
+* add suport for SSR projects [#60](https://github.com/AlaskaAirlines/auro-flightline/issues/60) ([cb7a111](https://github.com/AlaskaAirlines/auro-flightline/commit/cb7a1118f05b008f7408e20042a8fd0e7e9a8ba5))
+
 ## [2.0.2](https://github.com/AlaskaAirlines/auro-flightline/compare/v2.0.1...v2.0.2) (2023-12-02)
 
 
