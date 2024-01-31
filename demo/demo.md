@@ -19,7 +19,7 @@ The following illustrates a flight with no layovers or stopovers, for example, S
   <auro-flightline></auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -35,7 +35,7 @@ The following illustrates a canceled flight with no layovers or stopovers, for e
   <auro-flightline canceled></auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -51,7 +51,7 @@ If the canceled flightline has segments, they will all be shown as canceled. To 
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -71,7 +71,7 @@ The following illustrates flight with one layover, for example, SEA to AVP.
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -89,7 +89,7 @@ The following illustrates flight with one layover, that occurs on the following 
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -109,7 +109,7 @@ The following illustrates a canceled flight with layovers, for example, SEA to E
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -130,7 +130,7 @@ The following illustrates a flight with one stopover, for example, ANC to ADK.
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -151,7 +151,7 @@ The following illustrates flight with a stopover and a layover, for example, ADK
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -176,7 +176,7 @@ The following illustrates an international flight with stopovers and layovers, f
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -203,7 +203,7 @@ The following illustrates a cancellation of international flight with stopovers 
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -267,7 +267,7 @@ The first example illustrates a `auro-flightline` element with a container width
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
