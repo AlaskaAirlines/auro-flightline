@@ -55,13 +55,13 @@ In cases where the project is not able to process JS assets, there are pre-proce
 Include the following example HTML code in the `<head>` element of your page.
 
 ```html
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@alaskaairux/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/design-tokens@latest/dist/tokens/CSSCustomProperties.css" />
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@aurodesignsystem/webcorestylesheets@latest/dist/bundled/essentials.css" />
 
 <script src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-flightline@latest/dist/auro-flightline__bundled.js" type="module"></script>
 
 <!-- for just the segment -->
-<script src="https://unpkg.com/@aurodesignsystem/auro-flightline@latest/dist/auro-flight-segment__bundled.js" type="module"></script>
+<script src="https://cdn.jsdelivr.net/@aurodesignsystem/auro-flightline@latest/dist/auro-flight-segment__bundled.js" type="module"></script>
 ```
 
 **NOTE:** Be sure to replace `@latest` in the URL with the version of the asset you want. @latest is NOT aware of any MAJOR releases, use at your own risk.
