@@ -12,7 +12,7 @@ Below are example markets searchable in ITA and Sabre for availability.
   <auro-flightline></auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -39,7 +39,7 @@ Ask a TPO to load a CERT flight for you
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -60,7 +60,7 @@ The following illustrates flight with one layover, for example, SEA to AVP.
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -93,7 +93,7 @@ The following illustrates a flight with one stopover, for example, ANC to ADK.
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -126,7 +126,7 @@ The following illustrates flight with a stopover and a layover, for example, ADK
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
@@ -162,7 +162,7 @@ The following illustrates an international flight with stopovers and layovers, f
   </auro-flightline>
 </div>
 
-<auro-accordion lowProfile justifyRight>
+<auro-accordion alignRight>
   <span slot="trigger">See code</span>
 
   ```html
