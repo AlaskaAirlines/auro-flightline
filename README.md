@@ -11,6 +11,7 @@ For the most up to date information on [UI development browser support](https://
 [![Build Status](https://img.shields.io/github/actions/workflow/status/AlaskaAirlines/auro-flightline/testPublish.yml?branch=main&style=for-the-badge)](https://github.com/AlaskaAirlines/auro-flightline/actions/workflows/testPublish.yml)
 [![See it on NPM!](https://img.shields.io/npm/v/@aurodesignsystem/auro-flightline?style=for-the-badge&color=orange)](https://www.npmjs.com/package/@aurodesignsystem/auro-flightline)
 [![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-flightline?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
+![ESM supported](https://img.shields.io/badge/ESM-compatible-FFE900?style=for-the-badge)
 
 ```shell
 $ npm i @aurodesignsystem/auro-flightline
