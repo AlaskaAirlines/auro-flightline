@@ -1,5 +1,17 @@
 # Semantic Release Automated Changelog
 
+## [2.1.2](https://github.com/AlaskaAirlines/auro-flightline/compare/v2.1.1...v2.1.2) (2024-02-11)
+
+
+### Bug Fixes
+
+* remove unavailable script ref ([bba06ad](https://github.com/AlaskaAirlines/auro-flightline/commit/bba06ad38bcae929cbe27d39a4ef5c44650c57be))
+
+
+### Performance Improvements
+
+* update auro deps and ESM support ready ([4246e41](https://github.com/AlaskaAirlines/auro-flightline/commit/4246e41c0431b3a91f2fc3e79aa0cc4acfcfd125))
+
 ## [2.1.1](https://github.com/AlaskaAirlines/auro-flightline/compare/v2.1.0...v2.1.1) (2024-01-31)
 
 
