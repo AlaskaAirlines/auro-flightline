@@ -1,5 +1,5 @@
 {
-  "include": ["src/**/*.js"], // process the generated JS files from the src js files 
+  "include": ["src/**/*.js"], // process the generated J
   "exclude": [],
   "compilerOptions": {
     // Tells TypeScript to read JS files, as

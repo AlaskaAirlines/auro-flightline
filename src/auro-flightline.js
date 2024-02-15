@@ -9,6 +9,8 @@ import { classMap } from "lit/directives/class-map.js";
 
 import styleCss from "./style-flightline-css.js";
 
+import './auro-flight-segment.js';
+
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * The auro-flightline component provides a responsive flight timeline experience by placing dots indicating stopovers and layovers on a timeline.
