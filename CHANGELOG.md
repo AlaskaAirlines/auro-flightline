@@ -1,5 +1,18 @@
 # Semantic Release Automated Changelog
 
+## [2.1.4](https://github.com/AlaskaAirlines/auro-flightline/compare/v2.1.3...v2.1.4) (2024-02-19)
+
+
+### Bug Fixes
+
+* **ts:** revert comment change in tsconfig ([89ccd61](https://github.com/AlaskaAirlines/auro-flightline/commit/89ccd6125c871e24802279c8938e3c3f93041979))
+
+
+### Performance Improvements
+
+* **demo:** update demo file example structure [#65](https://github.com/AlaskaAirlines/auro-flightline/issues/65) ([ba82c8c](https://github.com/AlaskaAirlines/auro-flightline/commit/ba82c8cf1ea7ab2b8a18bf87142ec43d969da2a6))
+* **deps:** update dependencies ([f222b22](https://github.com/AlaskaAirlines/auro-flightline/commit/f222b229f0ee1c2169fc911f6cc788985ae3b29d))
+
 ## [2.1.3](https://github.com/AlaskaAirlines/auro-flightline/compare/v2.1.2...v2.1.3) (2024-02-13)
 
 
