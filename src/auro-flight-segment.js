@@ -9,6 +9,8 @@ import { classMap } from "lit/directives/class-map.js";
 import "@aurodesignsystem/auro-badge";
 
 import styleCss from "./style-flight-segment-css.js";
+import colorCss from "./color-segment-css.js";
+import tokensCss from "./tokens-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -56,9 +58,11 @@ class AuroFlightSegment extends LitElement {
   }
 
   static get styles() {
-    return css`
-      ${styleCss}
-    `;
+    return [
+      css`${styleCss}`,
+      css`${colorCss}`,
+      css`${tokensCss}`
+    ];
   }
 
   // function that renders the HTML and CSS into  the scope of the component

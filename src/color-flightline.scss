@@ -1,0 +1,18 @@
+// Copyright (c) 2024 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
+// See LICENSE in the project root for license information.
+
+// ---------------------------------------------------------------------
+
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+
+.nonstop {
+  &:before {
+    border-top: var(--ds-size-25, $ds-size-25) solid var(--ds-auro-flightline-nonstop-color);
+  }
+}
+
+.canceled {
+  &:before {
+    border-top: var(--ds-size-25, $ds-size-25) dashed var(--ds-auro-flightline-canceled-color);
+  }
+}

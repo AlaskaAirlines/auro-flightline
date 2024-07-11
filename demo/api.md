@@ -7,7 +7,7 @@ The auro-flight-segment component is a standard for indicating stopovers and lay
 Stopovers do not have duration information and are indicated differently.
 Layovers contain duration information and are indicated with a solid fill.
 For more information about the difference between a layover and a stopover,
-[please see this article.](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/).
+[please see this article](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/).
 
 ## Properties
 
@@ -365,3 +365,25 @@ The first example illustrates a `auro-flightline` element with a container width
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
+
+### Theme Support
+
+The component may be restyled using the following code sample and changing the values of the following token(s).
+
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
+<!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
+
+```scss
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+
+:host {
+  --ds-auro-flight-segment-badge-text-color: var(--ds-color-text-error-default, #{$ds-color-text-error-default});
+  --ds-auro-flight-segment-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
+  --ds-auro-flight-segment-iata-text-color: var(--ds-color-text-secondary-default, #{$ds-color-text-secondary-default});
+  --ds-auro-flight-segment-leg-border-color: var(--ds-color-border-info-default, #{$ds-color-border-info-default});
+  --ds-auro-flight-segment-leg-container-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
+  --ds-auro-flightline-canceled-color: var(--ds-color-utility-error-default, #{$ds-color-utility-error-default});
+  --ds-auro-flightline-nonstop-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
+}
+```
+<!-- AURO-GENERATED-CONTENT:END -->

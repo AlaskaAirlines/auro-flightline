@@ -26,13 +26,6 @@
     width: 100%;
     position: relative;
     top: 10px;
-    border-top: var(--ds-size-25, $ds-size-25) solid var(--ds-color-brand-atlas-500, $ds-color-brand-atlas-500);
-  }
-}
-
-.canceled {
-  &:before {
-    border-top: var(--ds-size-25, $ds-size-25) dashed var(--ds-color-alert-error-default, $ds-color-alert-error-default);
   }
 }
 

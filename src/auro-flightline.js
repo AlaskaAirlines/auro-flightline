@@ -8,6 +8,8 @@ import { LitElement, html } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 
 import styleCss from "./style-flightline-css.js";
+import colorCss from "./color-flightline-css.js";
+import tokensCss from "./tokens-css.js";
 
 import './auro-flight-segment.js';
 
@@ -43,7 +45,11 @@ export class AuroFlightline extends LitElement {
   }
 
   static get styles() {
-    return [styleCss];
+    return [
+      styleCss,
+      colorCss,
+      tokensCss
+    ];
   }
 
   /** @private */
