@@ -21,7 +21,8 @@
 
   &:before,
   &:after {
-    border-top: var(--ds-size-25, $ds-size-25) solid var(--ds-color-brand-atlas-500, $ds-color-brand-atlas-500);
+    border-top-width: var(--ds-size-25, $ds-size-25);
+    border-top-style: solid;
     position: absolute;
     top: 0.5rem;
     z-index: 1;
@@ -62,7 +63,8 @@
 :host([canceled]) {
   .wrapper {
     &:before {
-      border-top: var(--ds-size-25, $ds-size-25) dashed var(--ds-color-alert-error-default, $ds-color-alert-error-default);
+      border-top-width: var(--ds-size-25, $ds-size-25);
+      border-top-style: dashed;
     }
   }
 }
@@ -70,19 +72,14 @@
 :host([destinationCanceled]) {
   .wrapper {
     &:after {
-      border-top: var(--ds-size-25, $ds-size-25) dashed var(--ds-color-alert-error-default, $ds-color-alert-error-default);
+      border-top-width: var(--ds-size-25, $ds-size-25);
+      border-top-style: dashed;
     }
   }
 }
 
 auro-badge {
   min-width: var(--ds-size-800, $ds-size-800);
-}
-
-:host([nextday]) {
-  auro-badge {
-    color: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
-  }
 }
 
 .layout {
@@ -95,20 +92,9 @@ auro-badge {
 }
 
 .leg {
-  border: 1px solid var(--ds-color-ui-active-default, $ds-color-ui-active-default);
   border-radius: var(--ds-size-200, $ds-size-200);
   width: var(--ds-size-150, $ds-size-150);
   height: var(--ds-size-150, $ds-size-150);
-  background-color: var(--ds-color-ui-active-default, $ds-color-ui-active-default);
-
-  &--stopover {
-    background-color: var(--ds-color-background-lightest, $ds-color-background-lightest);
-  }
-
-  &--canceled {
-    border-color: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
-    background-color: var(--ds-color-alert-error-default, $ds-color-alert-error-default);
-  }
 
   @include auro_breakpoint--sm {
     width: var(--ds-size-200, $ds-size-200);
@@ -118,6 +104,5 @@ auro-badge {
 
 .iata {
   margin-top: var(--ds-size-150, $ds-size-150);
-  color: var(--ds-color-text-secondary-default, $ds-color-text-secondary-default);
   padding-bottom: var(--ds-size-50, $ds-size-50);
 }
