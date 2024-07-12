@@ -134,7 +134,7 @@ describe('auro-flight-segment', () => {
     `);
 
     await expect(el.shadowRoot.querySelector('span').innerText).to.equal('SEA');
-    await expect(el.shadowRoot.querySelectorAll('auro-badge').length).to.equal(1);
+    await expect(el.shadowRoot.querySelectorAll('[auro-badge]').length).to.equal(1);
   });
 
   it('with a layover no duration', async () => {

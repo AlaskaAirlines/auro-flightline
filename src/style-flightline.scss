@@ -18,7 +18,6 @@
   isolation: isolate;
 }
 
-// places the connecting line with a pseudo class
 .nonstop {
   &:before {
     content: "";
@@ -26,6 +25,14 @@
     width: 100%;
     position: relative;
     top: 10px;
+    border-width: var(--ds-size-25, $ds-size-25) 0 0 0;
+    border-style: solid;
+  }
+}
+
+.canceled {
+  &:before {
+    border-style: dashed;
   }
 }
 

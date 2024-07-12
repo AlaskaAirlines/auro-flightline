@@ -1,45 +1,54 @@
 // Copyright (c) 2024 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
+/* stylelint-disable selector-class-pattern */
+
 // ---------------------------------------------------------------------
 
 @import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
 
 .wrapper {
-  &:before,
+  &:before {
+    border-top-color: var(--ds-auro-flightline-segment-line-color);
+  }
+
   &:after {
-    border-top-color: var(--ds-auro-flight-segment-color);
-  }
-}
-
-:host([canceled]) {
-  --ds-auro-flight-segment-color: var(--ds-color-utility-error-default, #{$ds-color-utility-error-default});
-}
-
-:host([destinationCanceled]) {
-  --ds-auro-flight-segment-color: var(--ds-color-utility-error-default, #{$ds-color-utility-error-default});
-}
-
-:host([nextday]) {
-  auro-badge {
-    color: var(--ds-auro-flight-segment-badge-text-color);
-  }
-}
-
-.leg {
-  border: 1px solid var(--ds-auro-flight-segment-leg-border-color);
-  background-color: var(--ds-auro-flight-segment-leg-container-color);
-
-  &--stopover {
-    --ds-auro-flight-segment-leg-container-color: var(--ds-color-container-primary-default, #{$ds-color-container-primary-default});
-  }
-
-  &--canceled {
-    --ds-auro-flight-segment-leg-border-color: var(--ds-color-border-error-default, #{$ds-color-border-error-default});
-    --ds-auro-flight-segment-leg-container-color: var(--ds-color-utility-error-default, #{$ds-color-utility-error-default});
+    border-top-color: var(--ds-auro-flightline-destination-line-color);
   }
 }
 
 .iata {
   color: var(--ds-auro-flight-segment-iata-text-color);
+}
+
+[auro-badge] {
+  color: var(--ds-auro-flightline-layover-duration-color);
+}
+
+.leg {
+  border-color: var(--ds-auro-flightline-layover-marker-border-color);
+  background-color: var(--ds-auro-flightline-layover-marker-container-color);
+}
+
+.leg--stopover {
+  --ds-auro-flightline-layover-marker-container-color: var(--ds-color-container-ui-secondary-default-default, #{$ds-color-container-ui-secondary-default-default});
+}
+
+.leg--canceled {
+  --ds-auro-flightline-layover-marker-border-color: var(--ds-color-utility-error-default, #{$ds-color-utility-error-default});
+  --ds-auro-flightline-layover-marker-container-color: var(--ds-color-utility-error-default, #{$ds-color-utility-error-default});
+}
+
+:host([nextday]) {
+  --ds-auro-flightline-layover-duration-color: var(--ds-color-text-error-default, #{$ds-color-text-error-default});
+}
+
+
+:host([canceled]) {
+  --ds-auro-flightline-segment-line-color: var(--ds-color-utility-error-default, #{$ds-color-utility-error-default});
+}
+
+:host([destinationCanceled]) {
+  --ds-auro-flightline-layover-duration-color: var(--ds-color-text-error-default, #{$ds-color-text-error-default});
+  --ds-auro-flightline-destination-line-color: var(--ds-color-utility-error-default, #{$ds-color-utility-error-default});
 }
