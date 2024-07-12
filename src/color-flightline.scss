@@ -5,14 +5,13 @@
 
 @import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
 
-.nonstop {
+.nonstop,
+.canceled {
   &:before {
-    border-top: var(--ds-size-25, $ds-size-25) solid var(--ds-auro-flightline-nonstop-color);
+    border-top-color: var(--ds-auro-flightline-segment-line-color);
   }
 }
 
-.canceled {
-  &:before {
-    border-top: var(--ds-size-25, $ds-size-25) dashed var(--ds-auro-flightline-canceled-color);
-  }
+:host([canceled]) {
+  --ds-auro-flightline-segment-line-color: var(--ds-color-utility-error-default, #{$ds-color-utility-error-default});
 }

@@ -374,16 +374,19 @@ The component may be restyled using the following code sample and changing the v
 <!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
 
 ```scss
+/* stylelint-disable custom-property-empty-line-before */
+
 @import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
 
 :host {
-  --ds-auro-flight-segment-badge-text-color: var(--ds-color-text-error-default, #{$ds-color-text-error-default});
-  --ds-auro-flight-segment-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
-  --ds-auro-flight-segment-iata-text-color: var(--ds-color-text-secondary-default, #{$ds-color-text-secondary-default});
-  --ds-auro-flight-segment-leg-border-color: var(--ds-color-border-info-default, #{$ds-color-border-info-default});
-  --ds-auro-flight-segment-leg-container-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
-  --ds-auro-flightline-canceled-color: var(--ds-color-utility-error-default, #{$ds-color-utility-error-default});
-  --ds-auro-flightline-nonstop-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
+  --ds-auro-flightline-segment-line-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
+  --ds-auro-flightline-destination-line-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
+
+  --ds-auro-flightline-layover-marker-border-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
+  --ds-auro-flightline-layover-marker-container-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
+
+  --ds-auro-flightline-layover-iata-color: var(--ds-color-text-secondary-default, #{$ds-color-text-secondary-default});
+  --ds-auro-flightline-layover-duration-color: var(--ds-color-text-secondary-default, #{$ds-color-text-secondary-default});
 }
 ```
 <!-- AURO-GENERATED-CONTENT:END -->

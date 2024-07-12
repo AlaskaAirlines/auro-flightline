@@ -92,7 +92,9 @@ auro-badge {
 }
 
 .leg {
-  border-radius: var(--ds-size-200, $ds-size-200);
+  border-style: solid;
+  border-width: var(--ds-size-25, $ds-size-25);
+  border-radius: 50%;
   width: var(--ds-size-150, $ds-size-150);
   height: var(--ds-size-150, $ds-size-150);
 
