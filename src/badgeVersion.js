@@ -1,0 +1,1 @@
+export default '2.6.0-beta.2'

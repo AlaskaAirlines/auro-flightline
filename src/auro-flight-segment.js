@@ -3,14 +3,21 @@
 
 // ---------------------------------------------------------------------
 
+/* eslint-disable lit/binding-positions, lit/no-invalid-html */
+
 // If use litElement base class
-import { LitElement, html, css } from "lit";
+import { LitElement, css } from "lit";
+import { html } from 'lit/static-html.js';
 import { classMap } from "lit/directives/class-map.js";
 import "@aurodesignsystem/auro-badge";
 
 import styleCss from "./style-flight-segment-css.js";
 import colorCss from "./color-segment-css.js";
 import tokensCss from "./tokens-css.js";
+
+import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
+import { AuroBadge } from '@aurodesignsystem/auro-badge/src/auro-badge.js';
+import badgeVersion from './badgeVersion';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -37,6 +44,12 @@ class AuroFlightSegment extends LitElement {
 
     /** @private */
     this.partialCancel = false;
+
+    /**
+     * Generate unique names for dependency components.
+     */
+    const versioning = new AuroDependencyVersioning();
+    this.badgeTag = versioning.generateTag('auro-badge', badgeVersion, AuroBadge);
   }
 
   // function to define props used within the scope of this component
@@ -81,10 +94,10 @@ class AuroFlightSegment extends LitElement {
           <div class="${classMap(legClasses)}"></div>
           <span class="iata">${this.iata}</span>
           ${this.duration ? html`
-              <auro-badge label>
+              <${this.badgeTag} label>
                 ${this.duration}
                 <span class="util_displayHiddenVisually"> layover</span>
-              </auro-badge>
+              </${this.badgeTag}>
           ` : html``}
         </div>
       </div>
