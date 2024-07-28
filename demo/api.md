@@ -7,12 +7,13 @@ The auro-flight-segment component is a standard for indicating stopovers and lay
 Stopovers do not have duration information and are indicated differently.
 Layovers contain duration information and are indicated with a solid fill.
 For more information about the difference between a layover and a stopover,
-[please see this article](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/).
+[please see this article.](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/).
 
 ## Properties
 
 | Property              | Attribute             | Type      | Default | Description                                      |
 |-----------------------|-----------------------|-----------|---------|--------------------------------------------------|
+| [badgeTag](#badgeTag)            |                       | `string`  |         |                                                  |
 | [canceled](#canceled)            | `canceled`            | `Boolean` | false   | Whether the segment is canceled. The line leading to the segment will be red. |
 | [destinationCanceled](#destinationCanceled) | `destinationCanceled` | `Boolean` | false   | Whether the following segment is canceled, will only affect the last segment in a flightline. The line after the segment will be red. |
 | [duration](#duration)            | `duration`            | `String`  |         | Displayed in the auro-badge, typically duration (1h 53m) |
