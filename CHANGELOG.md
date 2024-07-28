@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [2.2.0-beta.1](https://github.com/AlaskaAirlines/auro-flightline/compare/v2.1.4...v2.2.0-beta.1) (2024-07-28)
+
+
+### Features
+
+* implement tier 3 color tokens for theming support [#70](https://github.com/AlaskaAirlines/auro-flightline/issues/70) ([ebef9da](https://github.com/AlaskaAirlines/auro-flightline/commit/ebef9da286da2d621b0c568143d6a61915e5bcee))
+
 ## [2.1.4](https://github.com/AlaskaAirlines/auro-flightline/compare/v2.1.3...v2.1.4) (2024-02-19)
 
 
