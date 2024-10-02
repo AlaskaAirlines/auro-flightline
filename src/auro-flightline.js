@@ -42,7 +42,6 @@ export class AuroFlightline extends LitElement {
      */
     this.lastSegmentCanceled = false;
 
-
     /**
      * @private
      */
