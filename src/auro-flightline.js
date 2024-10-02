@@ -7,6 +7,8 @@
 import { LitElement, html } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 import styleCss from "./style-flightline-css.js";
 import colorCss from "./color-flightline-css.js";
 import tokensCss from "./tokens-css.js";
@@ -25,14 +27,26 @@ export class AuroFlightline extends LitElement {
     super();
     this.canceled = false;
 
-    /** @private */
+    /**
+     * @private
+     */
     this.hasCanceledSegment = false;
 
-    /** @private */
+    /**
+     * @private
+     */
     this.firstSegmentCanceled = false;
 
-    /** @private */
+    /**
+     * @private
+     */
     this.lastSegmentCanceled = false;
+
+
+    /**
+     * @private
+     */
+    this.runtimeUtils = new AuroLibraryRuntimeUtils();
   }
 
   static get properties() {
@@ -50,6 +64,11 @@ export class AuroFlightline extends LitElement {
       colorCss,
       tokensCss
     ];
+  }
+
+  firstUpdated() {
+    // Add the tag name as an attribute if it is different than the component name
+    this.runtimeUtils.handleComponentTagRename(this, 'auro-flightline');
   }
 
   /** @private */
