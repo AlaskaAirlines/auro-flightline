@@ -10,7 +10,6 @@ For more information about the difference between a layover and a stopover,
 
 | Property              | Attribute             | Type      | Default | Description                                      |
 |-----------------------|-----------------------|-----------|---------|--------------------------------------------------|
-| `badgeTag`            |                       | `string`  |         |                                                  |
 | `canceled`            | `canceled`            | `Boolean` | false   | Whether the segment is canceled. The line leading to the segment will be red. |
 | `destinationCanceled` | `destinationCanceled` | `Boolean` | false   | Whether the following segment is canceled, will only affect the last segment in a flightline. The line after the segment will be red. |
 | `duration`            | `duration`            | `String`  |         | Displayed in the auro-badge, typically duration (1h 53m) |

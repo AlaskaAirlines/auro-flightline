@@ -42,13 +42,19 @@ class AuroFlightSegment extends LitElement {
     this.canceled = false;
     this.destinationCanceled = false;
 
-    /** @private */
+    /**
+     * @private
+     */
     this.partialCancel = false;
 
     /**
      * Generate unique names for dependency components.
      */
     const versioning = new AuroDependencyVersioning();
+
+    /**
+     * @private
+     */
     this.badgeTag = versioning.generateTag('auro-badge', badgeVersion, AuroBadge);
   }
 
