@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.0.1](https://github.com/AlaskaAirlines/auro-flightline/compare/v3.0.0...v3.0.1) (2024-10-17)
+
+
+### Bug Fixes
+
+* **ssr:** Add missing extension to badgeVersion import ([9256771](https://github.com/AlaskaAirlines/auro-flightline/commit/9256771c6b516a0ff052121aa6abf47c8206586a))
+
 # [3.0.0](https://github.com/AlaskaAirlines/auro-flightline/compare/v2.1.4...v3.0.0) (2024-10-02)
 
 
