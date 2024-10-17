@@ -17,7 +17,7 @@ import tokensCss from "./tokens-css.js";
 
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
 import { AuroBadge } from '@aurodesignsystem/auro-badge/src/auro-badge.js';
-import badgeVersion from './badgeVersion';
+import badgeVersion from './badgeVersion.js';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
