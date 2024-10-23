@@ -13,8 +13,6 @@ import styleCss from "./style-flightline-css.js";
 import colorCss from "./color-flightline-css.js";
 import tokensCss from "./tokens-css.js";
 
-import './auro-flight-segment.js';
-
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * The auro-flightline component provides a responsive flight timeline experience by placing dots indicating stopovers and layovers on a timeline.
@@ -65,6 +63,18 @@ export class AuroFlightline extends LitElement {
     ];
   }
 
+  /**
+   * This will register this element with the browser.
+   * @param {string} [name="auro-flightline"] - The name of element that you want to register to.
+   *
+   * @example
+   * AuroFlightLine.register("custom-flightline") // this will register this element to <custom-flightline/>
+   *
+   */
+  static register(name = "auro-flightline") {
+    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroFlightline);
+  }
+
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
     this.runtimeUtils.handleComponentTagRename(this, 'auro-flightline');
@@ -72,7 +82,7 @@ export class AuroFlightline extends LitElement {
 
   /** @private */
   containsCanceledSegment() {
-    const segments = this.querySelectorAll('auro-flight-segment');
+    const segments = this.querySelectorAll('auro-flight-segment, [auro-flight-segment');
     for (let idx = 0; idx < segments.length; idx += 1) {
       const segment = segments[idx];
       if (this.canceled) {
@@ -117,10 +127,4 @@ export class AuroFlightline extends LitElement {
         ` : html``}
       </div>`;
   }
-}
-
-/* istanbul ignore else */
-// define the name of the custom component
-if (!customElements.get("auro-flightline")) {
-  customElements.define("auro-flightline", AuroFlightline);
 }
