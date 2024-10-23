@@ -15,6 +15,8 @@ import styleCss from "./style-flight-segment-css.js";
 import colorCss from "./color-segment-css.js";
 import tokensCss from "./tokens-css.js";
 
+import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+
 import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
 import { AuroBadge } from '@aurodesignsystem/auro-badge/src/auro-badge.js';
 import badgeVersion from './badgeVersion.js';
@@ -35,7 +37,7 @@ import badgeVersion from './badgeVersion.js';
  * @attr {Boolean} destinationCanceled - Whether the following segment is canceled, will only affect the last segment in a flightline. The line after the segment will be red.
  */
 
-class AuroFlightSegment extends LitElement {
+export class AuroFlightSegment extends LitElement {
   constructor() {
     super();
     this.stopover = false;
@@ -84,6 +86,23 @@ class AuroFlightSegment extends LitElement {
     ];
   }
 
+  /**
+   * This will register this element with the browser.
+   * @param {string} [name="auro-flightline"] - The name of element that you want to register to.
+   *
+   * @example
+   * AuroFlightSegment.register("auro-flight-segment") // this will register this element to <auro-flight-segment/>
+   *
+   */
+  static register(name = "auro-flight-segment") {
+    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroFlightSegment);
+  }
+
+  firstUpdated() {
+    // Add the tag name as an attribute if it is different than the component name
+    AuroLibraryRuntimeUtils.prototype.handleComponentTagRename(this, 'auro-flight-segment');
+  }
+
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const legClasses = {
@@ -109,10 +128,4 @@ class AuroFlightSegment extends LitElement {
       </div>
     `;
   }
-}
-
-/* istanbul ignore else */
-// define the name of the custom component
-if (!customElements.get("auro-flight-segment")) {
-  customElements.define("auro-flight-segment", AuroFlightSegment);
 }

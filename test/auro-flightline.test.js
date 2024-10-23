@@ -1,6 +1,5 @@
 import { fixture, html, expect, waitUntil } from '@open-wc/testing';
-import '../src/auro-flightline.js';
-import '../src/auro-flight-segment.js';
+import '../index';
 
 // This suppresses ResizeObserver errors that only show up in the tests
 // Ref: https://stackoverflow.com/a/64197640/14808988

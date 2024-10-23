@@ -1,4 +1,5 @@
 import { AuroFlightline } from './src/auro-flightline.js';
-import * as RuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+import { AuroFlightSegment } from './src/auro-flight-segment.js';
 
-RuntimeUtils.default.prototype.registerComponent('custom-flightline', AuroFlightline);
+AuroFlightline.register();
+AuroFlightSegment.register();
