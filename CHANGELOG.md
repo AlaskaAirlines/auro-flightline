@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+# [3.1.0](https://github.com/AlaskaAirlines/auro-flightline/compare/v3.0.1...v3.1.0) (2024-10-24)
+
+
+### Features
+
+* **api:** add register static method [#77](https://github.com/AlaskaAirlines/auro-flightline/issues/77) ([e98de49](https://github.com/AlaskaAirlines/auro-flightline/commit/e98de49bcaeb8c47d5aa80d7af74b066e9efc284))
+
 ## [3.0.1](https://github.com/AlaskaAirlines/auro-flightline/compare/v3.0.0...v3.0.1) (2024-10-17)
 
 
