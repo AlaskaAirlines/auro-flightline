@@ -1,5 +1,5 @@
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../api.md) -->
-<!-- The below content is automatically added from ./../api.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/api.md) -->
+<!-- The below content is automatically added from ../docs/api.md -->
 
 # auro-flight-segment
 
@@ -44,15 +44,15 @@ The auro-flightline component provides a responsive flight timeline experience b
 This basic example represents a flight with no stops or layovers.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ../apiExamples/basic.html -->
   <auro-flightline></auro-flightline>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/basic.html -->
 
 ```html
 <auro-flightline></auro-flightline>
@@ -67,15 +67,15 @@ This basic example represents a flight with no stops or layovers.
 The following illustrates a `canceled` flight with no layovers or stopovers, for example, SEA to EWR is canceled.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/canceled.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/canceled.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/canceled.html) -->
+  <!-- The below content is automatically added from ../apiExamples/canceled.html -->
   <auro-flightline canceled></auro-flightline>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/canceled.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/canceled.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/canceled.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/canceled.html -->
 
 ```html
 <auro-flightline canceled></auro-flightline>
@@ -88,8 +88,8 @@ The following illustrates a `canceled` flight with no layovers or stopovers, for
 If the `canceled` flightline has segments, they will all be shown as canceled. To cancel individual segments, see examples below.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/canceledSegment.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/canceledSegment.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/canceledSegment.html) -->
+  <!-- The below content is automatically added from ../apiExamples/canceledSegment.html -->
   <auro-flightline canceled>
     <auro-flight-segment iata="EWR" duration="3h 40m"></auro-flight-segment>
   </auro-flightline>
@@ -97,8 +97,8 @@ If the `canceled` flightline has segments, they will all be shown as canceled. T
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/canceledSegment.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/canceledSegment.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/canceledSegment.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/canceledSegment.html -->
 
 ```html
 <auro-flightline canceled>
@@ -115,8 +115,8 @@ If the `canceled` flightline has segments, they will all be shown as canceled. T
 The following illustrates flight with one layover, for example, SEA to AVP.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/layover.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/layover.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/layover.html) -->
+  <!-- The below content is automatically added from ../apiExamples/layover.html -->
   <auro-flightline>
     <auro-flight-segment iata="ORD" duration="3h 40m"></auro-flight-segment>
   </auro-flightline>
@@ -124,8 +124,8 @@ The following illustrates flight with one layover, for example, SEA to AVP.
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/layover.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/layover.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/layover.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/layover.html -->
 
 ```html
 <auro-flightline>
@@ -140,8 +140,8 @@ The following illustrates flight with one layover, for example, SEA to AVP.
 The following illustrates flight with one layover, that occurs on the following calendar day.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/plusDayLayover.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/plusDayLayover.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/plusDayLayover.html) -->
+  <!-- The below content is automatically added from ../apiExamples/plusDayLayover.html -->
   <auro-flightline>
     <auro-flight-segment nextDay iata="ORD" duration="3h 40m"></auro-flight-segment>
   </auro-flightline>
@@ -149,8 +149,8 @@ The following illustrates flight with one layover, that occurs on the following 
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/plusDayLayover.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/plusDayLayover.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/plusDayLayover.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/plusDayLayover.html -->
 
 ```html
 <auro-flightline>
@@ -165,8 +165,8 @@ The following illustrates flight with one layover, that occurs on the following 
 The following illustrates a canceled flight with layovers, for example, SEA to EWR is canceled.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/canceledLayover.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/canceledLayover.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/canceledLayover.html) -->
+  <!-- The below content is automatically added from ../apiExamples/canceledLayover.html -->
   <auro-flightline>
     <auro-flight-segment canceled iata="EWR" duration="3h 40m"></auro-flight-segment>
   </auro-flightline>
@@ -174,8 +174,8 @@ The following illustrates a canceled flight with layovers, for example, SEA to E
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/canceledLayover.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/canceledLayover.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/canceledLayover.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/canceledLayover.html -->
 
 ```html
 <auro-flightline>
@@ -190,8 +190,8 @@ The following illustrates a canceled flight with layovers, for example, SEA to E
 The following illustrates a flight with one stopover, for example, ANC to ADK.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/stopover.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/stopover.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/stopover.html) -->
+  <!-- The below content is automatically added from ../apiExamples/stopover.html -->
   <auro-flightline>
     <auro-flight-segment stopover iata="CDB"></auro-flight-segment>
   </auro-flightline>
@@ -199,8 +199,8 @@ The following illustrates a flight with one stopover, for example, ANC to ADK.
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/stopover.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/stopover.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/stopover.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/stopover.html -->
 
 ```html
 <auro-flightline>
@@ -215,8 +215,8 @@ The following illustrates a flight with one stopover, for example, ANC to ADK.
 The following illustrates flight with a stopover and a layover, for example, ADK to SEA.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/stopoverAndLayover.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/stopoverAndLayover.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/stopoverAndLayover.html) -->
+  <!-- The below content is automatically added from ../apiExamples/stopoverAndLayover.html -->
   <auro-flightline>
     <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
     <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
@@ -225,8 +225,8 @@ The following illustrates flight with a stopover and a layover, for example, ADK
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/stopoverAndLayover.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/stopoverAndLayover.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/stopoverAndLayover.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/stopoverAndLayover.html -->
 
 ```html
 <auro-flightline>
@@ -242,8 +242,8 @@ The following illustrates flight with a stopover and a layover, for example, ADK
 The following illustrates an international flight with stopovers and layovers, for example, ADK to BCN.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/multipleStopAndLayovers.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/multipleStopAndLayovers.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/multipleStopAndLayovers.html) -->
+  <!-- The below content is automatically added from ../apiExamples/multipleStopAndLayovers.html -->
   <auro-flightline>
     <auro-flight-segment stopover iata="CDB"></auro-flight-segment>
     <auro-flight-segment iata="ANC" duration="1h 30m"></auro-flight-segment>
@@ -254,8 +254,8 @@ The following illustrates an international flight with stopovers and layovers, f
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/multipleStopAndLayovers.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/multipleStopAndLayovers.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/multipleStopAndLayovers.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/multipleStopAndLayovers.html -->
 
 ```html
 <auro-flightline>
@@ -273,8 +273,8 @@ The following illustrates an international flight with stopovers and layovers, f
 The following illustrates a cancellation of international flight with stopovers and layovers, for example, ADK to BCN.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/canceledStopAndLayovers.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/canceledStopAndLayovers.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/canceledStopAndLayovers.html) -->
+  <!-- The below content is automatically added from ../apiExamples/canceledStopAndLayovers.html -->
   <auro-flightline>
     <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
     <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
@@ -286,8 +286,8 @@ The following illustrates a cancellation of international flight with stopovers 
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/canceledStopAndLayovers.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/canceledStopAndLayovers.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/canceledStopAndLayovers.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/canceledStopAndLayovers.html -->
 
 ```html
 <auro-flightline>
@@ -310,8 +310,8 @@ The default container query is a min-width of `320px`, or `var(--ds-grid-breakpo
 The first example illustrates a `auro-flightline` element with a container width of `300px`. The next `auro-flightline` element is within a container set at `100%` for context. Notice when the container reaches a width of < `320px`, the container query switches the UI.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/containerQuery.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/containerQuery.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/containerQuery.html) -->
+  <!-- The below content is automatically added from ../apiExamples/containerQuery.html -->
   <auro-flightline style="width: 300px">
     <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
     <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
@@ -337,8 +337,8 @@ The first example illustrates a `auro-flightline` element with a container width
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/containerQuery.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/containerQuery.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/containerQuery.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/containerQuery.html -->
 
 ```html
 <auro-flightline style="width: 300px">
@@ -370,13 +370,13 @@ The first example illustrates a `auro-flightline` element with a container width
 
 The component may be restyled using the following code sample and changing the values of the following token(s).
 
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../src/tokens.scss) -->
-<!-- The below code snippet is automatically added from ./../../src/tokens.scss -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../src/tokens.scss) -->
+<!-- The below code snippet is automatically added from ../src/tokens.scss -->
 
 ```scss
 /* stylelint-disable custom-property-empty-line-before */
 
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
 
 :host {
   --ds-auro-flightline-segment-line-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
