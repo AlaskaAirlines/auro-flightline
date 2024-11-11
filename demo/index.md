@@ -6,8 +6,8 @@ This file is generated based on a template fetched from `./docs/partials/index.m
 
 # Flightline
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./description.md) -->
-<!-- The below content is automatically added from ./description.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/description.md) -->
+<!-- The below content is automatically added from ../docs/partials/description.md -->
 The `<auro-flightline>` component represents any layovers and/or stopovers a guest may encounter throughout their journey.
 
 For mobile, the number of stops is automatically calculated by the number of layovers and/or stopovers added in the DOM via the `auro-flight-segment` element.
@@ -15,8 +15,8 @@ For mobile, the number of stops is automatically calculated by the number of lay
 
 ## auro-flightline use cases
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=./useCases.md) -->
-<!-- The below content is automatically added from ./useCases.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/useCases.md) -->
+<!-- The below content is automatically added from ../docs/partials/useCases.md -->
 The `<auro-flightline>` element should be used in situations where users may:
 
 * Flying from SEA (Seattle, WA) to AVP (Scranton, PA) will require a *layover* in ORD (Chicago, IL)
@@ -28,15 +28,15 @@ The `<auro-flightline>` element should be used in situations where users may:
 This basic example represents a flight with no stops or layovers.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/basic.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
+  <!-- The below content is automatically added from ../apiExamples/basic.html -->
   <auro-flightline></auro-flightline>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/basic.html -->
 
 ```html
 <auro-flightline></auro-flightline>
@@ -61,8 +61,8 @@ AuroFlightSegment.register('custom-flight-segment');
 This will create a new custom element that you can use in your HTML that will function identically to the `auro-flightline` element.
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../../apiExamples/custom.html) -->
-  <!-- The below content is automatically added from ./../../apiExamples/custom.html -->
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom.html) -->
+  <!-- The below content is automatically added from ../apiExamples/custom.html -->
   <custom-flightline>
       <custom-flight-segment canceled iata="ORD" duration="3h 40m"></custom-flight-segment>
   </custom-flightline>
@@ -70,8 +70,8 @@ This will create a new custom element that you can use in your HTML that will fu
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../../apiExamples/custom.html) -->
-<!-- The below code snippet is automatically added from ./../../apiExamples/custom.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom.html) -->
+<!-- The below code snippet is automatically added from ../apiExamples/custom.html -->
 
 ```html
 <custom-flightline>
