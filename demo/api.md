@@ -376,7 +376,7 @@ The component may be restyled using the following code sample and changing the v
 ```scss
 /* stylelint-disable custom-property-empty-line-before */
 
-@import "@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
 
 :host {
   --ds-auro-flightline-segment-line-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
