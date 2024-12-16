@@ -5,7 +5,7 @@ labels:
   - 'Type: Question'
   - 'Type: Feature'
   - not-reviewed
-  - auro-flightline
+  - 'auro-flightline'
 body:
   - type: textarea
     id: request
