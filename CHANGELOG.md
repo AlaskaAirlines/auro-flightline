@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.2](https://github.com/AlaskaAirlines/auro-flightline/compare/v3.1.1...v3.1.2) (2024-12-21)
+
+
+### Performance Improvements
+
+* update node to version 22 ([9285d39](https://github.com/AlaskaAirlines/auro-flightline/commit/9285d39a7e72a00d5a414b2da0ba5f09b8474c36))
+
 ## [3.1.1](https://github.com/AlaskaAirlines/auro-flightline/compare/v3.1.0...v3.1.1) (2024-11-22)
 
 
