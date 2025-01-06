@@ -82,7 +82,7 @@ export class AuroFlightline extends LitElement {
 
   /** @private */
   containsCanceledSegment() {
-    const segments = this.querySelectorAll('auro-flight-segment, [auro-flight-segment');
+    const segments = this.querySelectorAll('auro-flight-segment, [auro-flight-segment]');
     for (let idx = 0; idx < segments.length; idx += 1) {
       const segment = segments[idx];
       if (this.canceled) {
