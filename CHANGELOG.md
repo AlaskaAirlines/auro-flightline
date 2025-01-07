@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.3](https://github.com/AlaskaAirlines/auro-flightline/compare/v3.1.2...v3.1.3) (2025-01-07)
+
+
+### Bug Fixes
+
+* add querySelector closing bracket [#83](https://github.com/AlaskaAirlines/auro-flightline/issues/83) ([2842aab](https://github.com/AlaskaAirlines/auro-flightline/commit/2842aabb3862172cfd91e4174dc8feba8807697a))
+
 ## [3.1.2](https://github.com/AlaskaAirlines/auro-flightline/compare/v3.1.1...v3.1.2) (2024-12-21)
 
 
