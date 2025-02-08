@@ -1,5 +1,13 @@
 # Semantic Release Automated Changelog
 
+## [3.1.4](https://github.com/AlaskaAirlines/auro-flightline/compare/v3.1.3...v3.1.4) (2025-02-08)
+
+
+### Performance Improvements
+
+* update dependencies ([b08caf2](https://github.com/AlaskaAirlines/auro-flightline/commit/b08caf2352e92775b27f33e73b71eabae3680aeb))
+* update mixin per new WCSS spec ([de10ef2](https://github.com/AlaskaAirlines/auro-flightline/commit/de10ef2f259c76130f00955aec25e3239190c049))
+
 ## [3.1.3](https://github.com/AlaskaAirlines/auro-flightline/compare/v3.1.2...v3.1.3) (2025-01-07)
 
 
