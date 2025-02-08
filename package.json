@@ -124,7 +124,7 @@
             "./docs/api.md",
             "./demo/index.md",
             "./demo/api.md",
-            ".src/badgeVersion.js/"
+            "./src/badgeVersion.js"
           ]
         }
       ],
