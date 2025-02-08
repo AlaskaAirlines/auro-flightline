@@ -95,7 +95,7 @@ auro-badge {
   width: var(--ds-size-150, $ds-size-150);
   height: var(--ds-size-150, $ds-size-150);
 
-  @include auro_breakpoint--sm {
+  @include auro_grid-breakpoint--sm {
     width: var(--ds-size-200, $ds-size-200);
     height: var(--ds-size-200, $ds-size-200);
   }
