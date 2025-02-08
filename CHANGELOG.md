@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [3.1.5](https://github.com/AlaskaAirlines/auro-flightline/compare/v3.1.4...v3.1.5) (2025-02-08)
+
+
+### Performance Improvements
+
+* update release asset ([533157d](https://github.com/AlaskaAirlines/auro-flightline/commit/533157d3ac42497e744326cfae0319c698fd0ec3))
+
 ## [3.1.4](https://github.com/AlaskaAirlines/auro-flightline/compare/v3.1.3...v3.1.4) (2025-02-08)
 
 
