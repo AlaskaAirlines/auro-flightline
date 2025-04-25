@@ -4,7 +4,9 @@
 // ---------------------------------------------------------------------
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/utilityClasses/displayProperties";
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 // forces each segment to take up as much space in its row to extend the ::before
 :host {
