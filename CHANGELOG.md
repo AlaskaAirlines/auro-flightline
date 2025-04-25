@@ -1,5 +1,22 @@
 # Semantic Release Automated Changelog
 
+# [5.0.0](https://github.com/AlaskaAirlines/auro-flightline/compare/v4.0.1...v5.0.0) (2025-04-25)
+
+
+### Features
+
+* update to use new color theme tokens [#89](https://github.com/AlaskaAirlines/auro-flightline/issues/89) ([fc38e7f](https://github.com/AlaskaAirlines/auro-flightline/commit/fc38e7fbd7695155988d1b1c5fee27bae048296a))
+
+
+### Performance Improvements
+
+* update styles around duration text ([21f42d2](https://github.com/AlaskaAirlines/auro-flightline/commit/21f42d2ef0fce7e5fcd11ebf76a90844a44c3f35))
+
+
+### BREAKING CHANGES
+
+* auro-badge is no longer used to display duration text.
+
 ## [4.0.1](https://github.com/AlaskaAirlines/auro-flightline/compare/v4.0.0...v4.0.1) (2025-04-15)
 
 

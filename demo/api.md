@@ -15,7 +15,7 @@ For more information about the difference between a layover and a stopover,
 |-----------------------|-----------------------|-----------|---------|--------------------------------------------------|
 | [canceled](#canceled)            | `canceled`            | `Boolean` | false   | Whether the segment is canceled. The line leading to the segment will be red. |
 | [destinationCanceled](#destinationCanceled) | `destinationCanceled` | `Boolean` | false   | Whether the following segment is canceled, will only affect the last segment in a flightline. The line after the segment will be red. |
-| [duration](#duration)            | `duration`            | `String`  |         | Displayed in the auro-badge, typically duration (1h 53m) |
+| [duration](#duration)            | `duration`            | `String`  |         | Indicates time duration of a stop                |
 | [iata](#iata)                | `iata`                | `String`  |         | Text to display, typically a station code (SEA, PVD, AVP) |
 | [nextDay](#nextDay)             | `nextDay`             | `Boolean` |         | Indicates time is on the following calendar day. |
 | [stopover](#stopover)            | `stopover`            | `Boolean` | false   | Indicates a stopover. Do not provide duration.   |
