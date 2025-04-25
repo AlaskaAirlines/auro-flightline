@@ -376,17 +376,16 @@ The component may be restyled using the following code sample and changing the v
 ```scss
 /* stylelint-disable custom-property-empty-line-before */
 
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 :host {
-  --ds-auro-flightline-segment-line-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
-  --ds-auro-flightline-destination-line-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
-
-  --ds-auro-flightline-layover-marker-border-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
-  --ds-auro-flightline-layover-marker-container-color: var(--ds-color-utility-navy-default, #{$ds-color-utility-navy-default});
-
-  --ds-auro-flightline-layover-iata-color: var(--ds-color-text-secondary-default, #{$ds-color-text-secondary-default});
-  --ds-auro-flightline-layover-duration-color: var(--ds-color-text-secondary-default, #{$ds-color-text-secondary-default});
+  --ds-auro-flightline-destination-line-color: var(--ds-advanced-color-flightline-line, #{$ds-advanced-color-flightline-line});
+  --ds-auro-flightline-segment-iata-text-color: var(--ds-basic-color-texticon-muted, #{$ds-basic-color-texticon-muted});
+  --ds-auro-flightline-segment-line-color: var(--ds-advanced-color-flightline-line, #{$ds-advanced-color-flightline-line});
+  --ds-auro-flightline-layover-duration-color: var(--ds-basic-color-texticon-muted, #{$ds-basic-color-texticon-muted});
+  --ds-auro-flightline-layover-marker-border-color: var(--ds-advanced-color-flightline-indicator, #{$ds-advanced-color-flightline-indicator});
+  --ds-auro-flightline-layover-marker-container-color: var(--ds-advanced-color-flightline-indicator, #{$ds-advanced-color-flightline-indicator});
 }
 ```
 <!-- AURO-GENERATED-CONTENT:END -->

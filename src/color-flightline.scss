@@ -3,7 +3,8 @@
 
 // ---------------------------------------------------------------------
 
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
 
 .nonstop,
 .canceled {
@@ -13,5 +14,5 @@
 }
 
 :host([canceled]) {
-  --ds-auro-flightline-segment-line-color: var(--ds-color-utility-error-default, #{$ds-color-utility-error-default});
+  --ds-auro-flightline-segment-line-color: var(--ds-basic-color-status-error, #{$ds-basic-color-status-error});
 }

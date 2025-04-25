@@ -7,7 +7,9 @@
 @import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
 
 // Support for fallback values
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/tokens/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
+@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
+
 
 :host {
   display: block;
