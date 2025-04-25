@@ -9,17 +9,12 @@
 import { LitElement, css } from "lit";
 import { html } from 'lit/static-html.js';
 import { classMap } from "lit/directives/class-map.js";
-import "@aurodesignsystem/auro-badge";
 
 import styleCss from "./style-flight-segment-css.js";
 import colorCss from "./color-segment-css.js";
 import tokensCss from "./tokens-css.js";
 
 import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-
-import { AuroDependencyVersioning } from '@aurodesignsystem/auro-library/scripts/runtime/dependencyTagVersioning.mjs';
-import { AuroBadge } from '@aurodesignsystem/auro-badge/src/auro-badge.js';
-import badgeVersion from './badgeVersion.js';
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -32,7 +27,7 @@ import badgeVersion from './badgeVersion.js';
  * @attr {Boolean} stopover - Indicates a stopover. Do not provide duration.
  * @attr {Boolean} nextDay - Indicates time is on the following calendar day.
  * @attr {String} iata - Text to display, typically a station code (SEA, PVD, AVP)
- * @attr {String} duration - Displayed in the auro-badge, typically duration (1h 53m)
+ * @attr {String} duration - Indicates time duration of a stop
  * @attr {Boolean} canceled - Whether the segment is canceled. The line leading to the segment will be red.
  * @attr {Boolean} destinationCanceled - Whether the following segment is canceled, will only affect the last segment in a flightline. The line after the segment will be red.
  */
@@ -48,16 +43,6 @@ export class AuroFlightSegment extends LitElement {
      * @private
      */
     this.partialCancel = false;
-
-    /**
-     * Generate unique names for dependency components.
-     */
-    const versioning = new AuroDependencyVersioning();
-
-    /**
-     * @private
-     */
-    this.badgeTag = versioning.generateTag('auro-badge', badgeVersion, AuroBadge);
   }
 
   // function to define props used within the scope of this component
@@ -118,12 +103,7 @@ export class AuroFlightSegment extends LitElement {
           <slot></slot>
           <div class="${classMap(legClasses)}"></div>
           <span class="iata">${this.iata}</span>
-          ${this.duration ? html`
-              <${this.badgeTag} label>
-                ${this.duration}
-                <span class="util_displayHiddenVisually"> layover</span>
-              </${this.badgeTag}>
-          ` : html``}
+          ${this.duration ? html`<span class="duration">${this.duration}</span>` : undefined}
         </div>
       </div>
     `;

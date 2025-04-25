@@ -77,8 +77,9 @@
   }
 }
 
-auro-badge {
-  min-width: var(--ds-size-800, $ds-size-800);
+.duration {
+  font-size: var(--ds-size-150, $ds-size-150);
+  line-height: var(--ds-size-200, $ds-size-200);
 }
 
 .layout {
@@ -105,5 +106,4 @@ auro-badge {
 
 .iata {
   margin-top: var(--ds-size-150, $ds-size-150);
-  padding-bottom: var(--ds-size-50, $ds-size-50);
 }

@@ -133,7 +133,7 @@ describe('auro-flight-segment', () => {
     `);
 
     await expect(el.shadowRoot.querySelector('span').innerText).to.equal('SEA');
-    await expect(el.shadowRoot.querySelectorAll('[auro-badge]').length).to.equal(1);
+    await expect(el.shadowRoot.querySelectorAll('.duration').length).to.equal(1);
   });
 
   it('with a layover no duration', async () => {
@@ -142,7 +142,7 @@ describe('auro-flight-segment', () => {
     `);
 
     await expect(el.shadowRoot.querySelector('span').innerText).to.equal('2 Stops');
-    await expect(el.shadowRoot.querySelectorAll('auro-badge').length).to.equal(0);
+    await expect(el.shadowRoot.querySelectorAll('.duration').length).to.equal(0);
   });
 
   it('with a stopover', async () => {
