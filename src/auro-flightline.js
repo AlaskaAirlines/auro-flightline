@@ -1,3 +1,4 @@
+/* eslint-disable object-property-newline */
 // Copyright (c) 2021 Alaska Airlines. All right reserved. Licensed under the Apache-2.0 license
 // See LICENSE in the project root for license information.
 
@@ -48,10 +49,10 @@ export class AuroFlightline extends LitElement {
 
   static get properties() {
     return {
-      canceled:    { type: Boolean },
-      hasCanceledSegment: { type: Boolean },
-      firstSegmentCanceled: { type: Boolean },
-      lastSegmentCanceled: { type: Boolean }
+      canceled:    { type: Boolean, reflect: true },
+      hasCanceledSegment: { type: Boolean, reflect: true },
+      firstSegmentCanceled: { type: Boolean, reflect: true },
+      lastSegmentCanceled: { type: Boolean, reflect: true }
     };
   }
 
