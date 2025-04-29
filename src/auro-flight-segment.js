@@ -48,18 +48,28 @@ export class AuroFlightSegment extends LitElement {
   // function to define props used within the scope of this component
   static get properties() {
     return {
-      stopover:   { type: Boolean },
+      stopover: {
+        type: Boolean,
+        reflect: true
+      },
       nextDay: {
         type: Boolean,
         reflect: true
       },
       iata:       { type: String },
       duration:   { type: String },
-      canceled:   { type: Boolean,
-        reflect: true },
-      destinationCanceled: { type: Boolean,
-        reflect: true },
-      partialCancel: { type: Boolean }
+      canceled:   {
+        type: Boolean,
+        reflect: true
+      },
+      destinationCanceled: {
+        type: Boolean,
+        reflect: true
+      },
+      partialCancel: {
+        type: Boolean,
+        reflect: true
+      }
     };
   }
 
