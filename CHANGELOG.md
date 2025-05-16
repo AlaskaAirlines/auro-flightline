@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.1](https://github.com/AlaskaAirlines/auro-flightline/compare/v5.0.0...v5.0.1) (2025-05-16)
+
+
+### Bug Fixes
+
+* add `reflect: true` on boolean props ([5a55f57](https://github.com/AlaskaAirlines/auro-flightline/commit/5a55f5768416bb048b103c7cf87e85dee5602f15))
+
 # [5.0.0](https://github.com/AlaskaAirlines/auro-flightline/compare/v4.0.1...v5.0.0) (2025-04-25)
 
 
