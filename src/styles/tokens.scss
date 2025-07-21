@@ -1,0 +1,10 @@
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
+
+:host {
+  --ds-auro-flightline-destination-line-color: var(--ds-advanced-color-flightline-line, #{v.$ds-advanced-color-flightline-line});
+  --ds-auro-flightline-segment-iata-text-color: var(--ds-basic-color-texticon-muted, #{v.$ds-basic-color-texticon-muted});
+  --ds-auro-flightline-segment-line-color: var(--ds-advanced-color-flightline-line, #{v.$ds-advanced-color-flightline-line});
+  --ds-auro-flightline-layover-duration-color: var(--ds-basic-color-texticon-muted, #{v.$ds-basic-color-texticon-muted});
+  --ds-auro-flightline-layover-marker-border-color: var(--ds-advanced-color-flightline-indicator, #{v.$ds-advanced-color-flightline-indicator});
+  --ds-auro-flightline-layover-marker-container-color: var(--ds-advanced-color-flightline-indicator, #{v.$ds-advanced-color-flightline-indicator});
+}

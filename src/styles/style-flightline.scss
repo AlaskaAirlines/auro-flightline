@@ -3,13 +3,10 @@
 
 // ---------------------------------------------------------------------
 
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/core";
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
-// Support for fallback values
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
-
+@use "@aurodesignsystem/webcorestylesheets/src/core";
 
 :host {
   display: block;
@@ -21,11 +18,11 @@
 .nonstop {
   &:before {
     content: "";
-    height: var(--ds-size-25, $ds-size-25);
+    height: var(--ds-size-25, vac.$ds-size-25);
     width: 100%;
     position: relative;
     top: 10px;
-    border-width: var(--ds-size-25, $ds-size-25) 0 0 0;
+    border-width: var(--ds-size-25, vac.$ds-size-25) 0 0 0;
     border-style: solid;
   }
 }
@@ -42,7 +39,7 @@
 /* stylelint-disable selector-max-class, scss/at-mixin-pattern */
 
 @mixin auro_cq-xs {
-  @container (max-width: #{$ds-grid-breakpoint-xs}) {
+  @container (max-width: #{vac.$ds-grid-breakpoint-xs}) {
     @content;
   }
 }
@@ -69,6 +66,6 @@
 .slotContainer {
   display: flex;
   justify-content: space-around;
-  min-height: var(--ds-size-300, $ds-size-300);
+  min-height: var(--ds-size-300, vac.$ds-size-300);
   container-type: inline-size;
 }

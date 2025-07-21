@@ -10,9 +10,9 @@ import { LitElement, css } from "lit";
 import { html } from 'lit/static-html.js';
 import { classMap } from "lit/directives/class-map.js";
 
-import styleCss from "./style-flight-segment-css.js";
-import colorCss from "./color-segment-css.js";
-import tokensCss from "./tokens-css.js";
+import styleCss from "./styles/style-flight-segment-css.js";
+import colorCss from "./styles/color-segment-css.js";
+import tokensCss from "./styles/tokens-css.js";
 
 import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
@@ -112,8 +112,8 @@ export class AuroFlightSegment extends LitElement {
         <div class="layout">
           <slot></slot>
           <div class="${classMap(legClasses)}"></div>
-          <span class="iata">${this.iata}</span>
-          ${this.duration ? html`<span class="duration">${this.duration}</span>` : undefined}
+          <span class="iata body-default">${this.iata}</span>
+          ${this.duration ? html`<span class="duration body-default">${this.duration}</span>` : undefined}
         </div>
       </div>
     `;
