@@ -10,9 +10,9 @@ import { classMap } from "lit/directives/class-map.js";
 
 import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
 
-import styleCss from "./style-flightline-css.js";
-import colorCss from "./color-flightline-css.js";
-import tokensCss from "./tokens-css.js";
+import styleCss from "./styles/style-flightline-css.js";
+import colorCss from "./styles/color-flightline-css.js";
+import tokensCss from "./styles/tokens-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**

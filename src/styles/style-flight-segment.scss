@@ -2,11 +2,13 @@
 // See LICENSE in the project root for license information.
 
 // ---------------------------------------------------------------------
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/utilityClasses/displayProperties";
-@import "./../node_modules/@aurodesignsystem/webcorestylesheets/src/breakpoints";
+@use "@aurodesignsystem/design-tokens/dist/legacy/auro-classic/SCSSVariables" as vac;
+@use "@aurodesignsystem/design-tokens/dist/themes/alaska/SCSSVariables--alaska" as v;
 
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/auro-classic/SCSSVariables";
-@import "./../node_modules/@aurodesignsystem/design-tokens/dist/alaska/SCSSVariables--alaska";
+@use "@aurodesignsystem/webcorestylesheets/src/utilityClasses/displayProperties";
+@use "@aurodesignsystem/webcorestylesheets/src/breakpoints" as bp;
+
+@use "@aurodesignsystem/webcorestylesheets/dist/bundled/type/classes.alaska.min.css";
 
 // forces each segment to take up as much space in its row to extend the ::before
 :host {
@@ -20,7 +22,7 @@
 
   &:before,
   &:after {
-    border-top-width: var(--ds-size-25, $ds-size-25);
+    border-top-width: var(--ds-size-25, vac.$ds-size-25);
     border-top-style: solid;
     position: absolute;
     top: 0.5rem;
@@ -62,7 +64,7 @@
 :host([canceled]) {
   .wrapper {
     &:before {
-      border-top-width: var(--ds-size-25, $ds-size-25);
+      border-top-width: var(--ds-size-25, vac.$ds-size-25);
       border-top-style: dashed;
     }
   }
@@ -71,15 +73,10 @@
 :host([destinationCanceled]) {
   .wrapper {
     &:after {
-      border-top-width: var(--ds-size-25, $ds-size-25);
+      border-top-width: var(--ds-size-25, vac.$ds-size-25);
       border-top-style: dashed;
     }
   }
-}
-
-.duration {
-  font-size: var(--ds-size-150, $ds-size-150);
-  line-height: var(--ds-size-200, $ds-size-200);
 }
 
 .layout {
@@ -93,17 +90,17 @@
 
 .leg {
   border-style: solid;
-  border-width: var(--ds-size-25, $ds-size-25);
+  border-width: var(--ds-size-25, vac.$ds-size-25);
   border-radius: 50%;
-  width: var(--ds-size-150, $ds-size-150);
-  height: var(--ds-size-150, $ds-size-150);
+  width: var(--ds-size-150, vac.$ds-size-150);
+  height: var(--ds-size-150, vac.$ds-size-150);
 
-  @include auro_grid-breakpoint--sm {
-    width: var(--ds-size-200, $ds-size-200);
-    height: var(--ds-size-200, $ds-size-200);
+  @include bp.auro_grid-breakpoint--sm {
+    width: var(--ds-size-200, vac.$ds-size-200);
+    height: var(--ds-size-200, vac.$ds-size-200);
   }
 }
 
 .iata {
-  margin-top: var(--ds-size-150, $ds-size-150);
+  margin-top: var(--ds-size-150, vac.$ds-size-150);
 }
