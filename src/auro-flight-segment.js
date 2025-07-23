@@ -113,7 +113,7 @@ export class AuroFlightSegment extends LitElement {
           <slot></slot>
           <div class="${classMap(legClasses)}"></div>
           <span class="iata body-default">${this.iata}</span>
-          ${this.duration ? html`<span class="duration body-default">${this.duration}</span>` : undefined}
+          ${this.duration ? html`<span class="duration body-xs">${this.duration}</span>` : undefined}
         </div>
       </div>
     `;
