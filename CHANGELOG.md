@@ -1,5 +1,14 @@
 # Semantic Release Automated Changelog
 
+## [5.0.2](https://github.com/AlaskaAirlines/auro-flightline/compare/v5.0.1...v5.0.2) (2025-07-23)
+
+
+### Bug Fixes
+
+* add themeable type classes ([0f79ba5](https://github.com/AlaskaAirlines/auro-flightline/commit/0f79ba5778e5e556d08d05d5cbd95ddc1c8dd13b))
+* update docs head content ([f468dba](https://github.com/AlaskaAirlines/auro-flightline/commit/f468dba5fd96ac94db327ec04cf9dd255ec270ab))
+* update duration font size / class ([75519c7](https://github.com/AlaskaAirlines/auro-flightline/commit/75519c7e8343ca11b47c58e17bb9d11d32f26c8b))
+
 ## [5.0.1](https://github.com/AlaskaAirlines/auro-flightline/compare/v5.0.0...v5.0.1) (2025-05-16)
 
 
