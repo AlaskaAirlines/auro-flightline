@@ -167,10 +167,11 @@ The following illustrates an international flight with stopovers and layovers, f
 
   ```html
   <auro-flightline>
-    <auro-flight-segment stopover iata="CDB"></auro-flight-segment>
-    <auro-flight-segment iata="ANC" duration="1h 30m"></auro-flight-segment>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
     <auro-flight-segment iata="SEA" duration="0h 40m"></auro-flight-segment>
-    <auro-flight-segment iata="SFO" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="DUB" duration="13h 40m"></auro-flight-segment>
   </auro-flightline>
   ```
 
