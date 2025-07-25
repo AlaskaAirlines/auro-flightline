@@ -4,7 +4,7 @@ Below are example markets searchable in ITA and Sabre for availability.
 
 [Change of Gauge flights](https://www.travelweekly.com/Mark-Pestronk/Agents-must-identify-change-of-gauge-services)  are flights with the same flight number, but with an equipment swap at an intermediate stop.
 
-<auro-alerts information>Change of Gauge flights are a pain point for guests with physical disabilities whom may not expect to need to depart the aircraft. Even with the physical change of planes, these flights are still considered Direct. Qantas runs a COG JFK-SYD.</auro-alerts>
+<auro-alerts information>Change of Gauge flights are a pain point for guests with physical disabilities who may not expect to need to depart the aircraft. Even with the physical change of planes, these flights are still considered Direct. Qantas runs a COG JFK-SYD.</auro-alerts>
 
 ## Nonstop (SEAEWR)
 
@@ -52,7 +52,7 @@ Ask a TPO to load a CERT flight for you
 
 ## Flight with a single layover (SEAAVP)
 
-The following illustrates flight with one layover, for example, SEA to AVP.
+The following illustrates a flight with one layover, for example, SEA to AVP.
 
 <div class="exampleWrapper">
   <auro-flightline>
@@ -116,7 +116,7 @@ The following illustrates a flight with one stopover, for example, ANC to ADK.
 
 ## Flight with a stopover and a layover (ADKSEA)
 
-The following illustrates flight with a stopover and a layover, for example, ADK to SEA.
+The following illustrates a flight with a stopover and a layover, for example, ADK to SEA.
 
 
 <div class="exampleWrapper">
