@@ -1,5 +1,14 @@
 # Semantic Release Automated Changelog
 
+## [5.0.3](https://github.com/AlaskaAirlines/auro-flightline/compare/v5.0.2...v5.0.3) (2025-08-05)
+
+
+### Bug Fixes
+
+* correct grammatical errors in DoT compliance documentation ([c2bcac7](https://github.com/AlaskaAirlines/auro-flightline/commit/c2bcac78cdcbe7d6dd9c46de5a5df62ccb1d93ff))
+* rollback DoT compliance documentation file ([ea9ccb2](https://github.com/AlaskaAirlines/auro-flightline/commit/ea9ccb2f1f7132f638927f58b0c6e9887f8491a6))
+* update layovers and stopovers code example ([ed8c5bf](https://github.com/AlaskaAirlines/auro-flightline/commit/ed8c5bf1f61af330406d841cd509f68dab9242c9))
+
 ## [5.0.2](https://github.com/AlaskaAirlines/auro-flightline/compare/v5.0.1...v5.0.2) (2025-07-23)
 
 
