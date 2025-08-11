@@ -1,5 +1,12 @@
 # Semantic Release Automated Changelog
 
+## [5.0.4](https://github.com/AlaskaAirlines/auro-flightline/compare/v5.0.3...v5.0.4) (2025-08-11)
+
+
+### Bug Fixes
+
+* auro library was causing aqua scan failures ([cc72995](https://github.com/AlaskaAirlines/auro-flightline/commit/cc729954557e6e85112cf276e975fc3557834ff3))
+
 ## [5.0.3](https://github.com/AlaskaAirlines/auro-flightline/compare/v5.0.2...v5.0.3) (2025-08-05)
 
 
