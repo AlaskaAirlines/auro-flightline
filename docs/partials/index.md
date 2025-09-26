@@ -38,8 +38,7 @@ There are two important parts of every Auro component. The <a href="https://deve
 To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `AuroFlightline.register(name)` method and pass in a unique name.
 
 ```js
-import { AuroFlightline } from '@aurodesignsystem/auro-flightline/src/auro-flightline';
-import { AuroFlightSegment } from '@aurodesignsystem/auro-flight-segment/src/auro-flight-segment';
+import { AuroFlightline, AuroFlightSegment } from '@aurodesignsystem/auro-flightline/class';
 
 AuroFlightline.register('custom-flightline');
 AuroFlightSegment.register('custom-flight-segment');
