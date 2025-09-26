@@ -4,14 +4,12 @@
 
 // ---------------------------------------------------------------------
 
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 // If use litElement base class
-import { LitElement, html } from "lit";
+import { html, LitElement } from "lit";
 import { classMap } from "lit/directives/class-map.js";
-
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
-
-import styleCss from "./styles/style-flightline-css.js";
 import colorCss from "./styles/color-flightline-css.js";
+import styleCss from "./styles/style-flightline-css.js";
 import tokensCss from "./styles/tokens-css.js";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
@@ -49,19 +47,15 @@ export class AuroFlightline extends LitElement {
 
   static get properties() {
     return {
-      canceled:    { type: Boolean, reflect: true },
+      canceled: { type: Boolean, reflect: true },
       hasCanceledSegment: { type: Boolean, reflect: true },
       firstSegmentCanceled: { type: Boolean, reflect: true },
-      lastSegmentCanceled: { type: Boolean, reflect: true }
+      lastSegmentCanceled: { type: Boolean, reflect: true },
     };
   }
 
   static get styles() {
-    return [
-      styleCss,
-      colorCss,
-      tokensCss
-    ];
+    return [styleCss, colorCss, tokensCss];
   }
 
   /**
@@ -78,12 +72,14 @@ export class AuroFlightline extends LitElement {
 
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
-    this.runtimeUtils.handleComponentTagRename(this, 'auro-flightline');
+    this.runtimeUtils.handleComponentTagRename(this, "auro-flightline");
   }
 
   /** @private */
   containsCanceledSegment() {
-    const segments = this.querySelectorAll('auro-flight-segment, [auro-flight-segment]');
+    const segments = this.querySelectorAll(
+      "auro-flight-segment, [auro-flight-segment]",
+    );
     for (let idx = 0; idx < segments.length; idx += 1) {
       const segment = segments[idx];
       if (this.canceled) {
@@ -91,14 +87,17 @@ export class AuroFlightline extends LitElement {
         segment.destinationCanceled = true;
       }
 
-      if (segment.canceled || segment.hasAttribute('canceled')) {
+      if (segment.canceled || segment.hasAttribute("canceled")) {
         this.hasCanceledSegment = true;
         if (idx === 0) {
           this.firstSegmentCanceled = true;
         }
       }
 
-      if (segment.hasAttribute('destinationCanceled') && idx === segments.length - 1) {
+      if (
+        segment.hasAttribute("destinationCanceled") &&
+        idx === segments.length - 1
+      ) {
         this.lastSegmentCanceled = true;
       }
     }
@@ -108,16 +107,18 @@ export class AuroFlightline extends LitElement {
   render() {
     const isMultiple = this.children.length > 1;
     const classes = {
-      'slotContainer': true,
-      'nonstop': !this.children.length,
-      'multiple': isMultiple,
-      'canceled': this.canceled
+      slotContainer: true,
+      nonstop: !this.children.length,
+      multiple: isMultiple,
+      canceled: this.canceled,
     };
 
     return html`
       <div class="${classMap(classes)}">
         <slot @slotchange=${this.containsCanceledSegment}></slot>
-        ${isMultiple ? html`
+        ${
+          isMultiple
+            ? html`
           <auro-flight-segment
             class="showNoStops"
             ?canceled=${this.firstSegmentCanceled}
@@ -125,7 +126,9 @@ export class AuroFlightline extends LitElement {
             ?destinationCanceled=${this.lastSegmentCanceled}
             iata="${this.children.length} stops"
           ></auro-flight-segment>
-        ` : html``}
+        `
+            : html``
+        }
       </div>`;
   }
 }
