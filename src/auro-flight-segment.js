@@ -10,9 +10,9 @@ import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/util
 import { css, LitElement } from "lit";
 import { classMap } from "lit/directives/class-map.js";
 import { html } from "lit/static-html.js";
-import colorCss from "./styles/color-segment-css.js";
-import styleCss from "./styles/style-flight-segment-css.js";
-import tokensCss from "./styles/tokens-css.js";
+import colorCss from "./styles/color-segment.scss";
+import styleCss from "./styles/style-flight-segment.scss";
+import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
