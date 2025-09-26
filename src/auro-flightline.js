@@ -8,9 +8,9 @@ import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/util
 // If use litElement base class
 import { html, LitElement } from "lit";
 import { classMap } from "lit/directives/class-map.js";
-import colorCss from "./styles/color-flightline-css.js";
-import styleCss from "./styles/style-flightline-css.js";
-import tokensCss from "./styles/tokens-css.js";
+import colorCss from "./styles/color-flightline.scss";
+import styleCss from "./styles/style-flightline.scss";
+import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**

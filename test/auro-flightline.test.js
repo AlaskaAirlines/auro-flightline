@@ -1,5 +1,5 @@
 import { expect, fixture, html } from "@open-wc/testing";
-import "../index";
+import "../src/registered";
 
 // This suppresses ResizeObserver errors that only show up in the tests
 // Ref: https://stackoverflow.com/a/64197640/14808988
