@@ -1,5 +1,4 @@
-
-import { AuroFlightSegment } from '../../src/auro-flight-segment.js';
+import { AuroFlightSegment } from "../../src/auro-flight-segment.js";
 
 /**
  * The auro-flight-segment component is a standard for indicating stopovers and layovers.
