@@ -5,16 +5,14 @@
 
 /* eslint-disable lit/binding-positions, lit/no-invalid-html */
 
+import AuroLibraryRuntimeUtils from "@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs";
 // If use litElement base class
-import { LitElement, css } from "lit";
-import { html } from 'lit/static-html.js';
+import { css, LitElement } from "lit";
 import { classMap } from "lit/directives/class-map.js";
-
-import styleCss from "./styles/style-flight-segment-css.js";
-import colorCss from "./styles/color-segment-css.js";
-import tokensCss from "./styles/tokens-css.js";
-
-import AuroLibraryRuntimeUtils from '@aurodesignsystem/auro-library/scripts/utils/runtimeUtils.mjs';
+import { html } from "lit/static-html.js";
+import colorCss from "./styles/color-segment.scss";
+import styleCss from "./styles/style-flight-segment.scss";
+import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
@@ -50,35 +48,31 @@ export class AuroFlightSegment extends LitElement {
     return {
       stopover: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       nextDay: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
-      iata:       { type: String },
-      duration:   { type: String },
-      canceled:   {
+      iata: { type: String },
+      duration: { type: String },
+      canceled: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       destinationCanceled: {
         type: Boolean,
-        reflect: true
+        reflect: true,
       },
       partialCancel: {
         type: Boolean,
-        reflect: true
-      }
+        reflect: true,
+      },
     };
   }
 
   static get styles() {
-    return [
-      css`${styleCss}`,
-      css`${colorCss}`,
-      css`${tokensCss}`
-    ];
+    return [css`${styleCss}`, css`${colorCss}`, css`${tokensCss}`];
   }
 
   /**
@@ -90,21 +84,27 @@ export class AuroFlightSegment extends LitElement {
    *
    */
   static register(name = "auro-flight-segment") {
-    AuroLibraryRuntimeUtils.prototype.registerComponent(name, AuroFlightSegment);
+    AuroLibraryRuntimeUtils.prototype.registerComponent(
+      name,
+      AuroFlightSegment,
+    );
   }
 
   firstUpdated() {
     // Add the tag name as an attribute if it is different than the component name
-    AuroLibraryRuntimeUtils.prototype.handleComponentTagRename(this, 'auro-flight-segment');
+    AuroLibraryRuntimeUtils.prototype.handleComponentTagRename(
+      this,
+      "auro-flight-segment",
+    );
   }
 
   // function that renders the HTML and CSS into  the scope of the component
   render() {
     const legClasses = {
-      'leg': true,
-      'layout': true,
-      'leg--stopover': this.stopover,
-      'leg--canceled': this.canceled || this.partialCancel
+      leg: true,
+      layout: true,
+      "leg--stopover": this.stopover,
+      "leg--canceled": this.canceled || this.partialCancel,
     };
 
     return html`

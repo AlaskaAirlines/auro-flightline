@@ -1,9 +1,7 @@
-
-import { AuroFlightline } from '../src/auro-flightline';
-import { AuroFlightSegment } from '../src/auro-flight-segment';
+import { AuroFlightline, AuroFlightSegment } from "../src/index";
 
 AuroFlightline.register();
 AuroFlightSegment.register();
 
-AuroFlightline.register('custom-flightline');
-AuroFlightSegment.register('custom-flight-segment');
+AuroFlightline.register("custom-flightline");
+AuroFlightSegment.register("custom-flight-segment");
