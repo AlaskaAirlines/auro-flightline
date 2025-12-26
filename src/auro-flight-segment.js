@@ -17,22 +17,22 @@ import tokensCss from "./styles/tokens.scss";
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * The auro-flight-segment component is a standard for indicating stopovers and layovers.
+ * @customElement auro-flight-segment
+ * 
  * Stopovers do not have duration information and are indicated differently.
  * Layovers contain duration information and are indicated with a solid fill.
  * For more information about the difference between a layover and a stopover,
- * [please see this article.](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/).
- *
- * @attr {Boolean} stopover - Indicates a stopover. Do not provide duration.
- * @attr {Boolean} nextDay - Indicates time is on the following calendar day.
- * @attr {String} iata - Text to display, typically a station code (SEA, PVD, AVP)
- * @attr {String} duration - Indicates time duration of a stop
- * @attr {Boolean} canceled - Whether the segment is canceled. The line leading to the segment will be red.
- * @attr {Boolean} destinationCanceled - Whether the following segment is canceled, will only affect the last segment in a flightline. The line after the segment will be red.
+ * [please see this article](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/).
  */
 
 export class AuroFlightSegment extends LitElement {
   constructor() {
     super();
+
+    this._initializeDefaults();
+  }
+
+  _initializeDefaults() {
     this.stopover = false;
     this.canceled = false;
     this.destinationCanceled = false;
@@ -46,28 +46,55 @@ export class AuroFlightSegment extends LitElement {
   // function to define props used within the scope of this component
   static get properties() {
     return {
-      stopover: {
-        type: Boolean,
-        reflect: true,
-      },
-      nextDay: {
-        type: Boolean,
-        reflect: true,
-      },
-      iata: { type: String },
-      duration: { type: String },
+      /**
+       * Whether the segment is canceled. The line leading to the segment will be red.
+       */
       canceled: {
         type: Boolean,
-        reflect: true,
+        reflect: true
       },
+
+      /**
+       * Whether the following segment is canceled, will only affect the last segment in a flightline. The line after the segment will be red.
+       */
       destinationCanceled: {
         type: Boolean,
-        reflect: true,
+        reflect: true
       },
+
+      /**
+       * Indicates time duration of a stop.
+       */
+      duration: { type: String },
+
+      /**
+       * Text to display, typically a station code (SEA, PVD, AVP).
+       */
+      iata: { type: String },
+
+      /**
+       * Indicates time is on the following calendar day.
+       */
+      nextDay: {
+        type: Boolean,
+        reflect: true
+      },
+
+      /**
+       * @private
+       */
       partialCancel: {
         type: Boolean,
         reflect: true,
       },
+
+      /**
+       * Indicates a stopover. Do not provide duration.
+       */
+      stopover: {
+        type: Boolean,
+        reflect: true
+      }
     };
   }
 
@@ -77,7 +104,7 @@ export class AuroFlightSegment extends LitElement {
 
   /**
    * This will register this element with the browser.
-   * @param {string} [name="auro-flightline"] - The name of element that you want to register to.
+   * @param {string} [name="auro-flightline"] - The name of the element that you want to register.
    *
    * @example
    * AuroFlightSegment.register("auro-flight-segment") // this will register this element to <auro-flight-segment/>
