@@ -1,22 +1,22 @@
 <!--
-The index.md file is a compiled document. No edits should be made directly to this file.
-README.md is created by running `npm run build:docs`.
-This file is generated based on a template fetched from `./docs/partials/index.md`
+ THIS PAGE'S CONTENT SHOULD BE KEPT MINIMAL.
+ ONLY ADD EXAMPLES THAT ARE TRULY NECESSARY FOR THE INDEX PAGE — THE BASIC EXAMPLE IS USUALLY ENOUGH.
+ ALL OTHER EXAMPLES SHOULD GO IN THE API DOCUMENTATION.
 -->
 
 # Flightline
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/description.md) -->
-<!-- The below content is automatically added from ../docs/partials/description.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/description.md) -->
+<!-- The below content is automatically added from ./../docs/partials/description.md -->
 The `<auro-flightline>` component represents any layovers and/or stopovers a guest may encounter throughout their journey.
 
 For mobile, the number of stops is automatically calculated by the number of layovers and/or stopovers added in the DOM via the `auro-flight-segment` element.
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## auro-flightline use cases
+## Use Cases
 
-<!-- AURO-GENERATED-CONTENT:START (FILE:src=../docs/partials/useCases.md) -->
-<!-- The below content is automatically added from ../docs/partials/useCases.md -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
+<!-- The below content is automatically added from ./../docs/partials/useCases.md -->
 The `<auro-flightline>` element should be used in situations where users may:
 
 * Flying from SEA (Seattle, WA) to AVP (Scranton, PA) will require a *layover* in ORD (Chicago, IL)
@@ -25,57 +25,33 @@ The `<auro-flightline>` element should be used in situations where users may:
 
 ## Example(s)
 
-This basic example represents a flight with no stops or layovers.
+### Basic
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/basic.html) -->
-  <!-- The below content is automatically added from ../apiExamples/basic.html -->
-  <auro-flightline></auro-flightline>
+  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/canceled-stop-and-layovers.html) -->
+  <!-- The below content is automatically added from ./../apiExamples/canceled-stop-and-layovers.html -->
+  <auro-flightline>
+    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
+    <auro-flight-segment canceled iata="SEA" duration="0h 40m"></auro-flight-segment>
+    <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+    <auro-flight-segment canceled destinationCanceled iata="DUB" duration="13h 40m"></auro-flight-segment>
+  </auro-flightline>
   <!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
   <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/basic.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/basic.html -->
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/canceled-stop-and-layovers.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/canceled-stop-and-layovers.html -->
 
 ```html
-<auro-flightline></auro-flightline>
-```
-<!-- AURO-GENERATED-CONTENT:END -->
-</auro-accordion>
-
-## Recommended Use and Version Control
-
-There are two important parts of every Auro component. The <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom element. The class is exported and then used as part of defining the Web Component. When importing this component as described in the <a href="#install">install</a> section, the class is imported and the `auro-flightline` custom element is defined automatically.
-
-To protect from versioning conflicts with other instances of the component being loaded, it is recommended to use our `AuroFlightline.register(name)` method and pass in a unique name.
-
-```js
-import { AuroFlightline, AuroFlightSegment } from '@aurodesignsystem/auro-flightline/class';
-
-AuroFlightline.register('custom-flightline');
-AuroFlightSegment.register('custom-flight-segment');
-```
-
-This will create a new custom element that you can use in your HTML that will function identically to the `auro-flightline` element.
-
-<div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/custom.html) -->
-  <!-- The below content is automatically added from ../apiExamples/custom.html -->
-  <custom-flightline>
-      <custom-flight-segment canceled iata="ORD" duration="3h 40m"></custom-flight-segment>
-  </custom-flightline>
-  <!-- AURO-GENERATED-CONTENT:END -->
-</div>
-<auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=../apiExamples/custom.html) -->
-<!-- The below code snippet is automatically added from ../apiExamples/custom.html -->
-
-```html
-<custom-flightline>
-    <custom-flight-segment canceled iata="ORD" duration="3h 40m"></custom-flight-segment>
-</custom-flightline>
+<auro-flightline>
+  <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
+  <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
+  <auro-flight-segment canceled iata="SEA" duration="0h 40m"></auro-flight-segment>
+  <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
+  <auro-flight-segment canceled destinationCanceled iata="DUB" duration="13h 40m"></auro-flight-segment>
+</auro-flightline>
 ```
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
