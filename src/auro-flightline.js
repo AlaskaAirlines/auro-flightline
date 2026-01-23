@@ -15,13 +15,19 @@ import tokensCss from "./styles/tokens.scss";
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
  * The auro-flightline component provides a responsive flight timeline experience by placing dots indicating stopovers and layovers on a timeline.
- * @attr {Boolean} canceled - Whether the flightline is canceled.
+ * @customElement auro-flightline
+ * 
  * @slot - fill in with `<auro-flight-segment>` components of a given leg.
  */
 
 export class AuroFlightline extends LitElement {
   constructor() {
     super();
+
+    this._initializeDefaults();
+  }
+
+  _initializeDefaults() {
     this.canceled = false;
 
     /**
@@ -47,9 +53,27 @@ export class AuroFlightline extends LitElement {
 
   static get properties() {
     return {
-      canceled: { type: Boolean, reflect: true },
-      hasCanceledSegment: { type: Boolean, reflect: true },
+      /**
+       * If true, demonstrates a canceled flightline UI.
+       */
+      canceled: { 
+        type: Boolean, 
+        reflect: true 
+      },
+
+      /**
+       * @private
+       */
       firstSegmentCanceled: { type: Boolean, reflect: true },
+
+      /**
+       * @private
+       */
+      hasCanceledSegment: { type: Boolean, reflect: true },
+
+      /**
+       * @private
+       */
       lastSegmentCanceled: { type: Boolean, reflect: true },
     };
   }
@@ -60,7 +84,7 @@ export class AuroFlightline extends LitElement {
 
   /**
    * This will register this element with the browser.
-   * @param {string} [name="auro-flightline"] - The name of element that you want to register to.
+   * @param {string} [name="auro-flightline"] - The name of the element that you want to register.
    *
    * @example
    * AuroFlightLine.register("custom-flightline") // this will register this element to <custom-flightline/>
