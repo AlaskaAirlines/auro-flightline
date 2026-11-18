@@ -1,3 +1,3 @@
 The `<auro-flightline>` component represents any layovers and/or stopovers a guest may encounter throughout their journey.
 
-For mobile, the number of stops is automatically calculated by the number of layovers and/or stopovers added in the DOM via the `auro-flight-segment` element.
+When its container is `320px` wide or narrower, the flightline hides the individual segments and shows the number of stops, counted from the `auro-flight-segment` elements inside it.
