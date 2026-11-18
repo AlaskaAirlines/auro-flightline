@@ -14,11 +14,11 @@ import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * Shows a flight's layovers and stopovers as dots on a timeline that adapts to the width of its container.
+ * Shows a flight's layovers and stopovers as dots on a timeline that adapts to its width.
  *
  * **Key capabilities**
  * - **Shows each stop**: Each `<auro-flight-segment>` in the default slot adds a dot to the timeline.
- * - **Adapts to narrow spaces**: When its container is `320px` wide or narrower, it shows the number of stops instead of the dots.
+ * - **Adapts to narrow spaces**: When it has two or more segments and is `320px` wide or narrower, it shows the number of stops instead of the dots.
  * - **Shows cancellations**: `canceled` shows the whole flight as canceled.
  *
  * **Example**

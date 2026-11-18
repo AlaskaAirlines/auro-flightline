@@ -19,7 +19,7 @@ import tokensCss from "./styles/tokens.scss";
  * Marks one stop on a flight as a layover or a stopover.
  *
  * **Key capabilities**
- * - **Layover**: A stop with a duration, shown as a filled marker. Set `duration` to show it.
+ * - **Layover**: A stop with a duration, shown as a filled marker. Set `duration` to show how long it lasts.
  * - **Stopover**: A stop with no duration, shown as an outlined marker. Set `stopover` to turn it on.
  * - **Cancellation**: `canceled` and `destinationCanceled` show the lines around the segment as canceled.
  *

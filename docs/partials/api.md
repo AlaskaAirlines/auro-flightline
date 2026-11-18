@@ -125,7 +125,7 @@ Use `stopover` to show a stop with no duration.
 
 ### Container query
 
-The `auro-flightline` element responds to its own width instead of the device width, so you can control its shape in narrow spaces. When the flightline is `320px` (`var(--ds-grid-breakpoint-xs)`) wide or narrower, it shows the number of stops instead of the individual segments.
+The `auro-flightline` element responds to its own width instead of the device width, so you can control its shape in narrow spaces. When a flightline with two or more segments is `320px` wide or narrower (the `xs` grid breakpoint), it shows the number of stops instead of the individual segments.
 
 The first example sets the width to `300px`, the second uses the full width of its container, and the third sets `75%` so you can resize the window and watch it switch.
 
@@ -144,7 +144,7 @@ The first example sets the width to `300px`, the second uses the full width of i
 
 ### Stopover and layover
 
-A flight with a stopover and a layover.
+Mix stopover and layover segments in one flightline, as in this flight with one of each.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/stopover-and-layover.html) -->
@@ -161,7 +161,7 @@ A flight with a stopover and a layover.
 
 ### Flight with multiple stopovers and layovers
 
-A flight with multiple stopovers and layovers.
+Add as many stopover and layover segments as the route needs, as in this flight with one stopover and three layovers.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/multiple-stop-and-layovers.html) -->
@@ -178,7 +178,7 @@ A flight with multiple stopovers and layovers.
 
 ### Canceled flight with multiple stopovers and layovers
 
-A canceled international flight with stopovers and layovers.
+Set `canceled` on individual segments, and `destinationCanceled` on the last one, to show a canceled international flight with stopovers and layovers.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/canceled-stop-and-layovers.html) -->
