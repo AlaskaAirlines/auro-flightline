@@ -16,13 +16,19 @@ import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * The auro-flight-segment component is a standard for indicating stopovers and layovers.
+ * Marks one stop on a flight as a layover or a stopover.
+ *
+ * **Key capabilities**
+ * - **Layover**: A stop with a duration, shown as a filled marker. Set `duration` to show it.
+ * - **Stopover**: A stop with no duration, shown as an outlined marker. Set `stopover` to turn it on.
+ * - **Cancellation**: `canceled` and `destinationCanceled` show the lines around the segment as canceled.
+ *
+ * **Example**
+ * ```html
+ * <auro-flight-segment iata="ORD" duration="3h 40m"></auro-flight-segment>
+ * ```
+ * Read about [the difference between a layover and a stopover](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/).
  * @customElement auro-flight-segment
- * 
- * Stopovers do not have duration information and are indicated differently.
- * Layovers contain duration information and are indicated with a solid fill.
- * For more information about the difference between a layover and a stopover,
- * [please see this article](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/).
  */
 
 export class AuroFlightSegment extends LitElement {
@@ -47,7 +53,7 @@ export class AuroFlightSegment extends LitElement {
   static get properties() {
     return {
       /**
-       * Whether the segment is canceled. The line leading to the segment will be red.
+       * Marks the segment as canceled. The line leading to the segment is red and dashed, and the segment's marker is red.
        */
       canceled: {
         type: Boolean,
@@ -55,7 +61,7 @@ export class AuroFlightSegment extends LitElement {
       },
 
       /**
-       * Whether the following segment is canceled, will only affect the last segment in a flightline. The line after the segment will be red.
+       * Marks the final leg after the last segment as canceled. Use it on the last segment in a flightline, where it turns the line after the segment red and dashed and the duration text red.
        */
       destinationCanceled: {
         type: Boolean,
@@ -63,17 +69,17 @@ export class AuroFlightSegment extends LitElement {
       },
 
       /**
-       * Indicates time duration of a stop.
+       * Sets the layover length shown under the station code, such as `3h 40m`. Don't set it on a stopover, because stopover durations can't be predicted.
        */
       duration: { type: String },
 
       /**
-       * Text to display, typically a station code (SEA, PVD, AVP).
+       * Sets the text shown under the segment's marker, typically a station code such as `SEA`.
        */
       iata: { type: String },
 
       /**
-       * Indicates time is on the following calendar day.
+       * Marks a layover that extends into the next calendar day by showing its duration in red.
        */
       nextDay: {
         type: Boolean,
@@ -89,7 +95,7 @@ export class AuroFlightSegment extends LitElement {
       },
 
       /**
-       * Indicates a stopover. Do not provide duration.
+       * Marks the segment as a stopover and shows its marker as an outlined circle. Don't set `duration` on a stopover, because stopover durations can't be predicted.
        */
       stopover: {
         type: Boolean,
@@ -103,11 +109,11 @@ export class AuroFlightSegment extends LitElement {
   }
 
   /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-flightline"] - The name of the element that you want to register.
+   * Registers the element with the browser under a tag name.
+   * @param {string} [name="auro-flight-segment"] - The tag name to register the element under.
    *
    * @example
-   * AuroFlightSegment.register("auro-flight-segment") // this will register this element to <auro-flight-segment/>
+   * AuroFlightSegment.register("custom-flight-segment"); // Registers the element as <custom-flight-segment>.
    *
    */
   static register(name = "auro-flight-segment") {

@@ -12,9 +12,9 @@ The following sections are editable by making changes to the following files:
 | SECTION                | DESCRIPTION                                       | FILE LOCATION                       |
 |------------------------|---------------------------------------------------|-------------------------------------|
 | Description            | Description of the component                      | `./docs/partials/description.md`    |
-| Use Cases              | Examples for when to use this component           | `./docs/partials/useCases.md`       |
-| Additional Information | For use to add any component specific information | `./docs/partials/readmeAddlInfo.md` |
-| Component Example Code | HTML sample code of the components use            | `./apiExamples/basic.html`          |
+| Use cases              | Examples for when to use this component           | `./docs/partials/useCases.md`       |
+| Additional information | For use to add any component specific information | `./docs/partials/readmeAddlInfo.md` |
+| Component example code | HTML sample code of the components use            | `./apiExamples/basic.html`          |
 -->
 
 # Flightline
@@ -23,21 +23,21 @@ The following sections are editable by making changes to the following files:
 <!-- The below content is automatically added from ./docs/partials/description.md -->
 The `<auro-flightline>` component represents any layovers and/or stopovers a guest may encounter throughout their journey.
 
-For mobile, the number of stops is automatically calculated by the number of layovers and/or stopovers added in the DOM via the `auro-flight-segment` element.
+When its container is `320px` wide or narrower, the flightline hides the individual segments and shows the number of stops, counted from the `auro-flight-segment` elements inside it.
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/readmeAddlInfo.md) -->
 <!-- The below content is automatically added from ./docs/partials/readmeAddlInfo.md -->
 <!-- AURO-GENERATED-CONTENT This file is to be used for any additional content that should be included in the README.md which is specific to this component. -->
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Use Cases
+## Use cases
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/useCases.md) -->
 <!-- The below content is automatically added from ./docs/partials/useCases.md -->
-The `<auro-flightline>` element should be used in situations where users may:
+Use `<auro-flightline>` to show a route that includes layovers or stopovers, such as:
 
-* Flying from SEA (Seattle, WA) to AVP (Scranton, PA) will require a *layover* in ORD (Chicago, IL)
-* Flying from [ANC (Anchorage, AK) to ADK (Adak Island, AK) will have a *stopover* in CDB (Cold Bay, AK)](https://onemileatatime.com/alaska-airlines-adak-cold-bay/). These passengers will not deplane in Cold Bay. Stopover duration cannot be predicted due to variants in passenger and cargo loads.
+* A flight from SEA (Seattle, WA) to AVP (Scranton, PA) that requires a *layover* in ORD (Chicago, IL).
+* A flight from ANC (Anchorage, AK) to ADK (Adak Island, AK) that has a *stopover* in CDB (Cold Bay, AK). [Passengers stay on the plane in Cold Bay](https://onemileatatime.com/alaska-airlines-adak-cold-bay/), and the stopover duration can't be predicted because passenger and cargo loads vary.
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ## Install
@@ -48,90 +48,76 @@ The `<auro-flightline>` element should be used in situations where users may:
 [![License](https://img.shields.io/npm/l/@aurodesignsystem/auro-flightline?color=blue&style=for-the-badge)](https://www.apache.org/licenses/LICENSE-2.0)
 ![ESM supported](https://img.shields.io/badge/ESM-compatible-FFE900?style=for-the-badge)
 
-```shell
-$ npm i @aurodesignsystem/auro-flightline
-```
+<pre class="language-shell"><code class="language-shell">$ npm i @aurodesignsystem/auro-flightline</code></pre>
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
-### Define Dependency in Project
+### Define dependency in project
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/componentImportDescription.md) -->
-Defining the dependency within each project that is using the `<auro-flightline>` component.
+Import the component in each project that uses `<auro-flightline>`.
 
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/componentImport.md) -->
 
-```js
-import "@aurodesignsystem/auro-flightline";
-```
+<pre class="language-js"><code class="language-js">import "@aurodesignsystem/auro-flightline";</code></pre>
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
 ### Use CDN
 
 <!-- AURO-GENERATED-CONTENT:START (REMOTE:url=https://raw.githubusercontent.com/AlaskaAirlines/auro-templates/main/templates/default/partials/usage/bundleInstallDescription.md) -->
-In cases where the project is not able to process JS assets, there are pre-processed assets available for use. Legacy browsers such as IE11 are no longer supported.
+If your project can't process JS assets, use the pre-processed assets. Legacy browsers, such as IE11, aren't supported.
 
-```html
-<script type="module" src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-flightline@latest/+esm"></script>
-```
+<pre class="language-html"><code class="language-html">&lt;script type="module" src="https://cdn.jsdelivr.net/npm/@aurodesignsystem/auro-flightline@latest/+esm"&gt;&lt;/script&gt;</code></pre>
 
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Basic Example
+## Basic example
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/basic.html) -->
 <!-- The below code snippet is automatically added from ./apiExamples/basic.html -->
 
-```html
-<auro-flightline></auro-flightline>
-```
+<pre class="language-html"><code class="language-html">&lt;auro-flightline&gt;&lt;/auro-flightline&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Custom Component Registration for Version Management
+## Custom component registration for version management
 
-There are two key parts to every Auro component: the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom element definition.
+Every Auro component has two key parts: the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">class</a> and the custom element definition.
 The class defines the component’s behavior, while the custom element registers it under a specific name so it can be used in HTML.
 
-When you install the component as described on the `Install` page, the class is imported automatically, and the component is registered globally for you.
+Installing the component as described in the Install section imports the class and registers the component globally for you.
 
-However, if you need to load multiple versions of the same component on a single page (for example, when two projects depend on different versions), you can manually register the class under a custom element name to avoid conflicts.
+However, if you need to load multiple versions of the same component on a single page (for example, when two projects depend on different versions), register the class manually under a custom element name to avoid conflicts.
 
-You can do this by importing only the component class and using the `register(name)` method with a unique name:
+To do this, import only the component class and call the `register(name)` method with a unique name:
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/customRegistration.md) -->
 <!-- The below content is automatically added from ./docs/partials/customRegistration.md -->
 
-```js
-// Import the class only
-import { AuroFlightSegment } from "./auro-flight-segment.js";
-import { AuroFlightline } from "./auro-flightline.js";
+<pre class="language-js"><code class="language-js">// Import the classes only
+import { AuroFlightline, AuroFlightSegment } from "@aurodesignsystem/auro-flightline/class";
+&#10;// Register with custom names if desired
+AuroFlightSegment.register("custom-flight-segment");
+AuroFlightline.register("custom-flightline");</code></pre>
 
-// Register with a custom name if desired
-AuroFlightSegment.register('custom-flight-segment');
-AuroFlightline.register('custom-flightline');
-```
-
-This will create a new custom element `<custom-flightline>` and `<custom-flight-segment>` that behaves exactly like `<auro-flightline>` and `<auro-flight-segment>`, allowing both sets of components to coexist on the same page without interfering with each other.
+This creates `<custom-flightline>` and `<custom-flight-segment>`, which work like `<auro-flightline>` and `<auro-flight-segment>`. The flightline's "number of stops" summary at narrow widths still uses `<auro-flight-segment>`, so keep that element registered too.
 <!-- AURO-GENERATED-CONTENT:END -->
 <div class="exampleWrapper exampleWrapper--flex">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->
-  <!-- The below content is automatically added from ./apiExamples/custom.html -->
-  <custom-flightline>
-      <custom-flight-segment canceled iata="ORD" duration="3h 40m"></custom-flight-segment>
-  </custom-flightline>
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->
+<!-- The below content is automatically added from ./apiExamples/custom.html -->
+<custom-flightline>
+<custom-flight-segment canceled iata="ORD" duration="3h 40m"></custom-flight-segment>
+</custom-flightline>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
+<span slot="trigger">See code</span>
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./apiExamples/custom.html) -->
 <!-- The below code snippet is automatically added from ./apiExamples/custom.html -->
 
-```html
-<custom-flightline>
-    <custom-flight-segment canceled iata="ORD" duration="3h 40m"></custom-flight-segment>
-</custom-flightline>
-```
+<pre class="language-html"><code class="language-html">&lt;custom-flightline&gt;
+    &lt;custom-flight-segment canceled iata="ORD" duration="3h 40m"&gt;&lt;/custom-flight-segment&gt;
+&lt;/custom-flightline&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>

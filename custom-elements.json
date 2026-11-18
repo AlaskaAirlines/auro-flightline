@@ -1,0 +1,405 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "src/auro-flight-segment.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Marks one stop on a flight as a layover or a stopover.\n\n**Key capabilities**\n- **Layover**: A stop with a duration, shown as a filled marker. Set `duration` to show it.\n- **Stopover**: A stop with no duration, shown as an outlined marker. Set `stopover` to turn it on.\n- **Cancellation**: `canceled` and `destinationCanceled` show the lines around the segment as canceled.\n\n**Example**\n```html\n<auro-flight-segment iata=\"ORD\" duration=\"3h 40m\"></auro-flight-segment>\n```\nRead about [the difference between a layover and a stopover](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/).",
+          "name": "AuroFlightSegment",
+          "members": [
+            {
+              "kind": "method",
+              "name": "_initializeDefaults",
+              "type": {
+                "text": "_initializeDefaults() => void"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "canceled",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Marks the segment as canceled. The line leading to the segment is red and dashed, and the segment's marker is red.",
+              "attribute": "canceled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "destinationCanceled",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Marks the final leg after the last segment as canceled. Use it on the last segment in a flightline, where it turns the line after the segment red and dashed and the duration text red.",
+              "attribute": "destinationCanceled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "duration",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets the layover length shown under the station code, such as `3h 40m`. Don't set it on a stopover, because stopover durations can't be predicted.",
+              "attribute": "duration"
+            },
+            {
+              "kind": "field",
+              "name": "iata",
+              "privacy": "public",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets the text shown under the segment's marker, typically a station code such as `SEA`.",
+              "attribute": "iata"
+            },
+            {
+              "kind": "field",
+              "name": "nextDay",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Marks a layover that extends into the next calendar day by showing its duration in red.",
+              "attribute": "nextDay",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "partialCancel",
+              "privacy": "private",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "partialCancel",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "register",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "name",
+                  "default": "\"auro-flight-segment\"",
+                  "description": "The tag name to register the element under.",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Registers the element with the browser under a tag name.",
+              "type": {
+                "text": "register(name?: string = \"auro-flight-segment\") => void"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "stopover",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Marks the segment as a stopover and shows its marker as an outlined circle. Don't set `duration` on a stopover, because stopover durations can't be predicted.",
+              "attribute": "stopover",
+              "reflects": true
+            }
+          ],
+          "attributes": [
+            {
+              "name": "canceled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Marks the segment as canceled. The line leading to the segment is red and dashed, and the segment's marker is red.",
+              "fieldName": "canceled"
+            },
+            {
+              "name": "destinationCanceled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Marks the final leg after the last segment as canceled. Use it on the last segment in a flightline, where it turns the line after the segment red and dashed and the duration text red.",
+              "fieldName": "destinationCanceled"
+            },
+            {
+              "name": "duration",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets the layover length shown under the station code, such as `3h 40m`. Don't set it on a stopover, because stopover durations can't be predicted.",
+              "fieldName": "duration"
+            },
+            {
+              "name": "iata",
+              "type": {
+                "text": "string"
+              },
+              "description": "Sets the text shown under the segment's marker, typically a station code such as `SEA`.",
+              "fieldName": "iata"
+            },
+            {
+              "name": "nextDay",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Marks a layover that extends into the next calendar day by showing its duration in red.",
+              "fieldName": "nextDay"
+            },
+            {
+              "name": "stopover",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Marks the segment as a stopover and shows its marker as an outlined circle. Don't set `duration` on a stopover, because stopover durations can't be predicted.",
+              "fieldName": "stopover"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "auro-flight-segment",
+          "customElement": true,
+          "modulePath": "src/auro-flight-segment.js"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AuroFlightSegment",
+          "declaration": {
+            "name": "AuroFlightSegment",
+            "module": "src/auro-flight-segment.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/auro-flightline.js",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "Shows a flight's layovers and stopovers as dots on a timeline that adapts to the width of its container.\n\n**Key capabilities**\n- **Shows each stop**: Each `<auro-flight-segment>` in the default slot adds a dot to the timeline.\n- **Adapts to narrow spaces**: When its container is `320px` wide or narrower, it shows the number of stops instead of the dots.\n- **Shows cancellations**: `canceled` shows the whole flight as canceled.\n\n**Example**\n```html\n<auro-flightline>\n  <auro-flight-segment iata=\"SEA\" duration=\"1h 40m\"></auro-flight-segment>\n</auro-flightline>\n```",
+          "name": "AuroFlightline",
+          "slots": [
+            {
+              "description": "The `<auro-flight-segment>` elements that make up the flight, one for each stop.",
+              "name": ""
+            }
+          ],
+          "members": [
+            {
+              "kind": "method",
+              "name": "_initializeDefaults",
+              "type": {
+                "text": "_initializeDefaults() => void"
+              }
+            },
+            {
+              "kind": "field",
+              "name": "canceled",
+              "privacy": "public",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets the whole flightline to canceled. The line turns red and dashed, and every segment inside it is shown as canceled.",
+              "attribute": "canceled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "containsCanceledSegment",
+              "privacy": "private"
+            },
+            {
+              "kind": "field",
+              "name": "firstSegmentCanceled",
+              "privacy": "private",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "firstSegmentCanceled",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "hasCanceledSegment",
+              "privacy": "private",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "hasCanceledSegment",
+              "reflects": true
+            },
+            {
+              "kind": "field",
+              "name": "lastSegmentCanceled",
+              "privacy": "private",
+              "type": {
+                "text": "boolean"
+              },
+              "attribute": "lastSegmentCanceled",
+              "reflects": true
+            },
+            {
+              "kind": "method",
+              "name": "register",
+              "static": true,
+              "parameters": [
+                {
+                  "name": "name",
+                  "default": "\"auro-flightline\"",
+                  "description": "The tag name to register the element under.",
+                  "optional": true,
+                  "type": {
+                    "text": "string"
+                  }
+                }
+              ],
+              "description": "Registers the element with the browser under a tag name.",
+              "type": {
+                "text": "register(name?: string = \"auro-flightline\") => void"
+              }
+            }
+          ],
+          "attributes": [
+            {
+              "name": "canceled",
+              "type": {
+                "text": "boolean"
+              },
+              "description": "Sets the whole flightline to canceled. The line turns red and dashed, and every segment inside it is shown as canceled.",
+              "fieldName": "canceled"
+            }
+          ],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "auro-flightline",
+          "customElement": true,
+          "modulePath": "src/auro-flightline.js"
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AuroFlightline",
+          "declaration": {
+            "name": "AuroFlightline",
+            "module": "src/auro-flightline.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/color-flightline-css.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/color-flightline-css.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/color-segment-css.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/color-segment-css.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/index.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "AuroFlightline",
+          "declaration": {
+            "name": "AuroFlightline",
+            "module": "src/index.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "AuroFlightSegment",
+          "declaration": {
+            "name": "AuroFlightSegment",
+            "module": "src/index.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/registered.js",
+      "declarations": [],
+      "exports": []
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/style-flight-segment-css.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/style-flight-segment-css.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/style-flightline-css.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/style-flightline-css.js"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "src/tokens-css.js",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "default",
+          "declaration": {
+            "module": "src/tokens-css.js"
+          }
+        }
+      ]
+    }
+  ]
+}
