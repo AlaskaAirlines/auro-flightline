@@ -23,7 +23,7 @@ The following sections are editable by making changes to the following files:
 <!-- The below content is automatically added from ./docs/partials/description.md -->
 The `<auro-flightline>` component represents any layovers and/or stopovers a guest may encounter throughout their journey.
 
-When its container is `320px` wide or narrower, the flightline hides the individual segments and shows the number of stops, counted from the `auro-flight-segment` elements inside it.
+When a flightline with two or more segments is `320px` wide or narrower, it hides the individual segments and shows the number of stops, counted from the `auro-flight-segment` elements inside it.
 <!-- AURO-GENERATED-CONTENT:END -->
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./docs/partials/readmeAddlInfo.md) -->
 <!-- The below content is automatically added from ./docs/partials/readmeAddlInfo.md -->
@@ -101,7 +101,7 @@ import { AuroFlightline, AuroFlightSegment } from "@aurodesignsystem/auro-flight
 AuroFlightSegment.register("custom-flight-segment");
 AuroFlightline.register("custom-flightline");</code></pre>
 
-This creates `<custom-flightline>` and `<custom-flight-segment>`, which work like `<auro-flightline>` and `<auro-flight-segment>`. The flightline's "number of stops" summary at narrow widths still uses `<auro-flight-segment>`, so keep that element registered too.
+This creates `<custom-flightline>` and `<custom-flight-segment>`, which work like `<auro-flightline>` and `<auro-flight-segment>`. The flightline's "number of stops" summary at narrow widths uses `<auro-flight-segment>`, so also call `AuroFlightSegment.register()` to register it under its default name.
 <!-- AURO-GENERATED-CONTENT:END -->
 <div class="exampleWrapper exampleWrapper--flex">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./apiExamples/custom.html) -->

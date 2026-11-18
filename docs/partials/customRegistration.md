@@ -7,4 +7,4 @@ AuroFlightSegment.register("custom-flight-segment");
 AuroFlightline.register("custom-flightline");
 ```
 
-This creates `<custom-flightline>` and `<custom-flight-segment>`, which work like `<auro-flightline>` and `<auro-flight-segment>`. The flightline's "number of stops" summary at narrow widths still uses `<auro-flight-segment>`, so keep that element registered too.
+This creates `<custom-flightline>` and `<custom-flight-segment>`, which work like `<auro-flightline>` and `<auro-flight-segment>`. The flightline's "number of stops" summary at narrow widths uses `<auro-flight-segment>`, so also call `AuroFlightSegment.register()` to register it under its default name.
