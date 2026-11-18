@@ -6,7 +6,7 @@
 Marks one stop on a flight as a layover or a stopover.
 
 **Key capabilities**
-- **Layover**: A stop with a duration, shown as a filled marker. Set `duration` to show it.
+- **Layover**: A stop with a duration, shown as a filled marker. Set `duration` to show how long it lasts.
 - **Stopover**: A stop with no duration, shown as an outlined marker. Set `stopover` to turn it on.
 - **Cancellation**: `canceled` and `destinationCanceled` show the lines around the segment as canceled.
 
@@ -33,11 +33,11 @@ Read about [the difference between a layover and a stopover](https://www.turkish
 
 # auro-flightline
 
-Shows a flight's layovers and stopovers as dots on a timeline that adapts to the width of its container.
+Shows a flight's layovers and stopovers as dots on a timeline that adapts to its width.
 
 **Key capabilities**
 - **Shows each stop**: Each `<auro-flight-segment>` in the default slot adds a dot to the timeline.
-- **Adapts to narrow spaces**: When its container is `320px` wide or narrower, it shows the number of stops instead of the dots.
+- **Adapts to narrow spaces**: When it has two or more segments and is `320px` wide or narrower, it shows the number of stops instead of the dots.
 - **Shows cancellations**: `canceled` shows the whole flight as canceled.
 
 **Example**
@@ -223,7 +223,7 @@ Use `stopover` to show a stop with no duration.
 
 ### Container query
 
-The `auro-flightline` element responds to its own width instead of the device width, so you can control its shape in narrow spaces. When the flightline is `320px` (`var(--ds-grid-breakpoint-xs)`) wide or narrower, it shows the number of stops instead of the individual segments.
+The `auro-flightline` element responds to its own width instead of the device width, so you can control its shape in narrow spaces. When a flightline with two or more segments is `320px` wide or narrower (the `xs` grid breakpoint), it shows the number of stops instead of the individual segments.
 
 The first example sets the width to `300px`, the second uses the full width of its container, and the third sets `75%` so you can resize the window and watch it switch.
 
@@ -284,7 +284,7 @@ The first example sets the width to `300px`, the second uses the full width of i
 
 ### Stopover and layover
 
-A flight with a stopover and a layover.
+Mix stopover and layover segments in one flightline, as in this flight with one of each.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/stopover-and-layover.html) -->
@@ -309,7 +309,7 @@ A flight with a stopover and a layover.
 
 ### Flight with multiple stopovers and layovers
 
-A flight with multiple stopovers and layovers.
+Add as many stopover and layover segments as the route needs, as in this flight with one stopover and three layovers.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/multiple-stop-and-layovers.html) -->
@@ -338,7 +338,7 @@ A flight with multiple stopovers and layovers.
 
 ### Canceled flight with multiple stopovers and layovers
 
-A canceled international flight with stopovers and layovers.
+Set `canceled` on individual segments, and `destinationCanceled` on the last one, to show a canceled international flight with stopovers and layovers.
 
 <div class="exampleWrapper">
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/canceled-stop-and-layovers.html) -->
