@@ -71,12 +71,18 @@ export class AuroFlightSegment extends LitElement {
       /**
        * Sets the layover length shown under the station code, such as `3h 40m`. Don't set it on a stopover, because stopover durations can't be predicted.
        */
-      duration: { type: String },
+      duration: {
+        type: String,
+        reflect: true,
+      },
 
       /**
        * Sets the text shown under the segment's marker, typically a station code such as `SEA`.
        */
-      iata: { type: String },
+      iata: {
+        type: String,
+        reflect: true,
+      },
 
       /**
        * Marks a layover that extends into the next calendar day by showing its duration in red.
@@ -87,7 +93,7 @@ export class AuroFlightSegment extends LitElement {
       },
 
       /**
-       * @private
+       * @internal
        */
       partialCancel: {
         type: Boolean,

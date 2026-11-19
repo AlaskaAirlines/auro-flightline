@@ -159,7 +159,7 @@ Mix stopover and layover segments in one flightline, as in this flight with one 
 
 </auro-accordion>
 
-### Flight with multiple stopovers and layovers
+### Flight with a stopover and multiple layovers
 
 Add as many stopover and layover segments as the route needs, as in this flight with one stopover and three layovers.
 
