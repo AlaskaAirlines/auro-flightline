@@ -14,10 +14,22 @@ import tokensCss from "./styles/tokens.scss";
 
 // See https://git.io/JJ6SJ for "How to document your components using JSDoc"
 /**
- * The auro-flightline component provides a responsive flight timeline experience by placing dots indicating stopovers and layovers on a timeline.
+ * Shows a flight's layovers and stopovers as dots on a timeline that adapts to its width.
+ *
+ * **Key capabilities**
+ * - **Shows each stop**: Each `<auro-flight-segment>` in the default slot adds a dot to the timeline.
+ * - **Adapts to narrow spaces**: When it has two or more segments and is `320px` wide or narrower, it shows the number of stops instead of the dots.
+ * - **Shows cancellations**: `canceled` shows the whole flight as canceled.
+ *
+ * **Example**
+ * ```html
+ * <auro-flightline>
+ *   <auro-flight-segment iata="SEA" duration="1h 40m"></auro-flight-segment>
+ * </auro-flightline>
+ * ```
  * @customElement auro-flightline
- * 
- * @slot - fill in with `<auro-flight-segment>` components of a given leg.
+ *
+ * @slot - The `<auro-flight-segment>` elements that make up the flight, one for each stop.
  */
 
 export class AuroFlightline extends LitElement {
@@ -54,7 +66,7 @@ export class AuroFlightline extends LitElement {
   static get properties() {
     return {
       /**
-       * If true, demonstrates a canceled flightline UI.
+       * Sets the whole flightline to canceled. The line turns red and dashed, and every segment inside it is shown as canceled.
        */
       canceled: { 
         type: Boolean, 
@@ -83,11 +95,11 @@ export class AuroFlightline extends LitElement {
   }
 
   /**
-   * This will register this element with the browser.
-   * @param {string} [name="auro-flightline"] - The name of the element that you want to register.
+   * Registers the element with the browser under a tag name.
+   * @param {string} [name="auro-flightline"] - The tag name to register the element under.
    *
    * @example
-   * AuroFlightLine.register("custom-flightline") // this will register this element to <custom-flightline/>
+   * AuroFlightline.register("custom-flightline"); // Registers the element as <custom-flightline>.
    *
    */
   static register(name = "auro-flightline") {

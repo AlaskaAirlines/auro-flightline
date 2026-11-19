@@ -1,35 +1,65 @@
 # auro-flight-segment
 
-The auro-flight-segment component is a standard for indicating stopovers and layovers.
-Stopovers do not have duration information and are indicated differently.
-Layovers contain duration information and are indicated with a solid fill.
-For more information about the difference between a layover and a stopover,
-[please see this article.](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/).
+Marks one stop on a flight as a layover or a stopover.
 
-## Properties
+**Key capabilities**
+- **Layover**: A stop with a duration, shown as a filled marker. Set `duration` to show how long it lasts.
+- **Stopover**: A stop with no duration, shown as an outlined marker. Set `stopover` to turn it on.
+- **Cancellation**: `canceled` and `destinationCanceled` show the lines around the segment as canceled.
 
-| Property              | Attribute             | Type      | Default | Description                                      |
-|-----------------------|-----------------------|-----------|---------|--------------------------------------------------|
-| `canceled`            | `canceled`            | `Boolean` | false   | Whether the segment is canceled. The line leading to the segment will be red. |
-| `destinationCanceled` | `destinationCanceled` | `Boolean` | false   | Whether the following segment is canceled, will only affect the last segment in a flightline. The line after the segment will be red. |
-| `duration`            | `duration`            | `String`  |         | Indicates time duration of a stop                |
-| `iata`                | `iata`                | `String`  |         | Text to display, typically a station code (SEA, PVD, AVP) |
-| `nextDay`             | `nextDay`             | `Boolean` |         | Indicates time is on the following calendar day. |
-| `stopover`            | `stopover`            | `Boolean` | false   | Indicates a stopover. Do not provide duration.   |
+**Example**
+```html
+<auro-flight-segment iata="ORD" duration="3h 40m"></auro-flight-segment>
+```
+Read about [the difference between a layover and a stopover](https://www.turkishairlines.com/en-int/any-questions/what-is-the-difference-between-a-layover-and-a-stopover/).
 
+### Properties and attributes
+
+| Properties          | Attributes          | Modifiers | Type    | Default | Description                                                                                                                                                                             |
+| ------------------- | ------------------- | --------- | ------- | ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| canceled            | canceled            |           | boolean |         | Marks the segment as canceled. The line leading to the segment is red and dashed, and the segment's marker is red.                                                                      |
+| destinationCanceled | destinationCanceled |           | boolean |         | Marks the final leg after the last segment as canceled. Use it on the last segment in a flightline, where it turns the line after the segment red and dashed and the duration text red. |
+| duration            | duration            |           | string  |         | Sets the layover length shown under the station code, such as `3h 40m`. Don't set it on a stopover, because stopover durations can't be predicted.                                      |
+| iata                | iata                |           | string  |         | Sets the text shown under the segment's marker, typically a station code such as `SEA`.                                                                                                 |
+| nextDay             | nextDay             |           | boolean |         | Marks a layover that extends into the next calendar day by showing its duration in red.                                                                                                 |
+| stopover            | stopover            |           | boolean |         | Marks the segment as a stopover and shows its marker as an outlined circle. Don't set `duration` on a stopover, because stopover durations can't be predicted.                          |
+
+### Methods
+
+| Name     | Parameters                                                    | Return | Description                                              |
+| -------- | ------------------------------------------------------------- | ------ | -------------------------------------------------------- |
+| register | `name` (string) - The tag name to register the element under. |        | Registers the element with the browser under a tag name. |
 
 # auro-flightline
 
-The auro-flightline component provides a responsive flight timeline experience by placing dots indicating stopovers and layovers on a timeline.
+Shows a flight's layovers and stopovers as dots on a timeline that adapts to its width.
 
-## Properties
+**Key capabilities**
+- **Shows each stop**: Each `<auro-flight-segment>` in the default slot adds a dot to the timeline.
+- **Adapts to narrow spaces**: When it has two or more segments and is `320px` wide or narrower, it shows the number of stops instead of the dots.
+- **Shows cancellations**: `canceled` shows the whole flight as canceled.
 
-| Property   | Attribute  | Type      | Default | Description                         |
-|------------|------------|-----------|---------|-------------------------------------|
-| `canceled` | `canceled` | `Boolean` | false   | Whether the flightline is canceled. |
+**Example**
+```html
+<auro-flightline>
+  <auro-flight-segment iata="SEA" duration="1h 40m"></auro-flight-segment>
+</auro-flightline>
+```
 
-## Slots
+### Properties and attributes
 
-| Name | Description                                      |
-|------|--------------------------------------------------|
-|      | fill in with `<auro-flight-segment>` components of a given leg. |
+| Properties | Attributes | Modifiers | Type    | Default | Description                                                                                                             |
+| ---------- | ---------- | --------- | ------- | ------- | ----------------------------------------------------------------------------------------------------------------------- |
+| canceled   | canceled   |           | boolean |         | Sets the whole flightline to canceled. The line turns red and dashed, and every segment inside it is shown as canceled. |
+
+### Methods
+
+| Name     | Parameters                                                    | Return | Description                                              |
+| -------- | ------------------------------------------------------------- | ------ | -------------------------------------------------------- |
+| register | `name` (string) - The tag name to register the element under. |        | Registers the element with the browser under a tag name. |
+
+### Slots
+
+| Name      | Description                                                                      |
+| --------- | -------------------------------------------------------------------------------- |
+| (default) | The `<auro-flight-segment>` elements that make up the flight, one for each stop. |
