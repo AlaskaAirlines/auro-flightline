@@ -48,7 +48,8 @@
                 "text": "string"
               },
               "description": "Sets the layover length shown under the station code, such as `3h 40m`. Don't set it on a stopover, because stopover durations can't be predicted.",
-              "attribute": "duration"
+              "attribute": "duration",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -58,7 +59,8 @@
                 "text": "string"
               },
               "description": "Sets the text shown under the segment's marker, typically a station code such as `SEA`.",
-              "attribute": "iata"
+              "attribute": "iata",
+              "reflects": true
             },
             {
               "kind": "field",
@@ -69,16 +71,6 @@
               },
               "description": "Marks a layover that extends into the next calendar day by showing its duration in red.",
               "attribute": "nextDay",
-              "reflects": true
-            },
-            {
-              "kind": "field",
-              "name": "partialCancel",
-              "privacy": "private",
-              "type": {
-                "text": "boolean"
-              },
-              "attribute": "partialCancel",
               "reflects": true
             },
             {
