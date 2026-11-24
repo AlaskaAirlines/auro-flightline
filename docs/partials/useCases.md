@@ -1,4 +1,4 @@
-The `<auro-flightline>` element should be used in situations where users may:
+Use `<auro-flightline>` to show a route that includes layovers or stopovers, such as:
 
-* Flying from SEA (Seattle, WA) to AVP (Scranton, PA) will require a *layover* in ORD (Chicago, IL)
-* Flying from [ANC (Anchorage, AK) to ADK (Adak Island, AK) will have a *stopover* in CDB (Cold Bay, AK)](https://onemileatatime.com/alaska-airlines-adak-cold-bay/). These passengers will not deplane in Cold Bay. Stopover duration cannot be predicted due to variants in passenger and cargo loads.
+* A flight from SEA (Seattle, WA) to AVP (Scranton, PA) that requires a *layover* in ORD (Chicago, IL).
+* A flight from ANC (Anchorage, AK) to ADK (Adak Island, AK) that has a *stopover* in CDB (Cold Bay, AK). [Passengers stay on the plane in Cold Bay](https://onemileatatime.com/alaska-airlines-adak-cold-bay/), and the stopover duration can't be predicted because passenger and cargo loads vary.

@@ -16,13 +16,13 @@
 
 </auro-accordion>
 
-## Property & Attribute Examples
+## Property and attribute examples
 
 ### Canceled
 
-#### Canceled Flight
+#### Canceled flight
 
-The following illustrates a `canceled` flight with no layovers or stopovers, for example, SEA to EWR is canceled.
+Use `canceled` on a flightline with no segments to show a canceled nonstop flight, such as SEA to EWR.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/canceled.html) -->
@@ -36,9 +36,9 @@ The following illustrates a `canceled` flight with no layovers or stopovers, for
 
 </auro-accordion>
 
-#### Canceled Segment
+#### Canceled segment
 
-If the `canceled` flightline has segments, they will all be shown as canceled. To cancel individual segments, see complex examples below.
+When the `canceled` flightline has segments, it shows all of them as canceled. To cancel only some segments, set `canceled` on those segments, as in the canceled flight with multiple stopovers and layovers example.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/canceled-segment.html) -->
@@ -52,9 +52,9 @@ If the `canceled` flightline has segments, they will all be shown as canceled. T
 
 </auro-accordion>
 
-#### Canceled Destination
+#### Canceled destination
 
-The following illustrates the use of the `destinationCanceled` attribute, which demonstrates a canceled final destination segment.
+Use `destinationCanceled` on the last segment to show a canceled final leg.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/canceled-destination.html) -->
@@ -73,7 +73,7 @@ The following illustrates the use of the `destinationCanceled` attribute, which 
 
 ### Layover
 
-This example illustrates the use of the `duration` and `iata` attributes to display station codes with the layover duration.
+Use `iata` and `duration` to show a station code with the layover duration.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/iata.html) -->
@@ -87,9 +87,9 @@ This example illustrates the use of the `duration` and `iata` attributes to disp
 
 </auro-accordion>
 
-#### Next Day Layover
+#### Next day layover
 
-The following illustrates the use of the `nextDay` attribute to indicate a layover that extends into the next day.
+Use `nextDay` to show a layover that extends into the next day.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/next-day.html) -->
@@ -106,7 +106,7 @@ The following illustrates the use of the `nextDay` attribute to indicate a layov
 
 ### Stopover
 
-The following illustrates a flight with one `stopover`.
+Use `stopover` to show a stop with no duration.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/stopover.html) -->
@@ -121,15 +121,13 @@ The following illustrates a flight with one `stopover`.
 
 </auro-accordion>
 
-## Common Usage Patterns & Functional Examples
+## Common usage patterns
 
-### Container Query
+### Container query
 
-The `auro-flightline` element is reactive to its parent container's `width` value versus a `@media` query based on the device `width`. This allows for greater control over the shape of the element when in constrained spaces.
+The `auro-flightline` element responds to its own width instead of the device width, so you can control its shape in narrow spaces. When a flightline with two or more segments is `320px` wide or narrower (the `xs` grid breakpoint), it shows the number of stops instead of the individual segments.
 
-The default container query is a min-width of `320px`, or `var(--ds-grid-breakpoint-xs)`.
-
-The first example illustrates a `auro-flightline` element with a container width of `300px`. The next `auro-flightline` element is within a container set at `100%` for context. Notice when the container reaches a width of < `320px`, the container query switches the UI.
+The first example sets the width to `300px`, the second uses the full width of its container, and the third sets `75%` so you can resize the window and watch it switch.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/container-query.html) -->
@@ -144,9 +142,9 @@ The first example illustrates a `auro-flightline` element with a container width
 
 </auro-accordion>
 
-### Stopover and Layover
+### Stopover and layover
 
-The following illustrates a flight with a stopover and a layover.
+Mix stopover and layover segments in one flightline, as in this flight with one of each.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/stopover-and-layover.html) -->
@@ -161,9 +159,9 @@ The following illustrates a flight with a stopover and a layover.
 
 </auro-accordion>
 
-### Flight with Multiple Stopovers and Layovers
+### Flight with a stopover and multiple layovers
 
-The following illustrates an international flight with stopovers and layovers.
+Add as many stopover and layover segments as the route needs, as in this flight with one stopover and three layovers.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/multiple-stop-and-layovers.html) -->
@@ -178,9 +176,9 @@ The following illustrates an international flight with stopovers and layovers.
 
 </auro-accordion>
 
-### Canceled Flight with Multiple Stopovers and Layovers
+### Canceled flight with multiple stopovers and layovers
 
-The following illustrates a cancellation of international flight with stopovers and layovers.
+Set `canceled` on individual segments, and `destinationCanceled` on the last one, to show a canceled international flight with stopovers and layovers.
 
 <div class="exampleWrapper">
   <!-- AURO-GENERATED-CONTENT:START (FILE:src=../apiExamples/canceled-stop-and-layovers.html) -->
@@ -195,9 +193,9 @@ The following illustrates a cancellation of international flight with stopovers 
 
 </auro-accordion>
 
-## Restyle Component with CSS Variables
+## Restyle with CSS custom properties
 
-The component may be restyled by changing the values of the following token(s).
+Restyle the component by changing the values of the following tokens.
 
 <!-- AURO-GENERATED-CONTENT:START (CODE:src=./../src/styles/tokens.scss) -->
 <!-- AURO-GENERATED-CONTENT:END -->

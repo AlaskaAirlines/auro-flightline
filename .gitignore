@@ -18,6 +18,9 @@ src/**/*.css.map
 dist/
 build/
 
+## Custom Elements Manifest (generated)
+custom-elements.json
+
 ## Code coverage reports
 coverage/
 
