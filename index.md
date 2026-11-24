@@ -1,6 +1,6 @@
 <!--
  THIS PAGE'S CONTENT SHOULD BE KEPT MINIMAL.
- ONLY ADD EXAMPLES THAT ARE TRULY NECESSARY FOR THE INDEX PAGE — THE BASIC EXAMPLE IS USUALLY ENOUGH.
+ ONLY ADD EXAMPLES THAT ARE TRULY NECESSARY FOR THE INDEX PAGE. THE BASIC EXAMPLE IS USUALLY ENOUGH.
  ALL OTHER EXAMPLES SHOULD GO IN THE API DOCUMENTATION.
 -->
 
@@ -10,48 +10,34 @@
 <!-- The below content is automatically added from ./../docs/partials/description.md -->
 The `<auro-flightline>` component represents any layovers and/or stopovers a guest may encounter throughout their journey.
 
-For mobile, the number of stops is automatically calculated by the number of layovers and/or stopovers added in the DOM via the `auro-flight-segment` element.
+When a flightline with two or more segments is `320px` wide or narrower, it hides the individual segments and shows the number of stops, counted from the `auro-flight-segment` elements inside it.
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Use Cases
+## Use cases
 
 <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../docs/partials/useCases.md) -->
 <!-- The below content is automatically added from ./../docs/partials/useCases.md -->
-The `<auro-flightline>` element should be used in situations where users may:
+Use `<auro-flightline>` to show a route that includes layovers or stopovers, such as:
 
-* Flying from SEA (Seattle, WA) to AVP (Scranton, PA) will require a *layover* in ORD (Chicago, IL)
-* Flying from [ANC (Anchorage, AK) to ADK (Adak Island, AK) will have a *stopover* in CDB (Cold Bay, AK)](https://onemileatatime.com/alaska-airlines-adak-cold-bay/). These passengers will not deplane in Cold Bay. Stopover duration cannot be predicted due to variants in passenger and cargo loads.
+* A flight from SEA (Seattle, WA) to AVP (Scranton, PA) that requires a *layover* in ORD (Chicago, IL).
+* A flight from ANC (Anchorage, AK) to ADK (Adak Island, AK) that has a *stopover* in CDB (Cold Bay, AK). [Passengers stay on the plane in Cold Bay](https://onemileatatime.com/alaska-airlines-adak-cold-bay/), and the stopover duration can't be predicted because passenger and cargo loads vary.
 <!-- AURO-GENERATED-CONTENT:END -->
 
-## Example(s)
+## Examples
 
 ### Basic
 
 <div class="exampleWrapper">
-  <!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/canceled-stop-and-layovers.html) -->
-  <!-- The below content is automatically added from ./../apiExamples/canceled-stop-and-layovers.html -->
-  <auro-flightline>
-    <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
-    <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
-    <auro-flight-segment canceled iata="SEA" duration="0h 40m"></auro-flight-segment>
-    <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
-    <auro-flight-segment canceled destinationCanceled iata="DUB" duration="13h 40m"></auro-flight-segment>
-  </auro-flightline>
-  <!-- AURO-GENERATED-CONTENT:END -->
+<!-- AURO-GENERATED-CONTENT:START (FILE:src=./../apiExamples/basic.html) -->
+<!-- The below content is automatically added from ./../apiExamples/basic.html -->
+<auro-flightline></auro-flightline>
+<!-- AURO-GENERATED-CONTENT:END -->
 </div>
 <auro-accordion alignRight>
-  <span slot="trigger">See code</span>
-<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/canceled-stop-and-layovers.html) -->
-<!-- The below code snippet is automatically added from ./../apiExamples/canceled-stop-and-layovers.html -->
+<span slot="trigger">See code</span>
+<!-- AURO-GENERATED-CONTENT:START (CODE:src=./../apiExamples/basic.html) -->
+<!-- The below code snippet is automatically added from ./../apiExamples/basic.html -->
 
-```html
-<auro-flightline>
-  <auro-flight-segment stopover iata="YAK"></auro-flight-segment>
-  <auro-flight-segment stopover iata="WRG"></auro-flight-segment>
-  <auro-flight-segment canceled iata="SEA" duration="0h 40m"></auro-flight-segment>
-  <auro-flight-segment iata="BOS" duration="1h 40m"></auro-flight-segment>
-  <auro-flight-segment canceled destinationCanceled iata="DUB" duration="13h 40m"></auro-flight-segment>
-</auro-flightline>
-```
+<pre class="language-html"><code class="language-html">&lt;auro-flightline&gt;&lt;/auro-flightline&gt;</code></pre>
 <!-- AURO-GENERATED-CONTENT:END -->
 </auro-accordion>
